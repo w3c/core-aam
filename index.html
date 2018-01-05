@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 18.3.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.0.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -402,8 +402,9 @@ var mappingTableLabels = {
   "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
   "shortName": "core-aam-1.1",
   "copyrightStart": "2014",
+  "license": "document",
   "prevRecURI": "https://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/",
-  "edDraftURI": "https://w3c.github.io/aria/core-aam/core-aam.html",
+  "edDraftURI": "https://w3c.github.io/core-aam/",
   "editors": [
     {
       "name": "Joanmarie Diggs",
@@ -429,7 +430,7 @@ var mappingTableLabels = {
     {
       "name": "Michael Cooper",
       "company": "W3C",
-      "companyURI": "http://www.w3.org",
+      "companyURI": "https://www.w3.org",
       "w3cid": 34017
     },
     {
@@ -763,23 +764,24 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishISODate": "2017-11-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 November 2017"
-}</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."></head>
-<body aria-busy="false" class="h-entry"><div class="head">
+  "publishDate": "2018-01-05",
+  "publishISODate": "2018-01-05T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 05 January 2018"
+}</script></head>
+<body aria-busy="false" class="h-entry toc-inline" style="zoom: 1;"><div class="head">
     <p>
-      <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" width="72" height="48"></a>
+      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: 837027496;--></p>
+  <p><!--_hyper: -886810778;--></p>
   <h1 class="title p-name" id="title">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</h1>
-  <h2 id="w3c-editor-s-draft-21-november-2017"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2017-11-21">21 November 2017</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 21 November 2017" title="Permalink for W3C Editor's Draft 21 November 2017"><span>§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-05-january-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-01-05">05 January 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 05 January 2018" title="Permalink for W3C Editor's Draft 05 January 2018"><span>§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
-      <dd><a class="u-url" href="https://w3c.github.io/aria/core-aam/core-aam.html">https://w3c.github.io/aria/core-aam/core-aam.html</a></dd>
+      <dd><a class="u-url" href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd>
       <dt>Latest editor's draft:</dt>
-      <dd><a href="https://w3c.github.io/aria/core-aam/core-aam.html">https://w3c.github.io/aria/core-aam/core-aam.html</a></dd>
+      <dd><a href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
           <dt>Latest Recommendation:</dt>
           <dd><a href="https://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/">https://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/</a></dd>
     <dt>Editors:</dt>
@@ -799,7 +801,7 @@ var mappingTableLabels = {
   </dl>
       <p class="copyright">
         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
-        2014-2017
+        2014-2018
         
         <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
         (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
@@ -807,7 +809,7 @@ var mappingTableLabels = {
         <a href="https://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>).
         <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
         <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-            <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a>
+            <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
         rules apply.
       </p>
   <hr title="Separator for header">
@@ -5778,7 +5780,7 @@ var mappingTableLabels = {
 </dd><dt id="bib-UAAG10">[UAAG10]</dt><dd><a href="https://www.w3.org/TR/UAAG10/"><cite>User Agent Accessibility Guidelines 1.0</cite></a>. Ian Jacobs; Jon Gunderson; Eric Hansen. W3C. 17 December 2002. W3C Recommendation. URL: <a href="https://www.w3.org/TR/UAAG10/">https://www.w3.org/TR/UAAG10/</a>
 </dd><dt id="bib-UI-AUTOMATION">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a>
 </dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
-</dd><dt id="bib-WAI-ARIA-PRACTICES-1.1">[WAI-ARIA-PRACTICES-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><cite>WAI-ARIA Authoring Practices 1.1</cite></a>. Matthew King; James Nurthen; Michiel Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger. W3C. 28 June 2017. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">https://www.w3.org/TR/wai-aria-practices-1.1/</a>
+</dd><dt id="bib-WAI-ARIA-PRACTICES-1.1">[WAI-ARIA-PRACTICES-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><cite>WAI-ARIA Authoring Practices 1.1</cite></a>. Matthew King; James Nurthen; Michiel Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger. W3C. 14 December 2017. W3C Note. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">https://www.w3.org/TR/wai-aria-practices-1.1/</a>
 </dd><dt id="bib-WAI-ARIA-ROADMAP">[WAI-ARIA-ROADMAP]</dt><dd><a href="https://www.w3.org/TR/wai-aria-roadmap/"><cite>Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)</cite></a>. Richard Schwerdtfeger. W3C. 4 February 2008. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-roadmap/">https://www.w3.org/TR/wai-aria-roadmap/</a>
 </dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
 </dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#toc"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
