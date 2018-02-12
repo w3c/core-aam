@@ -99,29 +99,7 @@ input.task-list-item-checkbox {
 
 
 <script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
-<style id="respec-mainstyle">/*****************************************************************
+<script src="common/script/mapping-tables.js"></script><style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -295,7 +273,29 @@ details.respec-tests-details > li {
     display: none;
   }
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+</style>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -309,72 +309,71 @@ details.respec-tests-details > li {
   "editors": [
     {
       "name": "Joanmarie Diggs",
-      "url": "https://www.igalia.com",
-      "mailto": "jdiggs@igalia.com",
       "company": "Igalia, S.L.",
-      "companyURI": "https://www.igalia.com",
+      "companyURL": "https://www.igalia.com",
       "w3cid": 68182
-    },
-    {
-      "name": "Joseph Scheuhammer",
-      "company": "Inclusive Design Research Centre, OCAD University",
-      "companyURI": "http://idrc.ocad.ca",
-      "w3cid": 42279
-    },
-    {
-      "name": "Richard Schwerdtfeger",
-      "mailto": "richschwer@gmail.com",
-      "company": "Knowbility",
-      "companyURI": "https://www.knowbility.org/",
-      "w3cid": 2460
     },
     {
       "name": "Michael Cooper",
       "company": "W3C",
-      "companyURI": "https://www.w3.org",
+      "companyURL": "https://www.w3.org",
       "w3cid": 34017
     },
     {
-      "name": "Andi Snow-Weaver (until December 2012)",
-      "company": "IBM",
-      "companyURI": "http://www.ibm.com",
-      "w3cid": 35445
+      "name": "Richard Schwerdtfeger",
+      "company": "Knowbility",
+      "companyURL": "https://www.knowbility.org/",
+      "w3cid": 2460,
+      "note": "until October 2017"
     },
     {
-      "name": "Aaron Leventhal (until January 2009)",
+      "name": "Joseph Scheuhammer",
+      "company": "Inclusive Design Research Centre, OCAD University",
+      "companyURL": "http://idrc.ocad.ca",
+      "w3cid": 42279,
+      "note": "until May 2017"
+    },
+    {
+      "name": "Andi Snow-Weaver",
       "company": "IBM",
-      "companyURI": "http://www.ibm.com",
-      "w3cid": 34329
+      "companyURL": "http://www.ibm.com",
+      "w3cid": 35445,
+      "note": "until December 2012"
+    },
+    {
+      "name": "Aaron Leventhal",
+      "company": "IBM",
+      "companyURL": "http://www.ibm.com",
+      "w3cid": 34329,
+      "note": "until January 2009"
     }
   ],
   "authors": [
     {
       "name": "Bogdan Brinza",
       "company": "Microsoft Corp.",
-      "companyURI": "https://microsoft.com/",
+      "companyURL": "https://microsoft.com/",
       "note": "UIA",
       "w3cid": 71139
     },
     {
       "name": "James Craig",
       "company": "Apple, Inc.",
-      "companyURI": "https://apple.com/",
+      "companyURL": "https://apple.com/",
       "note": "AX API",
       "w3cid": 42459
     },
     {
       "name": "Joanmarie Diggs",
-      "url": "https://www.igalia.com",
-      "mailto": "jdiggs@igalia.com",
       "company": "Igalia, S.L.",
-      "companyURI": "https://www.igalia.com",
-      "note": "ATK / AT-SPI",
-      "w3cid": 68182
+      "companyURL": "https://www.igalia.com",
+      "w3cid": 68182,
+      "note": "ATK / AT-SPI"
     },
     {
       "name": "Alexander Surkov",
       "company": "Mozilla Foundation",
-      "companyURI": "https://mozilla.org/",
+      "companyURL": "https://mozilla.org/",
       "note": "MSAA, IAccessible2",
       "w3cid": 51089
     }
@@ -673,7 +672,7 @@ details.respec-tests-details > li {
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: -916515017;--></p>
+  <p><!--_hyper: 1828374745;--></p>
   <h1 class="title p-name" id="title">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
   <h2 id="w3c-editor-s-draft-12-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-12">12 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 12 February 2018" title="Permalink for W3C Editor's Draft 12 February 2018"><span>§</span></a></span></h2>
   <dl>
@@ -686,18 +685,18 @@ details.respec-tests-details > li {
           <dt>Latest Recommendation:</dt>
           <dd><a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd>
     <dt>Editors:</dt>
-    <dd class="p-author h-card vcard" data-editor-id="68182"><a class="u-url url p-name fn" href="https://www.igalia.com">Joanmarie Diggs</a>, Igalia, S.L., <span class="ed_mailto"><a class="u-email email" href="mailto:jdiggs@igalia.com">jdiggs@igalia.com</a></span></dd>
-<dd class="p-author h-card vcard" data-editor-id="42279"><span class="p-name fn">Joseph Scheuhammer</span>, Inclusive Design Research Centre, OCAD University</dd>
-<dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>, Knowbility, <span class="ed_mailto"><a class="u-email email" href="mailto:richschwer@gmail.com">richschwer@gmail.com</a></span></dd>
-<dd class="p-author h-card vcard" data-editor-id="34017"><span class="p-name fn">Michael Cooper</span>, <abbr title="World Wide Web Consortium">W3C</abbr></dd>
-<dd class="p-author h-card vcard" data-editor-id="35445"><span class="p-name fn">Andi Snow-Weaver (until December 2012)</span>, IBM</dd>
-<dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal (until January 2009)</span>, IBM</dd>
+    <dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>, <a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a></dd>
+<dd class="p-author h-card vcard" data-editor-id="34017"><span class="p-name fn">Michael Cooper</span>, <a class="p-org org h-org h-card" href="https://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a></dd>
+<dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>, <a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a> (until October 2017)</dd>
+<dd class="p-author h-card vcard" data-editor-id="42279"><span class="p-name fn">Joseph Scheuhammer</span>, <a class="p-org org h-org h-card" href="http://idrc.ocad.ca">Inclusive Design Research Centre, OCAD University</a> (until May 2017)</dd>
+<dd class="p-author h-card vcard" data-editor-id="35445"><span class="p-name fn">Andi Snow-Weaver</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (until December 2012)</dd>
+<dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (until January 2009)</dd>
 
       <dt>Platform Mapping Maintainers:</dt>
-      <dd class="p-author h-card vcard" data-editor-id="71139"><span class="p-name fn">Bogdan Brinza</span>, Microsoft Corp. (<abbr title="User Interface Automation">UIA</abbr>)</dd>
-<dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>, Apple, Inc. (<abbr title="macOS Accessibility Protocol">AX API</abbr>)</dd>
-<dd class="p-author h-card vcard" data-editor-id="68182"><a class="u-url url p-name fn" href="https://www.igalia.com">Joanmarie Diggs</a>, Igalia, S.L., <span class="ed_mailto"><a class="u-email email" href="mailto:jdiggs@igalia.com">jdiggs@igalia.com</a></span> (<abbr title="Accessibility Toolkit">ATK</abbr> / <abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>)</dd>
-<dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>, Mozilla Foundation (<abbr title="Microsoft Active Accessibility">MSAA</abbr>, IAccessible2)</dd>
+      <dd class="p-author h-card vcard" data-editor-id="71139"><span class="p-name fn">Bogdan Brinza</span>, <a class="p-org org h-org h-card" href="https://microsoft.com/">Microsoft Corp.</a> (<abbr title="User Interface Automation">UIA</abbr>)</dd>
+<dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>, <a class="p-org org h-org h-card" href="https://apple.com/">Apple, Inc.</a> (<abbr title="macOS Accessibility Protocol">AX API</abbr>)</dd>
+<dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>, <a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a> (<abbr title="Accessibility Toolkit">ATK</abbr> / <abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>)</dd>
+<dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>, <a class="p-org org h-org h-card" href="https://mozilla.org/">Mozilla Foundation</a> (<abbr title="Microsoft Active Accessibility">MSAA</abbr>, IAccessible2)</dd>
 
   </dl>
       <p class="copyright">
