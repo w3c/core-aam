@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.0.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -85,9 +85,41 @@ input.task-list-item-checkbox {
   border:0;
 }
 </style>
-<title>Core Accessibility API Mappings 1.1</title>
+<title>Core Accessibility API Mappings 1.2</title>
 
 <script src="common/script/jquery-1.9.0.min.js"></script>
+
+
+
+
+	
+<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
+<link href="common/css/common.css" rel="stylesheet" type="text/css">
+<link href="css/core-aam.css" rel="stylesheet" type="text/css">
+
+
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
 
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
@@ -263,144 +295,13 @@ details.respec-tests-details > li {
     display: none;
   }
 }
-</style><style>/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-</style>
-
-
-	
-<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-<link href="css/core-aam.css" rel="stylesheet" type="text/css">
-
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.1/"><script id="initialUserConfig" type="application/json">{
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
   "specStatus": "ED",
   "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
-  "shortName": "core-aam-1.1",
+  "shortName": "core-aam-1.2",
   "copyrightStart": "2014",
   "license": "document",
   "prevRecURI": "https://www.w3.org/TR/core-aam-1.1/",
@@ -764,22 +665,22 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-01-19",
-  "publishISODate": "2018-01-19T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 19 January 2018"
+  "publishDate": "2018-02-12",
+  "publishISODate": "2018-02-12T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 12 February 2018"
 }</script></head>
 <body aria-busy="false" class="h-entry toc-inline" style="zoom: 1;"><div class="head">
     <p>
       <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
     </p>
-  <p><!--_hyper: -1560662971;--></p>
-  <h1 class="title p-name" id="title">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</h1>
-  <h2 id="w3c-editor-s-draft-19-january-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-01-19">19 January 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 19 January 2018" title="Permalink for W3C Editor's Draft 19 January 2018"><span>§</span></a></span></h2>
+  <p><!--_hyper: -916515017;--></p>
+  <h1 class="title p-name" id="title">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
+  <h2 id="w3c-editor-s-draft-12-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-12">12 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 12 February 2018" title="Permalink for W3C Editor's Draft 12 February 2018"><span>§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
       <dt>Latest published version:</dt>
-      <dd><a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd>
+      <dd><a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a></dd>
       <dt>Latest editor's draft:</dt>
       <dd><a href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
           <dt>Latest Recommendation:</dt>
@@ -853,11 +754,11 @@ var mappingTableLabels = {
             <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
             6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         </p>
-          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2017/Process-20170301/">1 March 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
           </p>
         
 
-</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents"><span>§</span></a></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#intro" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#intro_aapi" class="tocxref"><span class="secno">1.1 </span>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a href="#intro_treetypes" class="tocxref"><span class="secno">1.2 </span>The Accessibility Tree and the <abbr title="Document Object Model">DOM</abbr> Tree</a></li><li class="tocline"><a href="#comparing-accessibility-apis" class="tocxref"><span class="secno">1.3 </span>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#atk-at-spi" class="tocxref"><span class="secno">1.3.1 </span><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr></a></li><li class="tocline"><a href="#uia-ui-automation" class="tocxref"><span class="secno">1.3.2 </span><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a href="#accessible-names-and-descriptions" class="tocxref"><span class="secno">1.3.3 </span>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a><ol class="toc"><li class="tocline"><a href="#rfc-2119-keywords" class="tocxref"><span class="secno">2.1 </span>RFC-2119 Keywords</a></li><li class="tocline"><a href="#normative-and-informative-sections" class="tocxref"><span class="secno">2.2 </span>Normative and Informative Sections</a></li><li class="tocline"><a href="#features-deprecated-in-wai-aria" class="tocxref"><span class="secno">2.3 </span>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#keyboard-focus" class="tocxref"><span class="secno">4. </span>Supporting Keyboard Navigation</a><ol class="toc"><li class="tocline"><a href="#focus_state_event_table" class="tocxref"><span class="secno">4.1 </span>Focus States and Events Table</a></li><li class="tocline"><a href="#keyboard-focus_tabindex" class="tocxref"><span class="secno">4.2 </span>Controlling focus with <code>tabindex</code></a></li><li class="tocline"><a href="#keyboard-focus_aria-activedescendant" class="tocxref"><span class="secno">4.3 </span>Controlling focus with <code>aria-activedescendant</code></a></li><li class="tocline"><a href="#keyboard-focus_at" class="tocxref"><span class="secno">4.4 </span>Handling focus changes from the Assistive Technology</a></li></ol></li><li class="tocline"><a href="#mapping" class="tocxref"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#mapping_general" class="tocxref"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a><ol class="toc"><li class="tocline"><a href="#exclude_elements2" class="tocxref"><span class="secno">5.1.1 </span>Excluding Elements from the Accessibility Tree</a></li><li class="tocline"><a href="#include_elements" class="tocxref"><span class="secno">5.1.2 </span>Including Elements in the Accessibility Tree</a></li><li class="tocline"><a href="#notify_state_changes" class="tocxref"><span class="secno">5.1.3 </span>Notification of State Changes</a></li></ol></li><li class="tocline"><a href="#mapping_conflicts" class="tocxref"><span class="secno">5.2 </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a href="#mapping_nodirect" class="tocxref"><span class="secno">5.3 </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a href="#mapping_role" class="tocxref"><span class="secno">5.4 </span>Role mapping</a><ol class="toc"><li class="tocline"><a href="#roleMappingGeneralRules" class="tocxref"><span class="secno">5.4.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_role_table" class="tocxref"><span class="secno">5.4.2 </span>Role Mapping Table</a></li></ol></li><li class="tocline"><a href="#mapping_state-property" class="tocxref"><span class="secno">5.5 </span>State and Property Mapping</a><ol class="toc"><li class="tocline"><a href="#statePropertyMappingGeneralRules" class="tocxref"><span class="secno">5.5.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_state-property_table" class="tocxref"><span class="secno">5.5.2 </span>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a href="#not_mapped" class="tocxref"><span class="secno">5.5.2.1 </span>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a href="#mapping_additional" class="tocxref"><span class="secno">5.6 </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_nd" class="tocxref"><span class="secno">5.6.1 </span>Name and Description</a></li><li class="tocline"><a href="#mapping_additional_widget-value" class="tocxref"><span class="secno">5.6.2 </span>Widget Values</a></li><li class="tocline"><a href="#mapping_additional_relations" class="tocxref"><span class="secno">5.6.3 </span>Relations</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_relations_error_processing" class="tocxref"><span class="secno">5.6.3.1 </span>ID Reference Error Processing</a></li><li class="tocline"><a href="#mapping_additional_relations_reverse_relations" class="tocxref"><span class="secno">5.6.3.2 </span>Reverse Relations</a></li><li class="tocline"><a href="#mapping_additional_relations_implied" class="tocxref"><span class="secno">5.6.3.3 </span>Implied reverse relations</a></li></ol></li><li class="tocline"><a href="#mapping_additional_position" class="tocxref"><span class="secno">5.6.4 </span>Group Position</a></li></ol></li><li class="tocline"><a href="#mapping_actions" class="tocxref"><span class="secno">5.7 </span>Actions</a></li><li class="tocline"><a href="#mapping_events" class="tocxref"><span class="secno">5.8 </span>Events</a><ol class="toc"><li class="tocline"><a href="#mapping_events_state-change" class="tocxref"><span class="secno">5.8.1 </span>State and Property Change Events</a></li><li class="tocline"><a href="#mapping_events_visibility" class="tocxref"><span class="secno">5.8.2 </span>Changes to document content or node visibility</a></li><li class="tocline"><a href="#mapping_events_selection" class="tocxref"><span class="secno">5.8.3 </span>Selection</a></li><li class="tocline"><a href="#mapping_events_menus" class="tocxref"><span class="secno">5.8.4 </span>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a href="#document-handling" class="tocxref"><span class="secno">6. </span>Special Document Handling Procedures</a><ol class="toc"><li class="tocline"><a href="#document-handling_css-selectors" class="tocxref"><span class="secno">6.1 </span><abbr title="cascading style sheets">CSS</abbr> Selectors</a></li><li class="tocline"><a href="#document-handling_author-errors" class="tocxref"><span class="secno">6.2 </span>Author Errors</a></li></ol></li><li class="tocline"><a href="#appendices" class="tocxref"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A.1 </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1.1 </span>Substantive changes since the <span class="formerLink">last public working draft</span></a></li><li class="tocline"><a href="#other-substantive-changes-since-the-wai-aria-1-0-user-agent-implementation-guide-recommendation" class="tocxref"><span class="secno">A.1.2 </span>Other substantive changes since the <span class="formerLink"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> 1.0 User Agent Implementation Guide Recommendation</span></a></li></ol></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A.2 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.2.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.2.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.2.3 </span>Enabling funders</a></li></ol></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ol></li></ol></nav>
+</section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents"><span>§</span></a></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#intro" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#intro_aapi" class="tocxref"><span class="secno">1.1 </span>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a href="#intro_treetypes" class="tocxref"><span class="secno">1.2 </span>The Accessibility Tree and the <abbr title="Document Object Model">DOM</abbr> Tree</a></li><li class="tocline"><a href="#comparing-accessibility-apis" class="tocxref"><span class="secno">1.3 </span>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#atk-at-spi" class="tocxref"><span class="secno">1.3.1 </span><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr></a></li><li class="tocline"><a href="#uia-ui-automation" class="tocxref"><span class="secno">1.3.2 </span><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a href="#accessible-names-and-descriptions" class="tocxref"><span class="secno">1.3.3 </span>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a><ol class="toc"><li class="tocline"><a href="#rfc-2119-keywords" class="tocxref"><span class="secno">2.1 </span>RFC-2119 Keywords</a></li><li class="tocline"><a href="#normative-and-informative-sections" class="tocxref"><span class="secno">2.2 </span>Normative and Informative Sections</a></li><li class="tocline"><a href="#features-deprecated-in-wai-aria" class="tocxref"><span class="secno">2.3 </span>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#keyboard-focus" class="tocxref"><span class="secno">4. </span>Supporting Keyboard Navigation</a><ol class="toc"><li class="tocline"><a href="#focus_state_event_table" class="tocxref"><span class="secno">4.1 </span>Focus States and Events Table</a></li><li class="tocline"><a href="#keyboard-focus_tabindex" class="tocxref"><span class="secno">4.2 </span>Controlling focus with <code>tabindex</code></a></li><li class="tocline"><a href="#keyboard-focus_aria-activedescendant" class="tocxref"><span class="secno">4.3 </span>Controlling focus with <code>aria-activedescendant</code></a></li><li class="tocline"><a href="#keyboard-focus_at" class="tocxref"><span class="secno">4.4 </span>Handling focus changes from the Assistive Technology</a></li></ol></li><li class="tocline"><a href="#mapping" class="tocxref"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#mapping_general" class="tocxref"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a><ol class="toc"><li class="tocline"><a href="#exclude_elements2" class="tocxref"><span class="secno">5.1.1 </span>Excluding Elements from the Accessibility Tree</a></li><li class="tocline"><a href="#include_elements" class="tocxref"><span class="secno">5.1.2 </span>Including Elements in the Accessibility Tree</a></li><li class="tocline"><a href="#notify_state_changes" class="tocxref"><span class="secno">5.1.3 </span>Notification of State Changes</a></li></ol></li><li class="tocline"><a href="#mapping_conflicts" class="tocxref"><span class="secno">5.2 </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a href="#mapping_nodirect" class="tocxref"><span class="secno">5.3 </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a href="#mapping_role" class="tocxref"><span class="secno">5.4 </span>Role mapping</a><ol class="toc"><li class="tocline"><a href="#roleMappingGeneralRules" class="tocxref"><span class="secno">5.4.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_role_table" class="tocxref"><span class="secno">5.4.2 </span>Role Mapping Table</a></li></ol></li><li class="tocline"><a href="#mapping_state-property" class="tocxref"><span class="secno">5.5 </span>State and Property Mapping</a><ol class="toc"><li class="tocline"><a href="#statePropertyMappingGeneralRules" class="tocxref"><span class="secno">5.5.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_state-property_table" class="tocxref"><span class="secno">5.5.2 </span>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a href="#not_mapped" class="tocxref"><span class="secno">5.5.2.1 </span>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a href="#mapping_additional" class="tocxref"><span class="secno">5.6 </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_nd" class="tocxref"><span class="secno">5.6.1 </span>Name and Description</a></li><li class="tocline"><a href="#mapping_additional_widget-value" class="tocxref"><span class="secno">5.6.2 </span>Widget Values</a></li><li class="tocline"><a href="#mapping_additional_relations" class="tocxref"><span class="secno">5.6.3 </span>Relations</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_relations_error_processing" class="tocxref"><span class="secno">5.6.3.1 </span>ID Reference Error Processing</a></li><li class="tocline"><a href="#mapping_additional_relations_reverse_relations" class="tocxref"><span class="secno">5.6.3.2 </span>Reverse Relations</a></li><li class="tocline"><a href="#mapping_additional_relations_implied" class="tocxref"><span class="secno">5.6.3.3 </span>Implied reverse relations</a></li></ol></li><li class="tocline"><a href="#mapping_additional_position" class="tocxref"><span class="secno">5.6.4 </span>Group Position</a></li></ol></li><li class="tocline"><a href="#mapping_actions" class="tocxref"><span class="secno">5.7 </span>Actions</a></li><li class="tocline"><a href="#mapping_events" class="tocxref"><span class="secno">5.8 </span>Events</a><ol class="toc"><li class="tocline"><a href="#mapping_events_state-change" class="tocxref"><span class="secno">5.8.1 </span>State and Property Change Events</a></li><li class="tocline"><a href="#mapping_events_visibility" class="tocxref"><span class="secno">5.8.2 </span>Changes to document content or node visibility</a></li><li class="tocline"><a href="#mapping_events_selection" class="tocxref"><span class="secno">5.8.3 </span>Selection</a></li><li class="tocline"><a href="#mapping_events_menus" class="tocxref"><span class="secno">5.8.4 </span>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a href="#document-handling" class="tocxref"><span class="secno">6. </span>Special Document Handling Procedures</a><ol class="toc"><li class="tocline"><a href="#document-handling_css-selectors" class="tocxref"><span class="secno">6.1 </span><abbr title="cascading style sheets">CSS</abbr> Selectors</a></li><li class="tocline"><a href="#document-handling_author-errors" class="tocxref"><span class="secno">6.2 </span>Author Errors</a></li></ol></li><li class="tocline"><a href="#appendices" class="tocxref"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A.1 </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1.1 </span>Substantive changes since the last public working draft</a></li><li class="tocline"><a href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation" class="tocxref"><span class="secno">A.1.2 </span>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A.1.3 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1.3.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.1.3.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.1.3.3 </span>Enabling funders</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section id="intro" class="informative">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction&nbsp;<span class="permalink"><a href="#intro" aria-label="Permalink for 1. Introduction" title="Permalink for 1. Introduction"><span>§</span></a></span></h2><p><em>This section is non-normative.</em></p>
       <p>In traditional desktop graphical user interface (<abbr title="Graphical User Interface">GUI</abbr>) applications, components of the user interface (<abbr title="user interface">UI</abbr>) are displayed when needed and hidden when not needed based on user interactions. <a class="termref internalDFN" data-lt="Accessibility APIs" href="#dfn-accessibility-api" data-link-type="dfn">Accessibility application programming interfaces (<abbr title="Application Programming Interfaces">APIs</abbr>)</a> are used to communicate <a class="termref internalDFN" href="#dfn-semantics" data-link-type="dfn">semantic</a> information about the user interface to <a class="termref internalDFN" href="#dfn-assistive-technology" data-link-type="dfn">assistive technology</a> software used by people with disabilities. These <abbr title="application programming interfaces">APIs</abbr> constitute a contract between applications and assistive technologies, such as screen readers, magnifiers, alternate input devices, and speech command and control, to enable them to access the appropriate semantics needed to produce a usable alternative to interactive applications. For example, screen reading software for blind users can determine whether a particular <abbr title="user interface">UI</abbr> component is a menu, button, text field, list box, etc.</p> 
@@ -5450,127 +5351,22 @@ var mappingTableLabels = {
 	<section class="appendix" id="changelog">
 		<h3 id="a-1-change-log"><span class="secno">A.1 </span>Change Log&nbsp;<span class="permalink"><a href="#changelog" aria-label="Permalink for A.1 Change Log" title="Permalink for A.1 Change Log"><span>§</span></a></span></h3>
 		<section id="substantive-changes-since-the-last-public-working-draft">
-			<h4 id="a-1-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1.1 </span>Substantive changes since the <a href="http://www.w3.org/TR/2015/WD-core-aam-1.1-20151119/">last public working draft</a>&nbsp;<span class="permalink"><a href="#substantive-changes-since-the-last-public-working-draft" aria-label="Permalink for A.1.1 Substantive changes since the last public working draft" title="Permalink for A.1.1 Substantive changes since the last public working draft"><span>§</span></a></span></h4>
-			<ul>
-				<li>07-Sep-2017: Add statement to <abbr title="Accessibility Toolkit">ATK</abbr> and <abbr title="Microsoft Active Accessibility">MSAA</abbr>/IA2 mappings for aria-owns indicating that user agents <em class="rfc2119" title="MAY">MAY</em> modify the accessibility tree as an alternative to using accessible relations.</li>
-				<li>04-Sep-2017: Fix AXSubrole for button with aria-pressed defined: Should be AXToggle; not AXToggleButton.</li>
-				<li>04-Sep-2017: Fix AXSubrole for tabpanel: Should be AXTabPanel; not TabPanel.</li>
-				<li>28-Aug-2017: Remove AXSortButton as an alternative role mapping for columnheader.</li>
-				<li>17-Aug-2017: Remove Localized Landmark Type when it is redundant to the Landmark Type.</li>
-				<li>17-Aug-2017: Remove exposure of <abbr title="Hypertext Markup Language">HTML</abbr>'s href attribute from link role mapping for <abbr title="User Interface Automation">UIA</abbr>.</li>
-				<li>17-Aug-2017: Add TableItem Control Pattern to role=cell mapping.</li>
-				<li>17-Aug-2017: Add Localized Control Type for cell, gridcell, and row.</li>
-				<li>17-Aug-2017: Fix name of <abbr title="User Interface Automation">UIA</abbr> pattern for range roles (should be RangeValue; not Range) and add it to focusable separator.</li>
-				<li>17-Aug-2017: Remove SelectionPattern from list role; add it to listbox role.</li>
-				<li>14-Aug-2017: Fix AXRoleDescription for table role, which should be "table"; not "grid".</li>
-				<li>09-Aug-2017: Add macOS AXValidationError/AXValidationErrorChanged for aria-errormessage.</li>
-				<li>08-Aug-2017: Remove erroneous statement about not exposing submenus in <abbr title="Accessibility Toolkit">ATK</abbr>. Menu items are expected to be contained in menus/submenus; not in other menuitems.</li>
-				<li>08-Aug-2017: Update <abbr title="User Interface Automation">UIA</abbr> mappings for link, term, timer, marquee, alert, cell, and aria-autocomplete.</li>
-				<li>07-Aug-2017: Update <abbr title="Accessibility Toolkit">ATK</abbr> mappings for indeterminate setsize, colcount, and rowcount.</li>
-				<li>04-Aug-2017: Correct IAccessible2 mapping for term role, changing it from ROLE_SYSTEM_LISTITEM to IA2_ROLE_TEXT_FRAME.</li>
-				<li>04-Aug-2017: Correct <abbr title="Microsoft Active Accessibility">MSAA</abbr> mapping for aria-pressed="mixed", changing it from STATE_SYSTEM_PRESSED to STATE_SYSTEM_MIXED.</li>
-				<li>04-Aug-2017: Add <abbr title="Microsoft Active Accessibility">MSAA</abbr> mapping for the switch role.</li>
-				<li>02-Aug-2017: Replace STATE_LINKED with STATE_SYSTEM_LINKED for <abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 mapping of role link.</li>
-				<li>02-Aug-2017: Change mapping of aria-readonly="false" from exposing ATK_STATE_EDITABLE on textbox to clearing ATK_STATE_READ_ONLY. For aria-readonly="true", add statement that AtkEditableText should not be implemented, and that ATK_STATE_CHECKABLE not be exposed on roles which support aria-checked.</li>
-				<li>01-Aug-2017: Remove explicit "do not expose STATE_EDITABLE" for roles which are by definition not editable from the <abbr title="Accessibility Toolkit">ATK</abbr> mappings.</li>
-				<li>27-Jul-2017: Update aria-orientation defaults and add mappings for aria-orientation with an undefined value.</li>
-				<li>26-Jul-2017: Map definition role to ROLE_DESCRIPTION_VALUE for <abbr title="Accessibility Toolkit">ATK</abbr>.</li>
-				<li>21-Jul-2017: Add aria-current mapping to "true" when value is not in list of allowed alues. </li>
-				<li>20-Jul-2017: Change AXRoleDescription for contentinfo from "content" to "content information".</li>
-				<li>20-Jul-2017: Change AXRoleDescription for AXCheckBox from "check box" to "checkbox".</li>
-				<li>20-Jul-2017: Add role exposure via xml-roles object attribute for searchbox and switch to <abbr title="Accessibility Toolkit">ATK</abbr> mappings.</li>
-				<li>20-Jul-2017: Correct IA2 mapping for aria-errormessage: It should be IA2_RELATION_ERROR; not IA2_RELATION_ERROR_MESSAGE.</li>
-				<li>06-Jul-2017: Remove AXPress action from the macOS mapping of aria-haspopup.</li>
-				<li>01-May-2017: Changed <abbr title="macOS Accessibility Protocol">AX API</abbr> AXSubrole for role="feed" from "&lt;nil&gt;" to "AXApplicationGroup" and its AXRoleDescription from "group" to "feed".</li>
-				<li>28-Apr-2017: Updated <abbr title="macOS Accessibility Protocol">AX API</abbr> AXRole and AXRoleDescription for role="button" where aria-haspoppup is not false. In this instance, the button element should be exposed as AXPopUpButton with a subrole of 'pop up button'.</li>
-				<li>27-Apr-2017: Updated <abbr title="macOS Accessibility Protocol">AX API</abbr> AXRoleDescription for role="grid" to 'table'.  It was formerly 'grid'.</li>
-				<li>27-Apr-2017: Replaced deprecated <abbr title="macOS Accessibility Protocol">AX API</abbr> accessibilityIsAttributeSettable() with AXUIElementIsAttributeSettable().</li>
-				<li>24-Apr-2017: Changed <abbr title="macOS Accessibility Protocol">AX API</abbr> AXRoleDescription for role="status" from "status" to "application status".</li>
-				<li>13-Apr-2017: Changed <abbr title="macOS Accessibility Protocol">AX API</abbr> AXSubrole for role="group" from "&lt;nil&gt;" to "AXApplicationGroup".</li>
-				<li>28-Mar-2017: Changed <abbr title="Microsoft Active Accessibility">MSAA</abbr>/IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> object attribute for aria-current mapping from "active" to "current".</li>
-				<li>20-Mar-2017: Modified <abbr title="macOS Accessibility Protocol">AX API</abbr> AXRoleDescription mappings of roles dialog and alertdialog to be "web dialog" and "web alert dialog", respectively.</li>
-				<li>14-Mar-2017: Undid the 1.1 addition of RELATION_POPUP_FOR to <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of aria-haspopup. While the addition is correct in terms of platform expectations, the ARIA spec provides no means through which user agents could reliably implement this.</li>
-				<li>20-Jan-2017: Added <abbr title="macOS Accessibility Protocol">AX API</abbr> mappings for aria-colcount, aria-colspan, aria-colindex, aria-rowcount, aria-rowindex, and aria-rowspan.</li>
-				<li>07-Dec-2016: Added <abbr title="User Interface Automation">UIA</abbr> mappings for roles feed, figure, and term, and for aria-colcount, aria-colspan, aria-colindex, aria-rowcount, aria-rowindex, aria-rowspan, and aria-details.  Added <abbr title="User Interface Automation">UIA</abbr> Range Value Pattern for range related roles scrollbar, slider, and spinbutton.</li>
-				<li>24-Oct-2016: Changed name of IA2 object property name for aria-placeholder to "placeholder-text" (was "placeholder").</li>
-				<li>04-Oct-2016: Add reverse relationships for aria-details and aria-errormessage on platforms <abbr title="Microsoft Active Accessibility">MSAA</abbr>/IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/ATSPI</li>
-				<li>03-Oct-2016: Added aria-roledescription mappings for empty and whitespace strings as well as error handling text.</li>
-				<li>12-Sep-2016: Added RELATION_POPUP_FOR to <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of aria-haspopup, for ARIA 1.1. N.B. This change has subsequently been undone. See entry for 14-Mar-2017.</li>
-				<li>08-Sep-2016: Added figure role, term role, feed role, aria-colspan, and aria-rowspan mappings. Updated table properties for row and column for <abbr title="Microsoft Active Accessibility">MSAA</abbr>/IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>.  Added <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of aria-details and aria-errormessage.</li>
-				<li>08-Aug-2016: Modified <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of aria-readonly.</li>
-				<li>04-Jul-2016: Added <abbr title="macOS Accessibility Protocol">AX API</abbr> mapping for aria-keyshortcuts.</li>
-				<li>27-Jun-2016: For <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2, <abbr title="User Interface Automation">UIA</abbr>, and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>, modified mappings of role="separator" when it is a window splitter.</li>
-				<li>27-Jun-2016: Added <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mapping for aria-keyshortcuts.</li>
-				<li>08-Jun-2016: Removed role text.</li>
-				<li>06-Jun-2016: Added <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2, <abbr title="User Interface Automation">UIA</abbr>, and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings for the new values of aria-haspopup added for ARIA 1.1.</li>
-				<li>03-Jun-2016: Added <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2 mapping of aria-keyshortcuts.</li>
-				<li>20-May-2016: Added <abbr title="User Interface Automation">UIA</abbr> mapping of aria-keyshortcuts.</li>
-				<li>05-May-2016: Updated <abbr title="macOS Accessibility Protocol">AX API</abbr> mapping of role region to reflect its inheritance from the landmark role.</li>
-				<li>02-May-2016: Modified <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of 'form' role to use IA2_ROLE_LANDMARK and ROLE_LANDMARK, respectively, plus the xml-roles object attribute set to 'form'.</li>
-				<li>11-Apr-2016: Added <abbr title="macOS Accessibility Protocol">AX API</abbr> mappings for aria-modal="true" and aria-modal="false".</li>
-				<li>11-Apr-2016: For role="application", replaced <abbr title="macOS Accessibility Protocol">AX API</abbr> subrole AXLandmarkAppliction with AXWebAppliction, and role description 'application' with 'web application'.</li>
-				<li>04-Apr-2016: Added new <abbr title="User Interface Automation">UIA</abbr> FullDescription property for mapping aria-describedby.</li>
-				<li>06-May-2016: Added changes for revised values for aria-haspopup for <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> and <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2 along with error handling </li>
-			<!-- EdNote: After each WD publish, move contents of this list into the next one below.  -->
-			</ul>
-		</section>
-		<section id="other-substantive-changes-since-the-wai-aria-1-0-user-agent-implementation-guide-recommendation">
-			<h4 id="a-1-2-other-substantive-changes-since-the-wai-aria-1-0-user-agent-implementation-guide-recommendation"><span class="secno">A.1.2 </span>Other substantive changes since the <a href="http://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> 1.0 User Agent Implementation Guide Recommendation</a>&nbsp;<span class="permalink"><a href="#other-substantive-changes-since-the-wai-aria-1-0-user-agent-implementation-guide-recommendation" aria-label="Permalink for A.1.2 Other substantive changes since the WAI-ARIA 1.0 User Agent Implementation Guide Recommendation" title="Permalink for A.1.2 Other substantive changes since the WAI-ARIA 1.0 User Agent Implementation Guide Recommendation"><span>§</span></a></span></h4>
-			<ul>
-				<li>11-Mar-2016: Added details to <abbr title="User Interface Automation">UIA</abbr> mappings of radio and menuitemradio roles reqarding how aria-checked values are exposed in the Toggle and SelectionItem patterns; removed aria-describedat from states and properties mapping table.</li>
-				<li>10-Mar-2016: Updated default values for aria-valuemin, aria-valuemax, and aria-valuenow for spinbutton role. Default for aria-valuenow is 0 (zero), default for aria-valuemin is no lower bound, and for aria-valuemax, no upper bound.</li>
-				<li>07-Mar-2016: Updated all <abbr title="User Interface Automation">UIA</abbr> mappings for landmark roles to include Landmark Type and Localized Landmark Type.</li>
-				<li>22-Feb-2016: IA2 mapping of role="text" changed to ROLE_SYSTEM_STATICTEXT from IA2_TEXT_FRAME.</li>
-				<li>02-Feb-2016: Modified <abbr title="User Interface Automation">UIA</abbr> mapping of main role to include a Landmark Type and a Localized Landmark Type.  Added <abbr title="User Interface Automation">UIA</abbr> mapping for aria-errormessage.</li>
-				<li>25-Jan-2016: Added <abbr title="macOS Accessibility Protocol">AX API</abbr> mappings for aria-current.</li>
-				<li>15-Jan-2016: Added <abbr title="User Interface Automation">UIA</abbr> mappings for aria-current.</li>
-				<li>11-Jan-2016: Modified <abbr title="User Interface Automation">UIA</abbr> mapping for roles article and application.  Finalized IA2 mapping of aria-current.</li>
-				<li>03-Jan-2016: Added <abbr title="User Interface Automation">UIA</abbr> mappings for aria-colindex and aria-rowindex.  Added placeholders for the other AAPIs.</li>
-			    <li>27-Nov-2015: Added <abbr title="User Interface Automation">UIA</abbr> mapping of role="text" as a Text control pattern; and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mapping as ROLE_STATIC.</li>
-				<li>03-Oct-2015: Modified <abbr title="User Interface Automation">UIA</abbr> role mappings of application, banner, complementary, contentinfo, main, search, navigation, article, definition, log, math, and note.</li>
-				<li>28-Sep-2015: Added IA2 mapping of role="text".</li>
-				<li>28-Sep-2015: Removed all <abbr title="Microsoft Active Accessibility">MSAA</abbr>+<abbr title="User Interface Automation">UIA</abbr> Express mappings.</li>
-				<li>24-Aug-2015: Modified mappings of region role in light of its new status as a landmark.</li>
-				<li>18-Aug-2015: Added mappings of aria-roledescription for <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2, <abbr title="User Interface Automation">UIA</abbr>, <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> and <abbr title="macOS Accessibility Protocol">AX API</abbr>.</li>
-				<li>31-Jul-2015: Finalized all mappings of aria-placeholder.</li>
-				<li>02-Jul-2015: Modified default values for missing required attributes table for aria-level with heading role, aria-checked with switch, and aria-valuemin, aria-valuemax, and aria-valuenow with scrollbar, slider, and spinbutton.</li>
-				<li>02-Jul-2015: Added special case of switch role to mappings of aria-checked="mixed" and undefined aria-checked.</li>
-				<li>25-Jun-2015: <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mapping for aria-current.</li>
-				<li>16-Jun-2015: Modified <abbr title="Microsoft Active Accessibility">MSAA</abbr>+<abbr title="User Interface Automation">UIA</abbr> Express and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of rowgroup role.</li>
-				<li>15-Jun-2015: Modified <abbr title="Microsoft Active Accessibility">MSAA</abbr>+IA2 mappings of presentation / none roles for required owned descendants.</li>
-				<li>02-Jun-2015: Modified <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> and <abbr title="User Interface Automation">UIA</abbr> mappings of presentation / none roles for required owned descendants.</li>
-				<li>02-Jun-2015: <abbr title="Microsoft Active Accessibility">MSAA</abbr>+<abbr title="User Interface Automation">UIA</abbr> Express and <abbr title="User Interface Automation">UIA</abbr> mappings for aria-placeholder.</li>
-				<li>28-Apr-2015: <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings for aria-placeholder.</li>
-				<li>31-Mar-2015: <abbr title="macOS Accessibility Protocol">AX API</abbr> mappings for aria-owns.</li>
-				<li>11-Mar-2015: Mappings for searchbox.</li>
-				<li>04-Mar-2015: Additional mappings for switch.</li>
-				<li>23-Feb-2015: Mappings for presentation / none.</li>
-				<li>23-Feb-2015: Mappings for switch.</li>
-				<li>14-Jan-2015: Mappings for rowgroup.</li>
-				<li>19-Dec-2015: Modify mappings to convey grid role beyond table. </li>
-				<li>27-Nov-2014: Added mappings for role text and aria-modal property.</li>
-				<li>14-Nov-2014: Fixed mappings of aria-invalid=&lt;unknown value&gt;.</li>
-				<li>11-Nov-2014: Added informative section on relationship between <abbr title="Accessibility Toolkit">ATK</abbr> and <abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>.</li>
-				<li>03-Nov-2014: Specified <abbr title="User Interface Automation">UIA</abbr> mappings of aria-level when used in conjunction with role heading.</li>
-				<li>27-Oct-2014: Moved text alternative computation section to its own document.</li>
-				<li>29-Aug-2014: Modified mappings of grid role to differentiate a grid from a table.</li>
-				<li>05-Jun-2014: Modified <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings for article, checkbox, menuitemcheckbox, menuitemradio, and aria-checked. </li>
-				<li>30-May-2014: Modified <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings for focus event, banner, listbox, log, marquee, math, navigation, note, radiogroup, row, timer, and treeitem.</li>
-				<li>21-May-2014: Added additional <abbr title="macOS Accessibility Protocol">AX API</abbr> mapping for aria-busy.</li>
-				<li>15-May-2014: Provided  IA2 and <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> mappings of aria-pressed and tablist.</li>
-				<li>15-May-2014: Change <abbr title="macOS Accessibility Protocol">AX API</abbr> mapping for aria-busy.</li>
-				<li>25-March-2014: Added text to Group Position section about computing implicit level information for a tree.</li>
-				<li>24-March-2014: Updated mapping of aria-hidden=true to indicate that user agents should not expose unless the accessible object is focused or fires an accessibility event.</li>
-				<li>21-March-2014: Added back <abbr title="User Interface Automation">UIA</abbr> columns to all mapping tables that were removed after the 1.0 Candidate Recommendation.</li>
-				<!-- EdNote: After each WD publish, move previous list into this one. -->
-			</ul>
-		</section>
+		<h4 id="a-1-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1.1 </span>Substantive changes since the last public working draft&nbsp;<span class="permalink"><a href="#substantive-changes-since-the-last-public-working-draft" aria-label="Permalink for A.1.1 Substantive changes since the last public working draft" title="Permalink for A.1.1 Substantive changes since the last public working draft"><span>§</span></a></span></h4>
+		<ul>
+			<!-- EdNote: After each WD publish, move contents of this list into the next one below. -->
+		</ul>
+	</section>
+	<section id="substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation">
+		<h4 id="a-1-2-substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation"><span class="secno">A.1.2 </span>Substantive changes since the <a href="https://www.w3.org/TR/core-aam-1.1/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</a>&nbsp;<span class="permalink"><a href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation" aria-label="Permalink for A.1.2 Substantive changes since the Core Accessibility API Mappings 1.1 Recommendation" title="Permalink for A.1.2 Substantive changes since the Core Accessibility API Mappings 1.1 Recommendation"><span>§</span></a></span></h4>
+		<ul>
+			<!-- EdNote: After each WD publish, move contents of the previous list into this one. -->
+		</ul>
 	</section>
 	<section class="appendix informative section" id="acknowledgements">
-	<h3 id="a-2-acknowledgments"><span class="secno">A.2 </span>Acknowledgments&nbsp;<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for A.2 Acknowledgments" title="Permalink for A.2 Acknowledgments"><span>§</span></a></span></h3><p><em>This section is non-normative.</em></p>
+	<h4 id="a-1-3-acknowledgments"><span class="secno">A.1.3 </span>Acknowledgments&nbsp;<span class="permalink"><a href="#acknowledgements" aria-label="Permalink for A.1.3 Acknowledgments" title="Permalink for A.1.3 Acknowledgments"><span>§</span></a></span></h4><p><em>This section is non-normative.</em></p>
 	<p>The following people contributed to the development of this document.</p>
 	<section class="section" id="ack_group">
-		<h4 id="a-2-1-participants-active-in-the-aria-wg-at-the-time-of-publication"><span class="secno">A.2.1 </span>Participants active in the ARIA WG at the time of publication&nbsp;<span class="permalink"><a href="#ack_group" aria-label="Permalink for A.2.1 Participants active in the ARIA WG at the time of publication" title="Permalink for A.2.1 Participants active in the ARIA WG at the time of publication"><span>§</span></a></span></h4>
+		<h5 id="a-1-3-1-participants-active-in-the-aria-wg-at-the-time-of-publication"><span class="secno">A.1.3.1 </span>Participants active in the ARIA WG at the time of publication&nbsp;<span class="permalink"><a href="#ack_group" aria-label="Permalink for A.1.3.1 Participants active in the ARIA WG at the time of publication" title="Permalink for A.1.3.1 Participants active in the ARIA WG at the time of publication"><span>§</span></a></span></h5>
 		<ul>
 			<li>Ann Abbott (IBM Corporation)</li>
 			<li>Michiel Bijl (The Paciello Group)</li>
@@ -5615,7 +5411,7 @@ var mappingTableLabels = {
 		</ul>
   </section>
 	<section class="section" id="ack_others">
-		<h4 id="a-2-2-other-aria-contributors-commenters-and-previously-active-participants"><span class="secno">A.2.2 </span>Other ARIA contributors, commenters, and previously active participants&nbsp;<span class="permalink"><a href="#ack_others" aria-label="Permalink for A.2.2 Other ARIA contributors, commenters, and previously active participants" title="Permalink for A.2.2 Other ARIA contributors, commenters, and previously active participants"><span>§</span></a></span></h4>
+		<h5 id="a-1-3-2-other-aria-contributors-commenters-and-previously-active-participants"><span class="secno">A.1.3.2 </span>Other ARIA contributors, commenters, and previously active participants&nbsp;<span class="permalink"><a href="#ack_others" aria-label="Permalink for A.1.3.2 Other ARIA contributors, commenters, and previously active participants" title="Permalink for A.1.3.2 Other ARIA contributors, commenters, and previously active participants"><span>§</span></a></span></h5>
 		<ul>
 			<li>Shadi Abou-Zahra (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
 			<li>Jim Allan (TSB)</li>
@@ -5745,7 +5541,7 @@ var mappingTableLabels = {
 		</ul>
 	</section>
 	<section class="section" id="ack_funders">
-		<h4 id="a-2-3-enabling-funders"><span class="secno">A.2.3 </span>Enabling funders&nbsp;<span class="permalink"><a href="#ack_funders" aria-label="Permalink for A.2.3 Enabling funders" title="Permalink for A.2.3 Enabling funders"><span>§</span></a></span></h4>
+		<h5 id="a-1-3-3-enabling-funders"><span class="secno">A.1.3.3 </span>Enabling funders&nbsp;<span class="permalink"><a href="#ack_funders" aria-label="Permalink for A.1.3.3 Enabling funders" title="Permalink for A.1.3.3 Enabling funders"><span>§</span></a></span></h5>
 		<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
 	</section>
 </section>
@@ -5753,7 +5549,7 @@ var mappingTableLabels = {
 </section>
 
 
-<section id="references" class="appendix"><!--OddPage--><h2 id="b-references"><span class="secno">B. </span>References&nbsp;<span class="permalink"><a href="#references" aria-label="Permalink for B. References" title="Permalink for B. References"><span>§</span></a></span></h2><section id="normative-references"><h3 id="b-1-normative-references"><span class="secno">B.1 </span>Normative references&nbsp;<span class="permalink"><a href="#normative-references" aria-label="Permalink for B.1 Normative references" title="Permalink for B.1 Normative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-RFC2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
+</section><section id="references" class="appendix"><!--OddPage--><h2 id="b-references"><span class="secno">B. </span>References&nbsp;<span class="permalink"><a href="#references" aria-label="Permalink for B. References" title="Permalink for B. References"><span>§</span></a></span></h2><section id="normative-references"><h3 id="b-1-normative-references"><span class="secno">B.1 </span>Normative references&nbsp;<span class="permalink"><a href="#normative-references" aria-label="Permalink for B.1 Normative references" title="Permalink for B.1 Normative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-RFC2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner. IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
 </dd><dt id="bib-WAI-ARIA">[WAI-ARIA]</dt><dd><a href="http://www.w3.org/TR/wai-aria-1.1/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.1</cite></a>. James Craig; Michael Cooper; Shane McCarron et al. W3C. W3C Working Draft. URL: <a href="http://www.w3.org/TR/wai-aria-1.1/">http://www.w3.org/TR/wai-aria-1.1/</a>
 </dd><dt id="bib-WAI-ARIA-IMPLEMENTATION">[WAI-ARIA-IMPLEMENTATION]</dt><dd><a href="https://www.w3.org/TR/wai-aria-implementation/"><cite>WAI-ARIA 1.0 User Agent Implementation Guide</cite></a>. Joseph Scheuhammer; Michael Cooper. W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-implementation/">https://www.w3.org/TR/wai-aria-implementation/</a>
 </dd></dl></section><section id="informative-references"><h3 id="b-2-informative-references"><span class="secno">B.2 </span>Informative references&nbsp;<span class="permalink"><a href="#informative-references" aria-label="Permalink for B.2 Informative references" title="Permalink for B.2 Informative references"><span>§</span></a></span></h3><dl class="bibliography"><dt id="bib-AT-SPI">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a>
