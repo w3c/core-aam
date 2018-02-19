@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 19.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -91,15 +91,7 @@ input.task-list-item-checkbox {
 
 
 
-
-	
-<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-<link href="css/core-aam.css" rel="stylesheet" type="text/css">
-
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script><style id="respec-mainstyle">/*****************************************************************
+<style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -274,6 +266,14 @@ details.respec-tests-details > li {
   }
 }
 </style>
+	
+<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
+<link href="common/css/common.css" rel="stylesheet" type="text/css">
+<link href="css/core-aam.css" rel="stylesheet" type="text/css">
+
+
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
 <script type="text/javascript">
 
 var mappingTableLabels = {
@@ -324,28 +324,28 @@ var mappingTableLabels = {
       "company": "Knowbility",
       "companyURL": "https://www.knowbility.org/",
       "w3cid": 2460,
-      "note": "until October 2017"
+      "note": "Editor until October 2017"
     },
     {
       "name": "Joseph Scheuhammer",
       "company": "Inclusive Design Research Centre, OCAD University",
       "companyURL": "http://idrc.ocad.ca",
       "w3cid": 42279,
-      "note": "until May 2017"
+      "note": "Editor until May 2017"
     },
     {
       "name": "Andi Snow-Weaver",
       "company": "IBM",
       "companyURL": "http://www.ibm.com",
       "w3cid": 35445,
-      "note": "until December 2012"
+      "note": "Editor until December 2012"
     },
     {
       "name": "Aaron Leventhal",
       "company": "IBM",
       "companyURL": "http://www.ibm.com",
       "w3cid": 34329,
-      "note": "until January 2009"
+      "note": "Editor until January 2009"
     }
   ],
   "authors": [
@@ -359,7 +359,7 @@ var mappingTableLabels = {
     {
       "name": "James Craig",
       "company": "Apple, Inc.",
-      "companyURL": "https://apple.com/",
+      "companyURL": "https://apple.com/accessibility",
       "note": "AX API",
       "w3cid": 42459
     },
@@ -664,17 +664,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-02-12",
-  "publishISODate": "2018-02-12T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 12 February 2018"
+  "publishDate": "2018-02-19",
+  "publishISODate": "2018-02-19T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 19 February 2018"
 }</script></head>
 <body aria-busy="false" class="h-entry toc-inline" style="zoom: 1;"><div class="head">
-    <p>
-      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
-    </p>
-  <p><!--_hyper: 1828374745;--></p>
+  <p><a href="https://www.w3.org/" class="logo">
+      <img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C">
+  </a><!--_hyper: -34868265;--></p>
   <h1 class="title p-name" id="title">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
-  <h2 id="w3c-editor-s-draft-12-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-12">12 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 12 February 2018" title="Permalink for W3C Editor's Draft 12 February 2018"><span>§</span></a></span></h2>
+  <h2 id="w3c-editor-s-draft-19-february-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-02-19">19 February 2018</time>&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for W3C Editor's Draft 19 February 2018" title="Permalink for W3C Editor's Draft 19 February 2018"><span>§</span></a></span></h2>
   <dl>
       <dt>This version:</dt>
       <dd><a class="u-url" href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
@@ -687,14 +686,14 @@ var mappingTableLabels = {
     <dt>Editors:</dt>
     <dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>, <a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a></dd>
 <dd class="p-author h-card vcard" data-editor-id="34017"><span class="p-name fn">Michael Cooper</span>, <a class="p-org org h-org h-card" href="https://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a></dd>
-<dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>, <a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a> (until October 2017)</dd>
-<dd class="p-author h-card vcard" data-editor-id="42279"><span class="p-name fn">Joseph Scheuhammer</span>, <a class="p-org org h-org h-card" href="http://idrc.ocad.ca">Inclusive Design Research Centre, OCAD University</a> (until May 2017)</dd>
-<dd class="p-author h-card vcard" data-editor-id="35445"><span class="p-name fn">Andi Snow-Weaver</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (until December 2012)</dd>
-<dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (until January 2009)</dd>
+<dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>, <a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a> (Editor until October 2017)</dd>
+<dd class="p-author h-card vcard" data-editor-id="42279"><span class="p-name fn">Joseph Scheuhammer</span>, <a class="p-org org h-org h-card" href="http://idrc.ocad.ca">Inclusive Design Research Centre, OCAD University</a> (Editor until May 2017)</dd>
+<dd class="p-author h-card vcard" data-editor-id="35445"><span class="p-name fn">Andi Snow-Weaver</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (Editor until December 2012)</dd>
+<dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal</span>, <a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a> (Editor until January 2009)</dd>
 
       <dt>Platform Mapping Maintainers:</dt>
       <dd class="p-author h-card vcard" data-editor-id="71139"><span class="p-name fn">Bogdan Brinza</span>, <a class="p-org org h-org h-card" href="https://microsoft.com/">Microsoft Corp.</a> (<abbr title="User Interface Automation">UIA</abbr>)</dd>
-<dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>, <a class="p-org org h-org h-card" href="https://apple.com/">Apple, Inc.</a> (<abbr title="macOS Accessibility Protocol">AX API</abbr>)</dd>
+<dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>, <a class="p-org org h-org h-card" href="https://apple.com/accessibility">Apple, Inc.</a> (<abbr title="macOS Accessibility Protocol">AX API</abbr>)</dd>
 <dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>, <a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a> (<abbr title="Accessibility Toolkit">ATK</abbr> / <abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr>)</dd>
 <dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>, <a class="p-org org h-org h-card" href="https://mozilla.org/">Mozilla Foundation</a> (<abbr title="Microsoft Active Accessibility">MSAA</abbr>, IAccessible2)</dd>
 
@@ -753,8 +752,8 @@ var mappingTableLabels = {
             <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section
             6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         </p>
-          <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-          </p>
+        <p>This document is governed by the <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+        </p>
         
 
 </section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents&nbsp;<span class="permalink"><a href="#undefined" aria-label="Permalink for Table of Contents" title="Permalink for Table of Contents"><span>§</span></a></span></h2><ol class="toc"><li class="tocline"><a href="#abstract" class="tocxref">Abstract</a></li><li class="tocline"><a href="#sotd" class="tocxref">Status of This Document</a></li><li class="tocline"><a href="#intro" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#intro_aapi" class="tocxref"><span class="secno">1.1 </span>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a href="#intro_treetypes" class="tocxref"><span class="secno">1.2 </span>The Accessibility Tree and the <abbr title="Document Object Model">DOM</abbr> Tree</a></li><li class="tocline"><a href="#comparing-accessibility-apis" class="tocxref"><span class="secno">1.3 </span>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#atk-at-spi" class="tocxref"><span class="secno">1.3.1 </span><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr></a></li><li class="tocline"><a href="#uia-ui-automation" class="tocxref"><span class="secno">1.3.2 </span><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a href="#accessible-names-and-descriptions" class="tocxref"><span class="secno">1.3.3 </span>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a><ol class="toc"><li class="tocline"><a href="#rfc-2119-keywords" class="tocxref"><span class="secno">2.1 </span>RFC-2119 Keywords</a></li><li class="tocline"><a href="#normative-and-informative-sections" class="tocxref"><span class="secno">2.2 </span>Normative and Informative Sections</a></li><li class="tocline"><a href="#features-deprecated-in-wai-aria" class="tocxref"><span class="secno">2.3 </span>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a href="#keyboard-focus" class="tocxref"><span class="secno">4. </span>Supporting Keyboard Navigation</a><ol class="toc"><li class="tocline"><a href="#focus_state_event_table" class="tocxref"><span class="secno">4.1 </span>Focus States and Events Table</a></li><li class="tocline"><a href="#keyboard-focus_tabindex" class="tocxref"><span class="secno">4.2 </span>Controlling focus with <code>tabindex</code></a></li><li class="tocline"><a href="#keyboard-focus_aria-activedescendant" class="tocxref"><span class="secno">4.3 </span>Controlling focus with <code>aria-activedescendant</code></a></li><li class="tocline"><a href="#keyboard-focus_at" class="tocxref"><span class="secno">4.4 </span>Handling focus changes from the Assistive Technology</a></li></ol></li><li class="tocline"><a href="#mapping" class="tocxref"><span class="secno">5. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a href="#mapping_general" class="tocxref"><span class="secno">5.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a><ol class="toc"><li class="tocline"><a href="#exclude_elements2" class="tocxref"><span class="secno">5.1.1 </span>Excluding Elements from the Accessibility Tree</a></li><li class="tocline"><a href="#include_elements" class="tocxref"><span class="secno">5.1.2 </span>Including Elements in the Accessibility Tree</a></li><li class="tocline"><a href="#notify_state_changes" class="tocxref"><span class="secno">5.1.3 </span>Notification of State Changes</a></li></ol></li><li class="tocline"><a href="#mapping_conflicts" class="tocxref"><span class="secno">5.2 </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a href="#mapping_nodirect" class="tocxref"><span class="secno">5.3 </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a href="#mapping_role" class="tocxref"><span class="secno">5.4 </span>Role mapping</a><ol class="toc"><li class="tocline"><a href="#roleMappingGeneralRules" class="tocxref"><span class="secno">5.4.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_role_table" class="tocxref"><span class="secno">5.4.2 </span>Role Mapping Table</a></li></ol></li><li class="tocline"><a href="#mapping_state-property" class="tocxref"><span class="secno">5.5 </span>State and Property Mapping</a><ol class="toc"><li class="tocline"><a href="#statePropertyMappingGeneralRules" class="tocxref"><span class="secno">5.5.1 </span>General rules</a></li><li class="tocline"><a href="#mapping_state-property_table" class="tocxref"><span class="secno">5.5.2 </span>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a href="#not_mapped" class="tocxref"><span class="secno">5.5.2.1 </span>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a href="#mapping_additional" class="tocxref"><span class="secno">5.6 </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_nd" class="tocxref"><span class="secno">5.6.1 </span>Name and Description</a></li><li class="tocline"><a href="#mapping_additional_widget-value" class="tocxref"><span class="secno">5.6.2 </span>Widget Values</a></li><li class="tocline"><a href="#mapping_additional_relations" class="tocxref"><span class="secno">5.6.3 </span>Relations</a><ol class="toc"><li class="tocline"><a href="#mapping_additional_relations_error_processing" class="tocxref"><span class="secno">5.6.3.1 </span>ID Reference Error Processing</a></li><li class="tocline"><a href="#mapping_additional_relations_reverse_relations" class="tocxref"><span class="secno">5.6.3.2 </span>Reverse Relations</a></li><li class="tocline"><a href="#mapping_additional_relations_implied" class="tocxref"><span class="secno">5.6.3.3 </span>Implied reverse relations</a></li></ol></li><li class="tocline"><a href="#mapping_additional_position" class="tocxref"><span class="secno">5.6.4 </span>Group Position</a></li></ol></li><li class="tocline"><a href="#mapping_actions" class="tocxref"><span class="secno">5.7 </span>Actions</a></li><li class="tocline"><a href="#mapping_events" class="tocxref"><span class="secno">5.8 </span>Events</a><ol class="toc"><li class="tocline"><a href="#mapping_events_state-change" class="tocxref"><span class="secno">5.8.1 </span>State and Property Change Events</a></li><li class="tocline"><a href="#mapping_events_visibility" class="tocxref"><span class="secno">5.8.2 </span>Changes to document content or node visibility</a></li><li class="tocline"><a href="#mapping_events_selection" class="tocxref"><span class="secno">5.8.3 </span>Selection</a></li><li class="tocline"><a href="#mapping_events_menus" class="tocxref"><span class="secno">5.8.4 </span>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a href="#document-handling" class="tocxref"><span class="secno">6. </span>Special Document Handling Procedures</a><ol class="toc"><li class="tocline"><a href="#document-handling_css-selectors" class="tocxref"><span class="secno">6.1 </span><abbr title="cascading style sheets">CSS</abbr> Selectors</a></li><li class="tocline"><a href="#document-handling_author-errors" class="tocxref"><span class="secno">6.2 </span>Author Errors</a></li></ol></li><li class="tocline"><a href="#appendices" class="tocxref"><span class="secno">A. </span>Appendices</a><ol class="toc"><li class="tocline"><a href="#changelog" class="tocxref"><span class="secno">A.1 </span>Change Log</a><ol class="toc"><li class="tocline"><a href="#substantive-changes-since-the-last-public-working-draft" class="tocxref"><span class="secno">A.1.1 </span>Substantive changes since the last public working draft</a></li><li class="tocline"><a href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation" class="tocxref"><span class="secno">A.1.2 </span>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A.1.3 </span>Acknowledgments</a><ol class="toc"><li class="tocline"><a href="#ack_group" class="tocxref"><span class="secno">A.1.3.1 </span>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a href="#ack_others" class="tocxref"><span class="secno">A.1.3.2 </span>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a href="#ack_funders" class="tocxref"><span class="secno">A.1.3.3 </span>Enabling funders</a></li></ol></li></ol></li></ol></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ol class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ol></li></ol></nav>
