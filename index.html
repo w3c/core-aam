@@ -119,30 +119,6 @@ input.task-list-item-checkbox {
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 <link href="css/core-aam.css" rel="stylesheet" type="text/css">
 
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -317,7 +293,31 @@ details.respec-tests-details > li {
     display: none;
   }
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+</style>
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -460,9 +460,9 @@ details.respec-tests-details > li {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-06-06",
-  "publishISODate": "2018-06-06T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 06 June 2018"
+  "publishDate": "2018-06-15",
+  "publishISODate": "2018-06-15T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 15 June 2018"
 }</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."></head>
 <body class="h-entry toc-inline" style="zoom: 1;"><div class="head">
   <a href="https://www.w3.org/" class="logo">
@@ -470,7 +470,7 @@ details.respec-tests-details > li {
   </a>
   <h1 id="title" class="title p-name">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
   
-  <h2 id="w3c-editor-s-draft-06-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-06">06 June 2018</time></h2>
+  <h2 id="w3c-editor-s-draft-15-june-2018"><abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft <time class="dt-published" datetime="2018-06-15">15 June 2018</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd><dt>Latest published version:</dt><dd><a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a></dd>
     <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
@@ -748,7 +748,7 @@ details.respec-tests-details > li {
     </dd>
     <dt><dfn id="dfn-keyboard-accessible" data-dfn-type="dfn">Keyboard Accessible</dfn></dt>
     <dd>
-      <p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+    	<p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG21/#keyboard-accessible"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" href="#bib-WCAG21">WCAG21</a></cite>].</p>
     </dd>
     
     
@@ -823,7 +823,7 @@ details.respec-tests-details > li {
     
     <dt><dfn id="dfn-understandable" data-dfn-type="dfn">Understandable</dfn></dt>
     <dd>
-      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG20/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" href="#bib-WCAG20">WCAG20</a></cite>].</p>
+      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="http://www.w3.org/TR/WCAG21/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" href="#bib-WCAG21">WCAG21</a></cite>].</p>
     </dd>
     <dt><dfn data-lt="user agent|user agents" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
     <dd>
@@ -5434,5 +5434,5 @@ details.respec-tests-details > li {
 </dd><dt id="bib-UIA-EXPRESS">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a>
 </dd><dt id="bib-WAI-ARIA-PRACTICES-1.1">[WAI-ARIA-PRACTICES-1.1]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.1/"><cite>WAI-ARIA Authoring Practices 1.1</cite></a>. Matthew King; James Nurthen; Michiel Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger. W3C. 14 December 2017. W3C Note. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.1/">https://www.w3.org/TR/wai-aria-practices-1.1/</a>
 </dd><dt id="bib-WAI-ARIA-ROADMAP">[WAI-ARIA-ROADMAP]</dt><dd><a href="https://www.w3.org/TR/wai-aria-roadmap/"><cite>Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)</cite></a>. Richard Schwerdtfeger. W3C. 4 February 2008. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-roadmap/">https://www.w3.org/TR/wai-aria-roadmap/</a>
-</dd><dt id="bib-WCAG20">[WCAG20]</dt><dd><a href="https://www.w3.org/TR/WCAG20/"><cite>Web Content Accessibility Guidelines (WCAG) 2.0</cite></a>. Ben Caldwell; Michael Cooper; Loretta Guarino Reid; Gregg Vanderheiden et al. W3C. 11 December 2008. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG20/">https://www.w3.org/TR/WCAG20/</a>
+</dd><dt id="bib-WCAG21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper. W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a>
 </dd></dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
