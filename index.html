@@ -101,30 +101,6 @@ input.task-list-item-checkbox {
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 <link href="css/core-aam.css" rel="stylesheet" type="text/css">
 
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -365,7 +341,31 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+</style>
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -4471,7 +4471,7 @@ h6>a.self-link::before {
 		<h3 id="x5-6-special-processing-requiring-additional-computation"><span class="secno">5.6 </span>Special Processing Requiring Additional Computation<a class="self-link" aria-label="§" href="#mapping_additional"></a></h3>
 		<section id="mapping_additional_nd">
 			<h4 id="x5-6-1-name-and-description"><span class="secno">5.6.1 </span>Name and Description<a class="self-link" aria-label="§" href="#mapping_additional_nd"></a></h4>
-				<p>For information on how to compute an <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">accessible name</a> or <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, see the section titled <a class="accname" href="https://w3c.github.io/accname/#mapping_additional_nd_te">Text Alternative Computation</a> of the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation and <abbr title="Application Programming Interface">API</abbr> Mappings</a> specification.</p>
+				<p>For information on how to compute an <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">accessible name</a> or <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, see the section titled <a class="accname" href="https://w3c.github.io/accname/#mapping_additional_nd_te">Accessible Name and Description Computation</a> of the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation and <abbr title="Application Programming Interface">API</abbr> Mappings</a> specification.</p>
 		</section>
 		<section id="mapping_additional_widget-value">
 			<h4 id="x5-6-2-widget-values"><span class="secno">5.6.2 </span>Widget Values<a class="self-link" aria-label="§" href="#mapping_additional_widget-value"></a></h4>
