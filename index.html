@@ -101,6 +101,30 @@ input.task-list-item-checkbox {
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 <link href="css/core-aam.css" rel="stylesheet" type="text/css">
 
+
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -341,31 +365,7 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style>
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -666,7 +666,7 @@ var mappingTableLabels = {
         <p>Software using <abbr title="Accessibility Toolkit">ATK</abbr> can read and write to an object's <code>accessible-name</code> and <code>accessible-description</code> properties. In turn, <abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> can query the values of those properties through its <code>atspi_accessible_get_name</code> and <code>atspi_accessible_get_description</code> functions.</p>
         <p>Automation elements in the <abbr title="User Interface Automation">UIA</abbr> accessibility tree have a <code>Name</code> property. Where the object also supports having an <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, <abbr title="User Interface Automation">UIA</abbr> stores this property in the object's <code>FullDescription</code> property.</p>
         <p>The approach to <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">accessible names</a> and <a class="termref internalDFN" data-lt="accessible description" href="#dfn-accessible-description" data-link-type="dfn">accessible descriptions</a> in <abbr title="macOS Accessibility Protocol">AX API</abbr> is somewhat different to the other platform <abbr title="Application Programming Interfaces">APIs</abbr>. <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">Accessible names</a> are exposed using the <code>AXTitle</code> property when the name is visually rendered, while the <code>AXDescription</code> property is used when the object's name is not rendered visually. An object's <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, where provided, should always be exposed in the <code>AXHelp</code> property.</p>
-        <p>For more detail, see the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation and <abbr title="Application Programming Interface">API</abbr> Mappings</a> specification.</p>
+        <p>For more detail, see the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation</a> specification.</p>
       </section>
     </section>
 </section>
@@ -4316,7 +4316,7 @@ var mappingTableLabels = {
 		<h3 id="x4-6-special-processing-requiring-additional-computation"><span class="secno">4.6 </span>Special Processing Requiring Additional Computation<a class="self-link" aria-label="§" href="#mapping_additional"></a></h3>
 		<section id="mapping_additional_nd">
 			<h4 id="x4-6-1-name-and-description"><span class="secno">4.6.1 </span>Name and Description<a class="self-link" aria-label="§" href="#mapping_additional_nd"></a></h4>
-				<p>For information on how to compute an <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">accessible name</a> or <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, see the section titled <a class="accname" href="https://w3c.github.io/accname/#mapping_additional_nd_te">Accessible Name and Description Computation</a> of the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation and <abbr title="Application Programming Interface">API</abbr> Mappings</a> specification.</p>
+				<p>For information on how to compute an <a class="termref internalDFN" href="#dfn-accessible-name" data-link-type="dfn">accessible name</a> or <a class="termref internalDFN" href="#dfn-accessible-description" data-link-type="dfn">accessible description</a>, see the section titled <a class="accname" href="https://w3c.github.io/accname/#mapping_additional_nd_te">Accessible Name and Description Computation</a> of the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation</a> specification.</p>
 		</section>
 		<section id="mapping_additional_relations">
 		    <h4 id="x4-6-2-relations"><span class="secno">4.6.2 </span>Relations<a class="self-link" aria-label="§" href="#mapping_additional_relations"></a></h4>
