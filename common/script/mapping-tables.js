@@ -92,7 +92,9 @@ function mapTables(respecEvents) {
 				//store the row's @id
 				tableInfo.ids.push(id);
 				//remove the tr's @id since same id will be used in the relevant summary element
-				// $row.removeAttr('id');
+				if (!respecEvents) {
+				   $row.removeAttr('id');
+				}
 				//store the row's cells in array rowCells
 				var rowCells = [];
 				//add row cells to array rowCells for use in the details' table
