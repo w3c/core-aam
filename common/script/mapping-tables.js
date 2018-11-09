@@ -2,7 +2,7 @@
 if (typeof require !== "undefined") {
 	/* globals $, require */
 	require(["core/pubsubhub"], function(respecEvents) {
-		mapTables(respecEvents);
+		// mapTables(respecEvents);
 	});
 } else {
 	$(document).ready(function() {
