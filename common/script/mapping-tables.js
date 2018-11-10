@@ -92,9 +92,7 @@ function mapTables(respecEvents) {
 				//store the row's @id
 				tableInfo.ids.push(id);
 				//remove the tr's @id since same id will be used in the relevant summary element
-				if (!respecEvents) {
-				   $row.removeAttr('id');
-				}
+				$row.removeAttr('id');
 				//store the row's cells in array rowCells
 				var rowCells = [];
 				//add row cells to array rowCells for use in the details' table
@@ -257,6 +255,7 @@ function mapTables(respecEvents) {
 		// Subscribe to ReSpec "save" message to set the mapping tables to
 		// view-as-single-table state.
 		respecEvents.sub ("save", function (details) {
+			document.body.append(document.createTextNode("testjn"));
 			mappingTableInfos.forEach (function (item) {
 				viewAsSingleTable (item);
 			});
