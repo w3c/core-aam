@@ -254,8 +254,7 @@ function mapTables(respecEvents) {
 		});
 		// Subscribe to ReSpec "save" message to set the mapping tables to
 		// view-as-single-table state.
-		respecEvents.sub ("save", function (details) {
-			document.body.append(document.createTextNode("testjn"));
+		respecEvents.sub ("end", function (details) {
 			mappingTableInfos.forEach (function (item) {
 				viewAsSingleTable (item);
 			});
