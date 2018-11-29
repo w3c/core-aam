@@ -101,30 +101,6 @@ input.task-list-item-checkbox {
 <link href="common/css/common.css" rel="stylesheet" type="text/css">
 <link href="css/core-aam.css" rel="stylesheet" type="text/css">
 
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
 <style id="respec-mainstyle">/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -365,7 +341,31 @@ h6>a.self-link::before {
     display: none;
   }
 }
-</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+</style>
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -510,9 +510,9 @@ h6>a.self-link::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2018-11-28",
-  "publishISODate": "2018-11-28T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 28 November 2018"
+  "publishDate": "2018-11-29",
+  "publishISODate": "2018-11-29T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 29 November 2018"
 }</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."></head>
 <body class="h-entry toc-inline" style="zoom: 1;"><div class="head">
       <a href="https://www.w3.org/" class="logo">
@@ -521,7 +521,7 @@ h6>a.self-link::before {
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2018-11-28">28 November 2018</time>
+        <time class="dt-published" datetime="2018-11-29">29 November 2018</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -1896,19 +1896,15 @@ h6>a.self-link::before {
 				<tr>
 				<th><a class="role-reference" href="https://w3c.github.io/aria/#none"><code>none</code></a></th>
 					<td class="role-msaa-ia2">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>IA2_ROLE_TEXT_FRAME</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-uia">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it using the <code>text</code> pattern.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-atk">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>ROLE_SECTION</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-axapi">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>AXGroup</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 				</tr>
@@ -1995,19 +1991,15 @@ h6>a.self-link::before {
 				<tr>
 					<th><a class="role-reference" href="https://w3c.github.io/aria/#presentation"><code>presentation</code></a></th>
 					<td class="role-msaa-ia2">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>IA2_ROLE_TEXT_FRAME</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-uia">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it using the <code>text</code> pattern.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-atk">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>ROLE_SECTION</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 					<td class="role-axapi">
-						<p>See <a href="#mapping_general">General rules for exposing <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> semantics</a>.</p>
 						<p>For objects that have required owned descendants (e.g., a grid owns gridcells, a list owns listitems), and the descendant is in the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>, expose it as <code>AXGroup</code>.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> prune empty descendants from the <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>.</p>
 					</td>
 				</tr>
