@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.3.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
     padding-right:  1em;
     min-width: 7.5em;
@@ -7,9 +7,10 @@ div.issue-title, div.note-title , div.ednote-title, div.warning-title {
 div.issue-title { color: #e05252; }
 div.note-title, div.ednote-title { color: #2b2; }
 div.warning-title { color: #f22; }
-div.issue-title span, div.note-title span, div.ednote-title span, div.warning-title span {
+div.note-title span, div.ednote-title span, div.warning-title span {
     text-transform: uppercase;
 }
+div.issue-title span { text-transform: none; }
 div.note, div.issue, div.ednote, div.warning {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -68,6 +69,7 @@ input.task-list-item-checkbox {
   border-radius: 4px;
   position: relative;
   bottom: 2px;
+  border: none;
 }
 
 .issue a.respec-label-dark {
@@ -501,16 +503,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-02-12",
-  "publishISODate": "2019-02-12T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 12 February 2019"
+  "publishDate": "2019-02-25",
+  "publishISODate": "2019-02-25T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 25 February 2019"
 }</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."></head>
 <body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-12">12 February 2019</time>
+        <time class="dt-published" datetime="2019-02-25">25 February 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -563,7 +565,7 @@ var mappingTableLabels = {
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-      <a href="http://ev.buaa.edu.cn/">Beihang</a>). 
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
       <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
       apply.
@@ -572,7 +574,7 @@ var mappingTableLabels = {
     </div>
 <section id="abstract" class="introductory"><h2>Abstract</h2>
 	<p>This document describes how <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> should expose semantics of web content languages to <a class="termref internalDFN" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. This helps users with disabilities to obtain and interact with information using <a class="termref internalDFN" href="#dfn-assistive-technology" data-link-type="dfn">assistive technologies</a>. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility <abbr title="Application Programming Interfaces">APIs</abbr> and helps to ensure that this information appears in a manner consistent with author intent. </p>
-			<p>This Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a>, states, and <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [<cite><a class="bibref" href="#bib-wai-aria-1.2">WAI-ARIA-1.2</a></cite>]. Other Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</a> [<cite><a class="bibref" href="#bib-core-aam-1.1">CORE-AAM-1.1</a></cite>] <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
+			<p>This Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a>, states, and <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!!WAI-ARIA-1.2]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-2"><a class="bibref" href="#bib-wai-aria-1.2">WAI-ARIA-1.2</a></cite>]. Other Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!!CORE-AAM-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-core-aam-1-1"><a class="bibref" href="#bib-core-aam-1.1">CORE-AAM-1.1</a></cite>] <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
 	<p>The Accessible Rich Internet Applications Working Group seeks feedback on any aspect of the specification. When submitting feedback, please consider issues in the context of the companion documents. To comment, <a href="https://github.com/w3c/core-aam/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> core-aam GitHub repository</a>. If this is not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Comment%20on%20Core-AAM%201.2">public-aria@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="http://w3c.github.io/core-aam/">publicly visible editors' draft</a>.</p>
@@ -693,7 +695,11 @@ var mappingTableLabels = {
       As well as sections marked as non-normative, all authoring guidelines,
       diagrams, examples, and notes in this specification are non-normative.
       Everything else in this specification is normative.
-    </p><p id="respecRFC2119">The key words  <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> are to be interpreted as described in [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>].</p>
+    </p><p>
+            The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em>
+            are to be interpreted as described in
+            [<cite><a class="bibref" href="#bib-rfc2119">RFC2119</a></cite>].
+          </p>
 <section id="rfc-2119-keywords">
 <h3 id="x2-1-rfc-2119-keywords"><span class="secno">2.1 </span>RFC-2119 Keywords<a class="self-link" aria-label="§" href="#rfc-2119-keywords"></a></h3>
 <p>RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
@@ -1811,6 +1817,28 @@ var mappingTableLabels = {
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
+				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#meter"><code>meter</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>IA2_ROLE_LEVEL_BAR</code></span><br>
+						<span class="property">Interface: <code>IAcesssibleValue</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>ProgressBar</code></span><br>
+						<span class="property">Localized Control Type: <code>meter</code></span><br>
+						<span class="property">Control Pattern: <code>RangeValue</code></span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_LEVEL_BAR</code></span><br>
+						<span class="property">Interface: <code>Value</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXLevelIndicator</code></span><br>
+						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
+						<span class="property">AXRoleDescription: <code>'level indicator'</code></span>
+					</td>
+				</tr>
+
 				<tr>
 					<th><a class="role-reference" href="https://w3c.github.io/aria/#navigation"><code>navigation</code></a></th>
 					<td class="role-msaa-ia2">
@@ -4867,6 +4895,7 @@ var mappingTableLabels = {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			<!-- EdNote: After each WD publish, move contents of this list into the next one below. -->
+			<li>25-Feb-2019: Add mappings for <code>meter</code> role.</li>
 		        <li>05-Feb-2019: Update <abbr title="User Interface Automation">UIA</abbr> state and property change events.</li>
 			<li>06-Jun-2018: Update <abbr title="User Interface Automation">UIA</abbr> mappings for <code>aria-placeholder</code>.</li>
 			<li>04-Jun-2018: Add mappings for <code>blockquote</code>, <code>caption</code>, and <code>paragraph</code> roles.</li>
