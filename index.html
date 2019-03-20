@@ -1,31 +1,13 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.4.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
-div.issue-title, div.note-title , div.ednote-title, div.warning-title {
-    padding-right:  1em;
-    min-width: 7.5em;
-    color: #b9ab2d;
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.5.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+.issue-label {
+    text-transform: initial;
 }
-div.issue-title { color: #e05252; }
-div.note-title, div.ednote-title { color: #2b2; }
-div.warning-title { color: #f22; }
-div.note-title span, div.ednote-title span, div.warning-title span {
-    text-transform: uppercase;
-}
-div.issue-title span { text-transform: none; }
-div.note, div.issue, div.ednote, div.warning {
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
+
 .warning > p:first-child { margin-top: 0 }
 .warning {
     padding: .5em;
     border-left-width: .5em;
     border-left-style: solid;
-}
-div.issue, div.note , div.ednote,  div.warning {
-    padding: 1em 1.2em 0.5em;
-    margin: 1em 0;
-    position: relative;
-    clear: both;
 }
 span.warning { padding: .1em .5em .15em; }
 
@@ -358,7 +340,7 @@ var mappingTableLabels = {
 }
 </script>
 
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+<link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -503,16 +485,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-02-25",
-  "publishISODate": "2019-02-25T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 25 February 2019"
-}</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."></head>
+  "publishDate": "2019-03-20",
+  "publishISODate": "2019-03-20T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 20 March 2019"
+}</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
       <a href="https://www.w3.org/" class="logo"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.2</h1>
       
       <h2>
         <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
-        <time class="dt-published" datetime="2019-02-25">25 February 2019</time>
+        <time class="dt-published" datetime="2019-03-20">20 March 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -618,7 +600,7 @@ var mappingTableLabels = {
                   
                 </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                 </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intro_aapi"><span class="secno">1.1 </span>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a class="tocxref" href="#comparing-accessibility-apis"><span class="secno">1.2 </span>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#atk-at-spi"><span class="secno">1.2.1 </span><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr></a></li><li class="tocline"><a class="tocxref" href="#uia-ui-automation"><span class="secno">1.2.2 </span><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a class="tocxref" href="#accessible-names-and-descriptions"><span class="secno">1.2.3 </span>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><span class="secno">2. </span>Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfc-2119-keywords"><span class="secno">2.1 </span>RFC-2119 Keywords</a></li><li class="tocline"><a class="tocxref" href="#normative-and-informative-sections"><span class="secno">2.2 </span>Normative and Informative Sections</a></li><li class="tocline"><a class="tocxref" href="#features-deprecated-in-wai-aria"><span class="secno">2.3 </span>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><span class="secno">3. </span>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#mapping"><span class="secno">4. </span>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><span class="secno">4.1 </span>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><span class="secno">4.2 </span>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><span class="secno">4.3 </span>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><span class="secno">4.4 </span>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><span class="secno">4.4.1 </span>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><span class="secno">4.4.2 </span>Role Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_state-property"><span class="secno">4.5 </span>State and Property Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#statePropertyMappingGeneralRules"><span class="secno">4.5.1 </span>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_state-property_table"><span class="secno">4.5.2 </span>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#not_mapped"><span class="secno">4.5.2.1 </span>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><span class="secno">4.6 </span>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><span class="secno">4.6.1 </span>Name and Description</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations"><span class="secno">4.6.2 </span>Relations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_reverse_relations"><span class="secno">4.6.2.1 </span>Reverse Relations</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_implied"><span class="secno">4.6.2.2 </span>Implied reverse relations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional_position"><span class="secno">4.6.3 </span>Group Position</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><span class="secno">4.7 </span>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><span class="secno">4.8 </span>Events</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_events_state-change"><span class="secno">4.8.1 </span>State and Property Change Events</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_visibility"><span class="secno">4.8.2 </span>Changes to document content or node visibility</a></li><li class="tocline"><a class="tocxref" href="#focus_state_event_table"><span class="secno">4.8.3 </span>Focus Changes</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_selection"><span class="secno">4.8.4 </span>Selection</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_menus"><span class="secno">4.8.5 </span>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#changelog"><span class="secno">A. </span>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the last public working draft</a></li><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation"><span class="secno">A.2 </span>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><span class="secno">B. </span>Acknowledgments</a></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">C. </span>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><span class="secno">C.2 </span>Informative references</a></li></ol></li></ol></nav>
 <section id="intro" class="informative">
 	<!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#intro"></a></h2><p><em>This section is non-normative.</em></p>
