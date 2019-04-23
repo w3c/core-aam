@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.17.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.19.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -388,7 +388,51 @@ var mappingTableLabels = {
 }
 </script>
 
-<link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><script id="initialUserConfig" type="application/json">{
+<link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+var[data-type]::before,
+var[data-type]::after {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+
+/* the triangle or arrow or caret or whatever */
+var[data-type]::before {
+  content: "";
+  transform: translateX(-50%);
+  border-width: 4px 6px 0 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #000;
+}
+
+/* actual text */
+var[data-type]::after {
+  content: attr(data-type);
+  transform: translateX(-50%) translateY(-100%);
+  background: #000;
+  text-align: center;
+  /* additional styling */
+  font-family: "Dank Mono", "Fira Code", monospace;
+  font-style: normal;
+  padding: 6px;
+  border-radius: 3px;
+  color: #daca88;
+}
+
+var[data-type]:hover::after,
+var[data-type]:hover::before {
+  opacity: 1;
+}
+</style><script id="initialUserConfig" type="application/json">{
   "useExperimentalStyles": true,
   "includePermalinks": true,
   "lint": true,
@@ -533,16 +577,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-04-18",
-  "publishISODate": "2019-04-18T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 18 April 2019"
+  "publishDate": "2019-04-23",
+  "publishISODate": "2019-04-23T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 23 April 2019"
 }</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility API Mappings 1.2</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-04-18">18 April 2019</time>
+        <time class="dt-published" datetime="2019-04-23">23 April 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -795,8 +839,10 @@ var mappingTableLabels = {
     <dd>
       <p>In this specification, attribute is used as it is in markup languages. Attributes are structural features added to <a class="termref" href="#dfn-element">elements</a> to provide information about the <a class="termref" href="#dfn-state">states</a> and <a class="termref" href="#dfn-property">properties</a> of the <a class="termref" href="#dfn-object">object</a> represented by the element.</p>
     </dd>
-    
-    
+    <dt><dfn data-lt="class|classes" id="dfn-class" data-dfn-type="dfn">Class</dfn></dt>
+    <dd>
+      <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
+    </dd>
     
     
     
@@ -890,8 +936,10 @@ var mappingTableLabels = {
     
     
     
-    
-    
+    <dt><dfn id="dfn-text-node" data-dfn-type="dfn" data-plurals="text nodes">Text node</dfn></dt>
+    <dd>
+      <p>Type of <abbr title="Document Object Model">DOM</abbr> <a class="termref internalDFN" data-lt="node" href="#dfn-node" data-link-type="dfn">node</a> that represents the textual content of an <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attribute</a> or an <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">element</a>. A Text node has no child nodes.  </p>
+    </dd>
     
     
     
