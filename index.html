@@ -2385,6 +2385,46 @@ var[data-type]:hover::before {
 					</td>
 				</tr>
 				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#subscript"><code>subscript</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>ROLE_SYSTEM_TEXT</code></span><br>
+						<span class="property">Role: <code>IA2_ROLE_TEXT_FRAME</code></span><br>
+						<span class="property">Text Attribute: <code>text-position:sub</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Text</code></span><br>
+						<span class="property">Styles used are exposed by <code>IsSubscript</code> attribute of the <code>TextRange</code> Control Pattern implemented on the accessible object.</span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_SUBSCRIPT</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXSubrole: <code>AXSubscriptStyleGroup</code></span><br>
+						<span class="property">AXRoleDescription: <code>'group'</code></span>
+					</td>
+				</tr>
+				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#superscript"><code>superscript</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>ROLE_SYSTEM_TEXT</code></span><br>
+						<span class="property">Role: <code>IA2_ROLE_TEXT_FRAME</code></span><br>
+						<span class="property">Text Attribute: <code>text-position:super</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Text</code></span><br>
+						<span class="property">Styles used are exposed by <code>IsSuperscript</code> attribute of the <code>TextRange</code> Control Pattern implemented on the accessible object.</span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_SUPERSCRIPT</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXSubrole: <code>AXSuperscriptStyleGroup</code></span><br>
+						<span class="property">AXRoleDescription: <code>'group'</code></span>
+					</td>
+				</tr>
+				<tr>
 					<th><a class="role-reference" href="https://w3c.github.io/aria/#switch"><code>switch</code></a></th>
 					<td class="role-msaa-ia2">
 						<span class="property">Role: <code>ROLE_SYSTEM_CHECKBUTTON</code></span><br>
@@ -4969,6 +5009,7 @@ var[data-type]:hover::before {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><span class="secno">A.1 </span>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			<!-- EdNote: After each WD publish, move contents of this list into the next one below. -->
+			<li>25-Apr-2019: Add mappings for <code>subscript</code> and <code>superscript</code> roles.</li>
 			<li>25-Feb-2019: Add mappings for <code>meter</code> role.</li>
 		        <li>05-Feb-2019: Update <abbr title="User Interface Automation">UIA</abbr> state and property change events.</li>
 			<li>06-Jun-2018: Update <abbr title="User Interface Automation">UIA</abbr> mappings for <code>aria-placeholder</code>.</li>
