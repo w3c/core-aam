@@ -1601,6 +1601,28 @@ var[data-type]:hover::before {
 					</td>
 				</tr>
 				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#legend"><code>legend</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>ROLE_SYSTEM_STATICTEXT</code></span><br>
+						<span class="property">Role: <code>IA2_ROLE_LABEL</code></span><br>
+						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled group.</span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Text</code></span><br>
+						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled group.</span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_LABEL</code></span><br>
+						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled group.</span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
+						<span class="property">AXRoleDescription: <code>'group'</code></span><br>
+						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled group.</span>
+					</td>
+				</tr>
+				<tr>
 					<th><a class="role-reference" href="https://w3c.github.io/aria/#link"><code>link</code></a></th>
 					<td class="role-msaa-ia2">
 						<span class="property">Role: <code>ROLE_SYSTEM_LINK</code></span><br>
@@ -2628,10 +2650,10 @@ var[data-type]:hover::before {
 						<span class="property">Object Attribute: <code>xml-roles:time</code></span>
 					</td>
 					<td class="role-uia">
-						<span class="property">Control Type: <code>Text</code><br>
+						<span class="property">Control Type: <code>Text</code></span><br>
 						<span class="property">Localized Control Type: <code>time</code></span><br>
 						<span>Note: create a separate <abbr title="User Interface Automation">UIA</abbr> Control of type Text. This is different from most <abbr title="User Interface Automation">UIA</abbr> text mappings, which only create ranges in the page text pattern.</span>
-					</span></td>
+					</td>
 					<td class="role-atk">
 						<span class="property">Role: <code>ROLE_STATIC</code></span><br>
 						<span class="property">Object Attribute: <code>xml-roles:time</code></span>
@@ -5035,6 +5057,7 @@ var[data-type]:hover::before {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			
+			<li>14-May-2019: Add mappings for <code>legend</code> role.</li>
 			<li>14-May-2019: Add mappings for <code>label</code> role.</li>
 			<li>14-May-2019: Add mappings for <code>time</code> role.</li>
 			<li>25-Apr-2019: Add mappings for <code>subscript</code> and <code>superscript</code> roles.</li>
