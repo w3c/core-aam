@@ -576,16 +576,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-10-21",
-  "publishISODate": "2019-10-21T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 21 October 2019"
+  "publishDate": "2019-10-22",
+  "publishISODate": "2019-10-22T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 22 October 2019"
 }</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility API Mappings 1.2</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-10-21">21 October 2019</time>
+        <time class="dt-published" datetime="2019-10-22">22 October 2019</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -1269,9 +1269,9 @@ var[data-type]:hover::before {
 						<span class="property">Object Attribute: <code>xml-roles:code</code></span>
 					</td>
 					<td class="role-axapi">
-						<span class="property">AXRole: TBD</span><br>
-						<span class="property">AXSubrole: TBD</span><br>
-						<span class="property">AXRoleDescription: TBD</span>
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXSubrole: <code>AXCodeStyleGroup</code></span><br>
+						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -3191,6 +3191,21 @@ var[data-type]:hover::before {
 				</td>
 			</tr>
 			<tr>
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-colindextext"><code>aria-colindextext</code></a></th>
+				<td class="attr-msaa-ia2">
+					<span class="property">Object Attribute: <code>colindextext:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property">Property: <code>AriaProperties.colindextext</code>: <code>&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property">Object Attribute: <code>colindextext:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property">Property: TBD</span>
+				</td>
+			</tr>
+			<tr>
 				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-colspan"><code>aria-colspan</code></a></th>
 				<td class="attr-msaa-ia2">
 					<span class="property">Object Attribute: <code>colspan:&lt;value&gt;</code></span><br>
@@ -4338,6 +4353,21 @@ var[data-type]:hover::before {
 				</td>
 			</tr>
 			<tr>
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-rowindextext"><code>aria-rowindextext</code></a></th>
+				<td class="attr-msaa-ia2">
+					<span class="property">Object Attribute: <code>rowindextext:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property">Property: <code>AriaProperties.rowindextext</code>: <code>&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property">Object Attribute: <code>rowindextext:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property">Property: TBD</span>
+				</td>
+			</tr>
+			<tr>
 				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-rowspan"><code>aria-rowspan</code></a></th>
 				<td class="attr-msaa-ia2">
 					<span class="property">Object Attribute: <code>rowspan:&lt;value&gt;</code></span><br>
@@ -5172,6 +5202,8 @@ var[data-type]:hover::before {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			
+			<li>22-Oct-2019: Add mappings for <code>code</code> role for AXAPI.</li>
+			<li>21-Oct-2019: Add mappings for <code>aria-colindextext</code> and <code>aria-rowindextext</code> roles for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
 			<li>21-Oct-2019: Add mappings for <code>strong</code> and <code>emphasis</code> roles for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
 			<li>21-Oct-2019: Add mappings for <code>code</code> role for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
 			<li>18-Sep-2019: Update <abbr title="Microsoft Active Accessibility">MSAA</abbr> mappings for <code>subscript</code> and <code>superscript</code></li>
