@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 24.34.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 25.1.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -50,6 +50,7 @@ input.task-list-item-checkbox {
   position: relative;
   bottom: 2px;
   border: none;
+  display: inline-block;
 }
 
 .issue a.respec-label-dark {
@@ -61,15 +62,79 @@ input.task-list-item-checkbox {
   color: #000;
   background-color: #fff;
 }
+</style><style>/* dfn popup panel that list all local references to a dfn */
+dfn {
+  cursor: pointer;
+}
+
+.dfn-panel {
+  position: absolute;
+  left: var(--left); /* set via JS */
+  top: var(--top); /* set via JS */
+  z-index: 35;
+  height: auto;
+  width: max-content;
+  max-width: 300px;
+  max-height: 500px;
+  overflow: auto;
+  padding: 0.5em 0.75em;
+  font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+  background: #dddddd;
+  color: black;
+  border: outset 0.2em;
+}
+
+.dfn-panel * {
+  margin: 0;
+}
+
+.dfn-panel > b {
+  display: block;
+}
+
+.dfn-panel ul a[href] {
+  color: black;
+}
+
+.dfn-panel a:not(:hover) {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.dfn-panel a[href]:hover {
+  border-bottom-width: 1px;
+}
+
+.dfn-panel > b + b {
+  margin-top: 0.25em;
+}
+
+.dfn-panel ul {
+  padding: 0;
+}
+
+.dfn-panel li {
+  list-style: inside;
+}
+
+.dfn-panel.docked {
+  display: inline-block;
+  position: fixed;
+  left: 0.5em;
+  top: unset;
+  bottom: 2em;
+  margin: 0 auto;
+  /* 0.75em from padding (x2), 0.5em from left position, 0.2em border (x2) */
+  max-width: calc(100vw - 0.75em * 2 - 0.5em - 0.2em * 2);
+  max-height: 30vh;
+}
 </style>
 <title>Core Accessibility API Mappings 1.2</title>
 
 <script src="https://www.w3.org/scripts/jquery/1.11.3/jquery.min.js"></script>
 <style id="respec-mainstyle">/*****************************************************************
- * ReSpec 3 CSS
- * Robin Berjon - http://berjon.com/
+ * ReSpec specific CSS
  *****************************************************************/
-
 @keyframes pop {
   0% {
     transform: scale(1, 1);
@@ -386,7 +451,7 @@ var mappingTableLabels = {
 }
 </script>
 
-<link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var {
+<meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var {
   position: relative;
   cursor: pointer;
 }
@@ -563,6 +628,14 @@ var[data-type]:hover::before {
     "HTML-AAM": {
       "aliasOf": "HTML-AAM-1.0"
     },
+    "MathML-Core": {
+      "href": "https://mathml-refresh.github.io/mathml-core/",
+      "title": "MathML Core",
+      "authors": [
+        "David Carlisle",
+        "Frédéric Wang"
+      ]
+    },
     "SVG-AAM": {
       "aliasOf": "SVG-AAM-1.0"
     },
@@ -576,16 +649,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2019-10-23",
-  "publishISODate": "2019-10-23T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 23 October 2019"
-}</script><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
-<body class="h-entry toc-inline"><div class="head">
+  "publishDate": "2020-02-10",
+  "publishISODate": "2020-02-10T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 10 February 2020"
+}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
+<body class="h-entry"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility API Mappings 1.2</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2019-10-23">23 October 2019</time>
+        <time class="dt-published" datetime="2020-02-10">10 February 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -594,7 +667,6 @@ var[data-type]:hover::before {
                 <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
               </dd>
         <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/core-aam/">https://w3c.github.io/core-aam/</a></dd>
-        
         
         
         
@@ -634,7 +706,7 @@ var[data-type]:hover::before {
       <p class="copyright">
       <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
       ©
-      2014-2019
+      2014-2020
       
       <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
@@ -647,7 +719,7 @@ var[data-type]:hover::before {
     </div>
 <section id="abstract" class="introductory"><h2>Abstract</h2>
 	<p>This document describes how <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> should expose semantics of web content languages to <a class="termref internalDFN" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. This helps users with disabilities to obtain and interact with information using <a class="termref internalDFN" href="#dfn-assistive-technology" data-link-type="dfn">assistive technologies</a>. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility <abbr title="Application Programming Interfaces">APIs</abbr> and helps to ensure that this information appears in a manner consistent with author intent. </p>
-			<p>This Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a>, states, and <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.2]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-2"><a class="bibref" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2" data-link-type="biblio">WAI-ARIA-1.2</a></cite>]. Other Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!CORE-AAM-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-core-aam-1-1"><a class="bibref" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1" data-link-type="biblio">CORE-AAM-1.1</a></cite>] <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
+			<p>This Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a>, states, and <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!WAI-ARIA-1.2]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-wai-aria-1-2"><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]. Other Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1</a> [<cite class="respec-offending-element" title="Normative references in informative sections are not allowed. Remove '!' from the start of the reference `[[!CORE-AAM-1.1]]`" id="respec-offender-normative-references-in-informative-sections-are-not-allowed-remove-from-the-start-of-the-reference-core-aam-1-1"><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM-1.1</a></cite>] <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
 <section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p>
 	<p>The Accessible Rich Internet Applications Working Group seeks feedback on any aspect of the specification. When submitting feedback, please consider issues in the context of the companion documents. To comment, <a href="https://github.com/w3c/core-aam/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> core-aam GitHub repository</a>. If this is not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Comment%20on%20Core-AAM%201.2">public-aria@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="http://w3c.github.io/core-aam/">publicly visible editors' draft</a>.</p>
@@ -693,9 +765,9 @@ var[data-type]:hover::before {
 	<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#intro"></a></h2><p><em>This section is non-normative.</em></p>
 	<p>The Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings specifies how <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a>, <a class="termref internalDFN" href="#dfn-state" data-link-type="dfn">states</a>, and <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">properties</a> are expected to be exposed by user agents via platform accessibility <abbr title="Application Programming Interfaces">APIs</abbr>. It is part of a set of resources that define and support the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification which includes the following documents:</p>
 	<ul>
-          <li><cite><a class="specref" href="https://w3c.github.io/aria/">Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>) 1.2</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2" data-link-type="biblio">WAI-ARIA-1.2</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> recommendation, defines the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> standard.</li>
-          <li><cite><a href="http://www.w3.org/TR/wai-aria-practices/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices Guide</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-practices-1.2" title="WAI-ARIA Authoring Practices 1.2" data-link-type="biblio">WAI-ARIA-PRACTICES-1.2</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> Working Group Note, describes how web content developers can develop accessible rich internet applications using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>. It provides detailed advice and examples directed primarily to web application developers, yet also useful to user agent and developers of assistive technologies.</li>
-          <li><cite><a href="http://www.w3.org/TR/wai-aria-roadmap/">Roadmap for Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Roadmap)</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-roadmap" title="Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)" data-link-type="biblio">WAI-ARIA-ROADMAP</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> Working Group Note, defines the path to make rich web content accessible, including steps already taken, remaining future steps, and a time line.</li>
+          <li><cite><a class="specref" href="https://w3c.github.io/aria/">Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>) 1.2</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> recommendation, defines the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> standard.</li>
+          <li><cite><a href="http://www.w3.org/TR/wai-aria-practices/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices Guide</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-practices-1.2" title="WAI-ARIA Authoring Practices 1.2">WAI-ARIA-PRACTICES-1.2</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> Working Group Note, describes how web content developers can develop accessible rich internet applications using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>. It provides detailed advice and examples directed primarily to web application developers, yet also useful to user agent and developers of assistive technologies.</li>
+          <li><cite><a href="http://www.w3.org/TR/wai-aria-roadmap/">Roadmap for Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Roadmap)</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-roadmap" title="Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)">WAI-ARIA-ROADMAP</a></cite>], a planned <abbr title="World Wide Web Consortium">W3C</abbr> Working Group Note, defines the path to make rich web content accessible, including steps already taken, remaining future steps, and a time line.</li>
 	</ul>
 	<p>For an introduction to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>, see the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Overview</a>.</p>
 	  <section id="intro_aapi">
@@ -711,10 +783,10 @@ var[data-type]:hover::before {
             </ol>
             <p>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> covered by this specification are:</p>
 	    <ul>
-              <li><abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2 1.3</a></cite> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>]</li>
-              <li><cite><a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">User Interface Automation</a></cite> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation" data-link-type="biblio">UI-AUTOMATION</a></cite>]</li>
-	      <li><cite><a href="https://developer.gnome.org/atk/stable/"><abbr title="Accessibility Toolkit">ATK</abbr> - Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit" data-link-type="biblio">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface" data-link-type="biblio">AT-SPI</a></cite>], referred to hereafter as "<abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI"</li>
-	      <li><cite><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">macOS Accessibility Protocol</a></cite> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS" data-link-type="biblio">AXAPI</a></cite>]</li>
+              <li><abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="http://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">IAccessible2 1.3</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>]</li>
+              <li><cite><a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">User Interface Automation</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>]</li>
+	      <li><cite><a href="https://developer.gnome.org/atk/stable/"><abbr title="Accessibility Toolkit">ATK</abbr> - Accessibility Toolkit</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], referred to hereafter as "<abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI"</li>
+	      <li><cite><a href="https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSAccessibility_Protocol/index.html">macOS Accessibility Protocol</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>]</li>
 	    </ul>
 	    <p>The <cite><a href="http://www.w3.org/TR/wai-aria-implementation/"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> 1.0 User Agent Implementation Guide</a></cite> included mappings for <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a>, also known as IAccessibleEx</cite>, which was implemented in Microsoft Internet Explorer 8.0 - 11. New implementations are strongly encouraged to use <cite><a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">User Interface Automation</a></cite> instead.</p>
 	    <p>If user agent developers need to expose information using other accessibility <abbr title="Application Programming Interfaces">APIs</abbr>, it is recommended that they work closely with the developer of the platform where the <abbr title="application programming interface">API</abbr> runs, and assistive technology developers on that platform.</p>
@@ -761,17 +833,14 @@ var[data-type]:hover::before {
     </section>
 </section>
 <section id="conformance"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance<a class="self-link" aria-label="§" href="#conformance"></a></h2><p>
-      As well as sections marked as non-normative, all authoring guidelines,
-      diagrams, examples, and notes in this specification are non-normative.
-      Everything else in this specification is normative.
+      As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
     </p><p>
-            The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
-            are to be interpreted as described in
-            <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
-            [<cite><a class="bibref" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels" data-link-type="biblio">RFC2119</a></cite>]
-            [<cite><a class="bibref" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words" data-link-type="biblio">RFC8174</a></cite>] when, and only when, they appear
-            in all capitals, as shown here.
-          </p>
+          The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
+          are to be interpreted as described in
+          <a href="https://tools.ietf.org/html/bcp14">BCP 14</a>
+          [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+          when, and only when, they appear in all capitals, as shown here.
+        </p>
 <section id="rfc-2119-keywords">
 <h3 id="x2-1-rfc-2119-keywords"><bdi class="secno">2.1 </bdi>RFC-2119 Keywords<a class="self-link" aria-label="§" href="#rfc-2119-keywords"></a></h3>
 <p>RFC-2119 keywords are formatted in uppercase and contained in a <code>strong</code> element with <code>class="rfc2119"</code>. When the keywords shown above are used, but do not share this format, they do not convey formal information in the RFC 2119 sense, and are merely explanatory, i.e., informative. As much as possible, such usages are avoided in this specification.</p>
@@ -792,8 +861,8 @@ var[data-type]:hover::before {
 <dl class="termlist">
     <dt><dfn data-lt="accessibility api|accessibility apis|Accessibility API" id="dfn-accessibility-api" data-dfn-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></dfn></dt>
     <dd>
-      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0" data-link-type="biblio">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" href="#bib-ui-automation" title="UI Automation" data-link-type="biblio">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" href="#bib-uia-express" title="The IAccessibleEx Interface" data-link-type="biblio">UIA-EXPRESS</a></cite>], the
-      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" href="#bib-axapi" title="The NSAccessibility Protocol for macOS" data-link-type="biblio">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" href="#bib-atk" title="ATK - Accessibility Toolkit" data-link-type="biblio">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" href="#bib-at-spi" title="Assistive Technology Service Provider Interface" data-link-type="biblio">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>].</p>
+      <p>Operating systems and other platforms provide a set of interfaces that expose information about <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a> and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> to <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>. Assistive technologies use these interfaces to get information about and interact with those <a class="termref internalDFN" data-lt="widget" href="#dfn-widget" data-link-type="dfn">widgets</a>. Examples of accessibility <abbr title="Application Programming Interfaces">APIs</abbr> are <a href="https://msdn.microsoft.com/en-us/library/ms697270(VS.85).aspx">Microsoft Active Accessibility</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-msaa" title="Microsoft Active Accessibility (MSAA) 2.0">MSAA</a></cite>], <a href="https://msdn.microsoft.com/en-us/library/ee684013%28VS.85%29.aspx">Microsoft User Interface Automation</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>], <abbr title="Microsoft Active Accessibility">MSAA</abbr> with <cite><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898(v=vs.85).aspx"><abbr title="User Interface Automation">UIA</abbr> Express</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-uia-express" title="The IAccessibleEx Interface">UIA-EXPRESS</a></cite>], the
+      	<a href="https://developer.apple.com/documentation/appkit/accessibility/nsaccessibility">Mac <abbr title="OS Ten">OS X</abbr> Accessibility Protocol</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>], the <cite><a href="https://developer.gnome.org/atk/unstable/">Linux/Unix Accessibility Toolkit</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite><a href="https://developer.gnome.org/libatspi/stable/">Assistive Technology Service Provider Interface</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], and <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/start">IAccessible2</a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>].</p>
     </dd>
     <dt><dfn id="dfn-accessibility-subtree" data-dfn-type="dfn">Accessibility Subtree</dfn></dt>
     <dd>
@@ -845,10 +914,14 @@ var[data-type]:hover::before {
     <dd>
       <p>A set of instance <a class="termref" href="#dfn-object">objects</a> that share similar characteristics.</p>
     </dd>
-    
-    
-    
-    
+    <dt><dfn data-lt="deprecated|deprecate|deprecation|Deprecated" id="dfn-deprecated" data-dfn-type="dfn">Deprecated</dfn></dt>
+    <dd>
+      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">Deprecated Requirements</a> in the Conformance section.</p>
+    </dd>
+    <dt><dfn data-lt="desktop focus|desktop focus events|Desktop focus event" id="dfn-desktop-focus" data-dfn-type="dfn">Desktop focus event</dfn></dt>
+    <dd>
+      <p>Event from/to the host operating system via the accessibility <abbr title="application programming interface">API</abbr>, notifying of a change of input focus.</p>
+    </dd>
     <dt><dfn data-lt="element|elements|element's|Element" id="dfn-element" data-dfn-type="dfn">Element</dfn></dt>
     <dd>
       <p>In this specification, element is used as it is in markup languages. Elements are the structural elements in markup language that contains the data profile for <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a>.</p>
@@ -857,34 +930,46 @@ var[data-type]:hover::before {
     <dd>
       <p>A programmatic message used to communicate discrete changes in the <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> to other objects in a computational system. User input to a web page is commonly mediated through abstract events that describe the interaction and can provide notice of changes to the state of a document object. In some programming languages, events are more commonly known as notifications.</p>
     </dd>
-    
-    
-	
-    
+    <dt><dfn id="dfn-expose" data-dfn-type="dfn">Expose</dfn></dt>
+    <dd>
+      <p>Translated to platform-specific <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> as defined in the <a href="" class="core-mapping">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings</a>. [<cite><a class="bibref" data-link-type="biblio" href="#bib-core-aam-1.1" title="Core Accessibility API Mappings 1.1">CORE-AAM-1.1</a></cite>]</p>
+    </dd>
+	<dt><dfn data-lt="graphical document|graphical documents|Graphical Document" id="dfn-graphical-document" data-dfn-type="dfn">Graphical Document</dfn></dt>
+    <dd>
+      <p>A document containing graphic representations with user-navigable parts. Charts, maps, diagrams, blueprints, and dashboards are examples of graphical documents. A graphical document is composed using any combination of symbols, images, text, and graphic primitives (shapes such as circles, points, lines, paths, rectangles, etc).</p>
+    </dd>
     <dt><dfn id="dfn-hidden" data-dfn-type="dfn">Hidden</dfn></dt>
     <dd>
-        <p>Indicates that the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is not visible, <a href="#dfn-perceivable" class="internalDFN respec-offending-element" data-link-type="dfn" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">perceivable</a>, or interactive to <em>any</em> user. An element is considered <em>hidden</em> if it or any one of its ancestor elements is not rendered or is explicitly hidden.</p>
+        <p>Indicates that the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a> is not visible, <a href="#dfn-perceivable" class="internalDFN" data-link-type="dfn">perceivable</a>, or interactive to <em>any</em> user. An element is considered <em>hidden</em> if it or any one of its ancestor elements is not rendered or is explicitly hidden.</p>
     </dd>
     <dt><dfn data-lt="informative|non-normative|Informative" id="dfn-informative" data-dfn-type="dfn">Informative</dfn></dt>
     <dd>
       <p>Content provided for information purposes and not required for conformance. Content required for conformance is referred to as <a href="#dfn-normative" class="internalDFN" data-link-type="dfn">normative</a>.</p>
     </dd>
-    
-    
-    
-    
+    <dt><dfn id="dfn-keyboard-accessible" data-dfn-type="dfn">Keyboard Accessible</dfn></dt>
+    <dd>
+    	<p>Accessible to the user using a keyboard or <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a> that mimic keyboard input, such as a sip and puff tube. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#keyboard-accessible"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Guideline 2.1: Make all functionality available from a keyboard</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
+    <dt><dfn data-lt="landmark|landmarks|Landmark" id="dfn-landmark" data-dfn-type="dfn">Landmark</dfn></dt>
+    <dd>
+      <p>A type of region on a page to which the user may want quick access. Content in such a region is different from that of other regions on the page and relevant to a specific user purpose, such as navigating, searching, perusing the primary content, etc.</p>
+    </dd>
     <dt><dfn data-lt="live region|live regions|Live Region" id="dfn-live-region" data-dfn-type="dfn">Live Region</dfn></dt>
     <dd>
       <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
     </dd>
-    
-    
+    <dt><dfn id="dfn-primary-content-element" data-dfn-type="dfn">Primary Content Element</dfn></dt>
+    <dd>
+      <p>An implementing host language's primary content element, such as the <code>body</code> element in <abbr title="Hypertext Markup Language">HTML</abbr>.</p>
+    </dd>
     <dt><dfn data-lt="managed state|managed states|Managed State" id="dfn-managed-state" data-dfn-type="dfn">Managed State</dfn></dt>
     <dd>
       <p><a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">Accessibility <abbr title="Application Programming Interface">API</abbr></a> <a href="#dfn-state" class="internalDFN" data-link-type="dfn">state</a> that is controlled by the user agent, such as focus and selection. These are contrasted with "unmanaged states" that are typically controlled by the author. Nevertheless, authors can override some managed states, such as aria-posinset and aria-setsize. Many managed states have corresponding CSS pseudo-classes, such as :focus, and pseudo-elements, such as ::selection, that are also updated by the user agent.</p>
     </dd>
-    
-    
+    <dt><dfn id="dfn-nemeth-braille" data-dfn-type="dfn">Nemeth Braille</dfn></dt>
+    <dd>
+        <p>The Nemeth Braille Code for Mathematics is a braille code for encoding mathematical and scientific notation. See <cite><a href="https://en.wikipedia.org/wiki/Nemeth_Braille">Nemeth Braille on Wikipedia</a>.</cite></p>
+    </dd>
     <dt><dfn id="dfn-node" data-dfn-type="dfn" data-plurals="nodes">Node</dfn></dt>
     <dd>
       <p>Basic type of <a class="termref internalDFN" href="#dfn-object" data-link-type="dfn">object</a> in the <abbr title="Document Object Model">DOM</abbr> tree or <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a>. <abbr title="Document Object Model">DOM</abbr> nodes are further specified as <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">Element</a> or <a class="termref internalDFN" data-lt="Text node" href="#dfn-text-node" data-link-type="dfn">Text nodes</a>, among other types. The nodes of an <a class="termref internalDFN" href="#dfn-accessibility-tree" data-link-type="dfn">accessibility tree</a> are <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a>.  </p>
@@ -898,18 +983,26 @@ var[data-type]:hover::before {
       <p>In the context of user interfaces,  an item in the   perceptual user experience, represented in markup languages by one or   more <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a>, and rendered by <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">user agents</a>.</p>
     In the context of programming, the instantiation of one or more <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and interfaces which define the general characteristics of similar objects. An object in an <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="Application Programming Interfaces">API</abbr></a> may represent one or more <abbr title="Document Object Model">DOM</abbr> objects. <a class="termref internalDFN" data-lt="accessibility api" href="#dfn-accessibility-api" data-link-type="dfn">Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> have defined interfaces that are distinct from <abbr title="Document Object Model">DOM</abbr> interfaces.</dd>
   
-    
-    
-    
-    
+    <dt><dfn id="dfn-ontology" data-dfn-type="dfn">Ontology</dfn></dt>
+    <dd>
+      <p>A description of the characteristics of <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> and how they relate to each other.</p>
+    </dd>
+    <dt><dfn id="dfn-operable" data-dfn-type="dfn">Operable</dfn></dt>
+    <dd>
+      <p>Usable by users in ways they can control. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#operable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 2: Content must be operable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>]. See <a href="#dfn-keyboard-accessible" class="internalDFN" data-link-type="dfn">Keyboard Accessible</a>.</p>
+    </dd>
     <dt><dfn data-lt="owned element|owned|owned element's|owned elements|Owned Element" id="dfn-owned-element" data-dfn-type="dfn">Owned Element</dfn></dt>
     <dd>
       <p>An 'owned element' is any <abbr title="Document Object Model">DOM</abbr> descendant of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, any element specified as a child via <a href="https://w3c.github.io/aria/#aria-owns" class="property-reference"><code>aria-owns</code></a>, or any <abbr title="Document Object Model">DOM</abbr> descendant of the owned child.</p>
     </dd>
-    
-    
-    
-    
+    <dt><dfn data-lt="owning element|owning|Owning Element" id="dfn-owning-element" data-dfn-type="dfn">Owning Element</dfn></dt>
+    <dd>
+      <p>An 'owning element' is any <abbr title="Document Object Model">DOM</abbr> ancestor of the <a href="#dfn-element" class="internalDFN" data-link-type="dfn">element</a>, or any element with an <a href="https://w3c.github.io/aria/#aria-owns" class="property-reference"><code>aria-owns</code></a> attribute which references the ID of the   element. </p>
+    </dd>
+    <dt><dfn id="dfn-perceivable" data-dfn-type="dfn">Perceivable</dfn></dt>
+    <dd>
+      <p>Presentable to users in ways they can sense. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#perceivable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 1: Content must be perceivable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
     <dt><dfn data-lt="property|properties|Property" id="dfn-property" data-dfn-type="dfn">Property</dfn></dt>
     <dd>
       <p><a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">Attributes</a> that are essential to the nature of a given <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, or that represent a data value associated with the object. A change of a property may significantly impact the meaning or presentation of an object. Certain properties (for example, <a href="https://w3c.github.io/aria/#aria-multiline" class="property-reference"><code>aria-multiline</code></a>) are less likely to change than <a class="termref" href="#dfn-state">states</a>, but note that the frequency of change difference is not a rule. A few properties, such as <a href="https://w3c.github.io/aria/#aria-activedescendant" class="property-reference"><code>aria-activedescendant</code></a>, <a href="https://w3c.github.io/aria/#aria-valuenow" class="property-reference"><code>aria-valuenow</code></a>, and <a href="https://w3c.github.io/aria/#aria-valuetext" class="property-reference"><code>aria-valuetext</code></a> are expected to change often. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
@@ -922,8 +1015,10 @@ var[data-type]:hover::before {
     <dd>
       <p>Main indicator of type.  This <a class="termref internalDFN" data-lt="semantics" href="#dfn-semantics" data-link-type="dfn">semantic</a> association allows tools to present and support interaction with the object in a manner that is consistent with user expectations about other objects of that type.</p>
     </dd>
-    
-    
+    <dt><dfn id="dfn-root-wai-aria-node" data-dfn-type="dfn">Root <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> node</dfn></dt>
+    <dd>
+      <p> The primary element containing non-metadata content. In many languages, this is  the document element but in <abbr title="Hypertext Markup Language">HTML</abbr>, it is the <code>&lt;body&gt;</code>.</p>
+    </dd>
     <dt><dfn data-lt="semantics|semantic|semantically|Semantics" id="dfn-semantics" data-dfn-type="dfn">Semantics</dfn></dt>
     <dd>
       <p>The meaning of something as understood by a human, defined in a way that computers can process a representation of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a>, such as <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a>, and reliably represent the object in a way that various humans will achieve a mutually consistent understanding of the object.</p>
@@ -932,26 +1027,38 @@ var[data-type]:hover::before {
     <dd>
       <p>A state is a dynamic <a class="termref" href="#dfn-property">property</a> expressing characteristics of an <a href="#dfn-object" class="internalDFN" data-link-type="dfn">object</a> that may change in response to user action or automated processes. States do not affect the essential nature of the object, but represent data associated with the object or user interaction possibilities. See <a href="https://www.w3.org/TR/wai-aria-1.1/#statevsprop">clarification of states versus properties</a>.</p>
     </dd>
-    
-    
-    
-    
-    
-    
+    <dt><dfn id="dfn-sub-document" data-dfn-type="dfn">Sub-document</dfn></dt>
+    <dd>
+      <p>Any document created from a <code>&lt;frame&gt;</code>, <code>&lt;iframe&gt;</code> or similar mechanism. A sub-document may contain a document, an application or any widget such as a calendar pulled in from another server. In the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> there are two <a class="termref internalDFN" data-lt="accessible object" href="#dfn-accessible-object" data-link-type="dfn">accessible objects</a> for this situation—one represents the <code>&lt;frame&gt;</code>/<code>&lt;iframe&gt;</code> element in the parent document, which parents a single <a href="#dfn-accessible-object" class="internalDFN" data-link-type="dfn">accessible object</a> child representing the spawned document contents.</p>
+    </dd>
+    <dt><dfn id="dfn-target-element" data-dfn-type="dfn">Target Element</dfn></dt>
+    <dd>
+      <p>An element specified in a <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> relation. For example, in <code> &lt;div aria-controls=”elem1”&gt;</code>, where <code>“elem1”</code> is the ID for the target element.</p>
+    </dd>
+    <dt><dfn id="dfn-taxonomy" data-dfn-type="dfn">Taxonomy</dfn></dt>
+    <dd>
+      <p>A hierarchical definition of how the characteristics of various <a class="termref internalDFN" data-lt="class" href="#dfn-class" data-link-type="dfn">classes</a> relate to each other, in which classes inherit the properties of superclasses in the hierarchy. A taxonomy can comprise part of the formal definition of an <a href="#dfn-ontology" class="internalDFN" data-link-type="dfn">ontology</a>.</p>
+    </dd>
     <dt><dfn id="dfn-text-node" data-dfn-type="dfn" data-plurals="text nodes">Text node</dfn></dt>
     <dd>
       <p>Type of <abbr title="Document Object Model">DOM</abbr> <a class="termref internalDFN" data-lt="node" href="#dfn-node" data-link-type="dfn">node</a> that represents the textual content of an <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attribute</a> or an <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">element</a>. A Text node has no child nodes.  </p>
     </dd>
-    
-    
-    
-    
+    <dt><dfn id="dfn-tooltip-attribute" data-dfn-type="dfn">Tooltip attribute</dfn></dt>
+    <dd>
+      <p>Any host language attribute that would result in a user agent generating a tooltip such as in response to a mouse hover in desktop user agents.</p>
+    </dd>
+    <dt><dfn id="dfn-understandable" data-dfn-type="dfn">Understandable</dfn></dt>
+    <dd>
+      <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
     <dt><dfn data-lt="user agent|user agents|User Agent" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
     <dd>
       <p>Any software that retrieves, renders and facilitates end user interaction with Web content. This definition may differ from that used in other documents.</p>
     </dd>
-    
-    
+    <dt><dfn id="dfn-valid-idref" data-dfn-type="dfn">Valid IDREF</dfn></dt>
+    <dd>
+      <p>A reference to a target element in the same document that has a matching ID</p>
+    </dd>
     <dt><dfn data-lt="widget|widgets|Widget" id="dfn-widget" data-dfn-type="dfn">Widget</dfn></dt>
     <dd>
       <p>Discrete user interface <a class="termref" href="#dfn-object">object</a> with which the user can interact. Widgets range from simple objects that have one value or operation (e.g., check boxes and menu items), to complex objects that contain many managed sub-objects (e.g., trees and grids).</p>
@@ -1036,7 +1143,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationAlert</code></span><br>
-						<span class="property">AXRoleDescription: <code>'alert'</code></span><br>
 						<span class="event">Event: The user agent <em class="rfc2119" title="SHOULD">SHOULD</em> fire a system alert <a class="termref internalDFN" href="#dfn-event" data-link-type="dfn">event</a>. <sup>[<a href="#ftn.note2">Note 2</a>]</sup></span>
 					</td>
 				</tr>
@@ -1058,7 +1164,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationAlertDialog</code></span><br>
-						<span class="property">AXRoleDescription: <code> 'web alert dialog'</code></span><br>
 						<span class="event">Event: The user agent <em class="rfc2119" title="SHOULD">SHOULD</em> fire a system alert <a class="termref internalDFN" href="#dfn-event" data-link-type="dfn">event</a>. <sup>[<a href="#ftn.note2">Note 2</a>]</sup></span>
 					</td>
 				</tr>
@@ -1077,7 +1182,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXWebApplication</code></span><br>
-						<span class="property">AXRoleDescription: <code>'web application'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1098,7 +1202,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDocumentArticle</code></span><br>
-						<span class="property">AXRoleDescription: <code>'article'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1120,7 +1223,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkBanner</code></span><br>
-						<span class="property">AXRoleDescription: <code>'banner'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1139,7 +1241,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1156,7 +1257,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXButton</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'button'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1173,7 +1273,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXPopUpButton</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'pop up button'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1191,7 +1290,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCheckBox</code></span><br>
 						<span class="property">AXSubrole: <code>AXToggle</code></span><br>
-						<span class="property">AXRoleDescription: <code>'toggle button'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1209,7 +1307,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1230,7 +1327,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCell</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'cell'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1250,7 +1346,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCheckBox</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'checkbox'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -1271,7 +1366,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXCodeStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1290,7 +1384,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCell</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'cell'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1311,7 +1404,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXComboBox</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'combo box'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1333,7 +1425,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkComplementary</code></span><br>
-						<span class="property">AXRoleDescription: <code>'complementary'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1355,7 +1446,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkContentInfo</code></span><br>
-						<span class="property">AXRoleDescription: <code>'content information'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1374,7 +1464,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDefinition</code></span><br>
-						<span class="property">AXRoleDescription: <code>'definition'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1393,7 +1482,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDeleteStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1411,7 +1499,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationDialog</code></span><br>
-						<span class="property">AXRoleDescription: <code>'web dialog'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1428,7 +1515,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXList</code></span><br>
 						<span class="property">AXSubrole: <code>AXContentList</code></span><br>
-						<span class="property">AXRoleDescription: <code>'content list'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1446,7 +1532,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDocument</code></span><br>
-						<span class="property">AXRoleDescription: <code>'document'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1466,7 +1551,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXEmphasisStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1486,7 +1570,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'feed'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1506,7 +1589,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'figure'</code></span>
 					</td>
 					</tr>
 				<tr>
@@ -1527,7 +1609,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1545,7 +1626,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1571,7 +1651,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTable</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'table'</code></span><br>
 						<span class="property">AXColumnHeaderUIElements: a list of pointers to the columnheader elements</span><br>
 						<span class="property">AXHeader: a pointer to the row or group containing those columnheader elements</span><br>
 						<span class="property">AXRowHeaderUIElements: a list of pointers to the rowheader elements</span>
@@ -1596,7 +1675,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCell</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'cell'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1613,7 +1691,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1632,7 +1709,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXHeading</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'heading'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1651,7 +1727,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXImage</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'image'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1670,7 +1745,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXInsertStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1691,7 +1765,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span><br>
 						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled widget.</span>
 					</td>
 				</tr>
@@ -1713,7 +1786,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span><br>
 						<span class="seealso">See also: <a href="#ariaLabelledBy">aria-labelledby</a> regarding exposure of the labeled group.</span>
 					</td>
 				</tr>
@@ -1736,7 +1808,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXLink</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'link'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1754,7 +1825,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXList</code></span><br>
 						<span class="property">AXSubrole: <code>AXContentList</code></span><br>
-						<span class="property">AXRoleDescription: <code>'content list'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1776,7 +1846,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXList</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'list'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1798,7 +1867,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXList</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'list'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1818,7 +1886,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1844,7 +1911,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationLog</code></span><br>
-						<span class="property">AXRoleDescription: <code>'log'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1865,7 +1931,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkMain</code></span><br>
-						<span class="property">AXRoleDescription: <code>'main'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1889,7 +1954,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationMarquee</code></span><br>
-						<span class="property">AXRoleDescription: <code>'marquee'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1907,7 +1971,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDocumentMath</code></span><br>
-						<span class="property">AXRoleDescription: <code>'math'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1928,7 +1991,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenu</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1949,7 +2011,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenuBar</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu bar'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1966,7 +2027,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenuItem</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu item'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -1983,7 +2043,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenuButton</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu button'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2005,7 +2064,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenuItem</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu item'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2029,7 +2087,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXMenuItem</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'menu item'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2051,7 +2108,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXLevelIndicator</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'level indicator'</code></span>
 					</td>
 				</tr>
 
@@ -2073,7 +2129,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkNavigation</code></span><br>
-						<span class="property">AXRoleDescription: <code>'navigation'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2106,7 +2161,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDocumentNote</code></span><br>
-						<span class="property">AXRoleDescription: <code>'note'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2127,7 +2181,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXStaticText</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'text'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2149,7 +2202,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXStaticText</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'text'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2168,7 +2220,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2205,7 +2256,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXProgressIndicator</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'progress indicator'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2227,7 +2277,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRadioButton</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'radio button'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2245,7 +2294,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRadioGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'radio group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2267,7 +2315,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkRegion</code></span><br>
-						<span class="property">AXRoleDescription: <code>'region'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2301,7 +2348,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRow</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'row'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2320,7 +2366,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRow</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'row'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2354,7 +2399,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCell</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'cell'</code></span>
 					</td>
 
 				</tr>
@@ -2376,7 +2420,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXScrollBar</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'scroll bar'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2397,7 +2440,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkSearch</code></span><br>
-						<span class="property">AXRoleDescription: <code>'search'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2418,7 +2460,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTextField</code></span><br>
 						<span class="property">AXSubrole: <code>AXSearchField</code></span><br>
-						<span class="property">AXRoleDescription: <code>'search text field'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2435,7 +2476,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXSplitter</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'splitter'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2456,7 +2496,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXSplitter</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'splitter'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2477,7 +2516,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXSlider</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'slider'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2498,7 +2536,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXIncrementor</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'stepper'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2523,7 +2560,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationStatus</code></span><br>
-						<span class="property">AXRoleDescription: <code>'application status'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2543,7 +2579,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXStrongStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2563,7 +2598,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXSubscriptStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2583,7 +2617,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXSuperscriptStyleGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2608,7 +2641,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXCheckBox</code></span><br>
 						<span class="property">AXSubrole: <code>AXSwitch</code></span><br>
-						<span class="property">AXRoleDescription: <code>'switch'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2628,7 +2660,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRadioButton</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'tab'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2651,7 +2682,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTable</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'table'</code></span><br>
 						<span class="property">AXColumnHeaderUIElements: a list of pointers to the columnheader elements</span><br>
 						<span class="property">AXHeader: a pointer to the row or group containing those columnheader elements</span><br>
 						<span class="property">AXRowHeaderUIElements: a list of pointers to the rowheader elements</span>
@@ -2676,7 +2706,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTabGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'tab group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2693,7 +2722,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXTabPanel</code></span><br>
-						<span class="property">AXRoleDescription: <code>'tab panel'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2712,7 +2740,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXTerm</code></span><br>
-						<span class="property">AXRoleDescription: <code>'term'</code></span>
 					</td>
 					</tr>
 
@@ -2735,7 +2762,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTextField</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'text field'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2755,7 +2781,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTextArea</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'text entry area'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2776,7 +2801,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXTimeGroup</code></span><br>
-						<span class="property">AXRoleDescription: <code>'group'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2801,7 +2825,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXApplicationTimer</code></span><br>
-						<span class="property">AXRoleDescription: <code>'timer'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2818,7 +2841,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXToolbar</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'toolbar'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2835,7 +2857,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXUserInterfaceTooltip</code></span><br>
-						<span class="property">AXRoleDescription: <code>'tooltip'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2856,7 +2877,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXOutline</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'outline'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2879,7 +2899,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXTable</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
-						<span class="property">AXRoleDescription: <code>'table'</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2899,7 +2918,6 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXRow</code></span><br>
 						<span class="property">AXSubrole: <code>AXOutlineRow</code></span><br>
-						<span class="property">AXRoleDescription: <code>'outline row'</code></span><br>
 						<span class="seealso">See also: <code>aria-checked</code> in the <a href="#mapping_state-property_table">State and Property Mapping Table</a></span>
 					</td>
 				</tr>
@@ -2925,9 +2943,9 @@ var[data-type]:hover::before {
         <li><a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agents</a> <em class="rfc2119" title="MUST">MUST</em> compute <a class="termref internalDFN" href="#dfn-managed-state" data-link-type="dfn">managed states</a> <code>VISIBLE</code>/<code>INVISIBLE</code>, <code>SHOWING</code>/<code>OFFSCREEN</code>, etc. This typically is done in the same way as for ordinary <a class="termref internalDFN" href="#dfn-element" data-link-type="dfn">elements</a> that do not have <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> attributes present. The <code>FOCUSABLE</code>/<code>FOCUSED</code> states may be affected by <a class="property-reference" href="https://w3c.github.io/aria/#aria-activedescendant"><code>aria-activedescendant</code></a>.</li>
         <li>User agents <em class="rfc2119" title="MUST">MUST</em> continue to expose native semantics in addition to <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> state and property semantics except where an explicit <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> override is allowed by the host language. For example, an <abbr title="Hypertext Markup Language">HTML</abbr> checkbox may have an <a class="property-reference" href="https://w3c.github.io/aria/#aria-labelledby"><code>aria-labelledby</code></a> attribute but the native <abbr title="Hypertext Markup Language">HTML</abbr> semantics must still be exposed. </li>
         <li>User agents <em class="rfc2119" title="MUST">MUST</em> expose additional states for certain <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">roles</a> as defined in the <a href="#mapping_role_table">Role Mapping Table</a>.</li>
-        <li>User agents <em class="rfc2119" title="MUST">MUST</em> compute states for the relevant <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attributes</a> and map to the <a class="termref" href="#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> as specified in the <a href="#mapping_state-property_table">State and Property Mapping Table</a>. To determine the relevant <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> attributes, refer to the <cite><a href="https://w3c.github.io/aria/#role_definitions" class="specref">Definition of Roles</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2" data-link-type="biblio">WAI-ARIA-1.2</a></cite>]]. Where the author has not provided values for required attributes, user agents <em class="rfc2119" title="SHOULD">SHOULD</em>  process as if the default value was provided. </li>
+        <li>User agents <em class="rfc2119" title="MUST">MUST</em> compute states for the relevant <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> <a class="termref internalDFN" href="#dfn-attribute" data-link-type="dfn">attributes</a> and map to the <a class="termref" href="#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> as specified in the <a href="#mapping_state-property_table">State and Property Mapping Table</a>. To determine the relevant <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> attributes, refer to the <cite><a href="https://w3c.github.io/aria/#role_definitions" class="specref">Definition of Roles</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]]. Where the author has not provided values for required attributes, user agents <em class="rfc2119" title="SHOULD">SHOULD</em>  process as if the default value was provided. </li>
         <li>Some <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> properties are not global, and are only supported on  certain roles. If a non-global <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> state or property is used where it is not supported, user agents <em class="rfc2119" title="SHOULD NOT">SHOULD NOT</em> map the given <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> property to the platform accessibility <abbr title="application programming interface">API</abbr>.  For example, if <code>aria-checked="true"</code> is specified on <code>&lt;div role="grid"&gt;</code>, it should not be exposed in <abbr title="Microsoft Active Accessibility">MSAA</abbr> implementations as <code>STATE_SYSTEM_CHECKED</code>.</li>
-        <li>When an explicit or inherited role of <code>none</code> or <code>presentation</code> is applied to an element, the user agent <em class="rfc2119" title="MUST">MUST</em> implement  the rules for the <a class="role-reference" href="https://w3c.github.io/aria/#none"><code>none</code></a> or the <a class="role-reference" href="https://w3c.github.io/aria/#presentation"><code>presentation</code></a> <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">role</a> defined in <cite><a class="specref" href="https://w3c.github.io/aria/">Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>) 1.2</a></cite> [<cite><a class="bibref" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2" data-link-type="biblio">WAI-ARIA-1.2</a></cite>]].</li>
+        <li>When an explicit or inherited role of <code>none</code> or <code>presentation</code> is applied to an element, the user agent <em class="rfc2119" title="MUST">MUST</em> implement  the rules for the <a class="role-reference" href="https://w3c.github.io/aria/#none"><code>none</code></a> or the <a class="role-reference" href="https://w3c.github.io/aria/#presentation"><code>presentation</code></a> <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">role</a> defined in <cite><a class="specref" href="https://w3c.github.io/aria/">Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr>) 1.2</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wai-aria-1.2" title="Accessible Rich Internet Applications (WAI-ARIA) 1.2">WAI-ARIA-1.2</a></cite>]].</li>
       </ol>
     </section>
   <section id="mapping_state-property_table">
@@ -4645,7 +4663,7 @@ var[data-type]:hover::before {
 			  <li>Because these value are 1-based, include the current item  in the computation. For <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, include the current item and other group items if they are before the current item in the <abbr title="Document Object Model">DOM</abbr>. For <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a>, add to that the number of items in the same group after the current item in the <abbr title="Document Object Model">DOM</abbr>.</li>
 		  </ul>
       <p>If the author provides one or more of <code>aria-setsize</code> and <code>aria-posinset</code>, it is the author's responsibility to supply them for all elements in the set.  <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">User agent</a> correction of missing values in this case is not defined.</p>
-		  <p id="mapping_group_position"><abbr title="Microsoft Active Accessibility">MSAA</abbr>/IAccessible2 <abbr title="Application Programming Interface">API</abbr> mappings involve an additional function, <code>groupPosition()</code> [<cite><a class="bibref" href="#bib-iaccessible2" title="IAccessible2" data-link-type="biblio">IAccessible2</a></cite>], when <a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, and/or <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a> are present on an element, or are computed by the user agent. When this occurs: </p>
+		  <p id="mapping_group_position"><abbr title="Microsoft Active Accessibility">MSAA</abbr>/IAccessible2 <abbr title="Application Programming Interface">API</abbr> mappings involve an additional function, <code>groupPosition()</code> [<cite><a class="bibref" data-link-type="biblio" href="#bib-iaccessible2" title="IAccessible2">IAccessible2</a></cite>], when <a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, and/or <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a> are present on an element, or are computed by the user agent. When this occurs: </p>
 		  <ul>
 		    <li><a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a> is exposed in the <code>groupLevel</code> parameter of <code>groupPosition()</code>,</li>
 		    <li><a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a>  is exposed in the <code>similarItemsInGroup</code> parameter, and</li>
@@ -5202,8 +5220,9 @@ var[data-type]:hover::before {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			
-			<li>22-Oct-2019: Add mappings for <code>strong</code> and <code>emphasis</code> roles for AXAPI.</li>
-			<li>22-Oct-2019: Add mappings for <code>code</code> role for AXAPI.</li>
+			<li>03-Nov-2019: Remove explicit AXRoleDescription values for <abbr title="macOS Accessibility Protocol">AX API</abbr>. User agents should follow the guidance described in the note.</li>
+			<li>22-Oct-2019: Add mappings for <code>strong</code> and <code>emphasis</code> roles for <abbr title="macOS Accessibility Protocol">AX API</abbr>.</li>
+			<li>22-Oct-2019: Add mappings for <code>code</code> role for <abbr title="macOS Accessibility Protocol">AX API</abbr>.</li>
 			<li>21-Oct-2019: Add mappings for <code>aria-colindextext</code> and <code>aria-rowindextext</code> roles for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
 			<li>21-Oct-2019: Add mappings for <code>strong</code> and <code>emphasis</code> roles for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
 			<li>21-Oct-2019: Add mappings for <code>code</code> role for <abbr title="Accessibility Toolkit">ATK</abbr>, IA2, and <abbr title="User Interface Automation">UIA</abbr>.</li>
@@ -5239,15 +5258,12 @@ var[data-type]:hover::before {
 
 
 
-<section id="references" class="appendix">
-      <h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2>
-      
-    <section id="normative-references">
+<section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
         <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsaccessibility"><cite>The NSAccessibility Protocol for macOS</cite></a>.  Apple, Inc. URL: <a href="https://developer.apple.com/documentation/appkit/nsaccessibility">https://developer.apple.com/documentation/appkit/nsaccessibility</a></dd><dt id="bib-core-aam-1.1">[CORE-AAM-1.1]</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joanmarie Diggs; Joseph Scheuhammer; Richard Schwerdtfeger; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://tools.ietf.org/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc8174">https://tools.ietf.org/html/rfc8174</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-1.2">[WAI-ARIA-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.2/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.2</cite></a>. Joanmarie Diggs; Shane McCarron; James Nurthen; Michael Cooper; Richard Schwerdtfeger; James Craig.  W3C. 18 December 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-1.2/">https://www.w3.org/TR/wai-aria-1.2/</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
+        <dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsaccessibility"><cite>The NSAccessibility Protocol for macOS</cite></a>.  Apple, Inc. URL: <a href="https://developer.apple.com/documentation/appkit/nsaccessibility">https://developer.apple.com/documentation/appkit/nsaccessibility</a></dd><dt id="bib-core-aam-1.1">[CORE-AAM-1.1]</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joanmarie Diggs; Joseph Scheuhammer; Richard Schwerdtfeger; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-msaa">[MSAA]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx"><cite>Microsoft Active Accessibility (MSAA) 2.0</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ms697707.aspx">https://msdn.microsoft.com/en-us/library/ms697707.aspx</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://tools.ietf.org/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://tools.ietf.org/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc8174">https://tools.ietf.org/html/rfc8174</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/ee684009%28v=vs.85%29.aspx</a></dd><dt id="bib-uia-express">[UIA-EXPRESS]</dt><dd><a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx"><cite>The IAccessibleEx Interface</cite></a>.  Microsoft Corporation. URL: <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx">https://msdn.microsoft.com/en-us/library/windows/desktop/dd561898%28v=vs.85%29.aspx</a></dd><dt id="bib-wai-aria-1.2">[WAI-ARIA-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.2/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.2</cite></a>. Joanmarie Diggs; Shane McCarron; James Nurthen; Michael Cooper; Richard Schwerdtfeger; James Craig.  W3C. 18 December 2019. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-1.2/">https://www.w3.org/TR/wai-aria-1.2/</a></dd><dt id="bib-wcag21">[WCAG21]</dt><dd><a href="https://www.w3.org/TR/WCAG21/"><cite>Web Content Accessibility Guidelines (WCAG) 2.1</cite></a>. Andrew Kirkpatrick; Joshue O Connor; Alastair Campbell; Michael Cooper.  W3C. 5 June 2018. W3C Recommendation. URL: <a href="https://www.w3.org/TR/WCAG21/">https://www.w3.org/TR/WCAG21/</a></dd>
       </dl></section><section id="informative-references">
         <h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
       <dl class="bibliography">
-        <dt id="bib-wai-aria-practices-1.2">[WAI-ARIA-PRACTICES-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.2/"><cite>WAI-ARIA Authoring Practices 1.2</cite></a>. Matthew King; James Nurthen; Zoë Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger.  W3C. 18 December 2018. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.2/">https://www.w3.org/TR/wai-aria-practices-1.2/</a></dd><dt id="bib-wai-aria-roadmap">[WAI-ARIA-ROADMAP]</dt><dd><a href="https://www.w3.org/TR/wai-aria-roadmap/"><cite>Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)</cite></a>. Richard Schwerdtfeger.  W3C. 4 February 2008. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-roadmap/">https://www.w3.org/TR/wai-aria-roadmap/</a></dd>
+        <dt id="bib-wai-aria-practices-1.2">[WAI-ARIA-PRACTICES-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.2/"><cite>WAI-ARIA Authoring Practices 1.2</cite></a>. Matthew King; JaEun Ku; James Nurthen; Zoë Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger.  W3C. 18 December 2019. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.2/">https://www.w3.org/TR/wai-aria-practices-1.2/</a></dd><dt id="bib-wai-aria-roadmap">[WAI-ARIA-ROADMAP]</dt><dd><a href="https://www.w3.org/TR/wai-aria-roadmap/"><cite>Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)</cite></a>. Richard Schwerdtfeger.  W3C. 4 February 2008. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-roadmap/">https://www.w3.org/TR/wai-aria-roadmap/</a></dd>
       </dl></section></section><p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
