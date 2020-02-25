@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 25.1.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 25.3.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -649,16 +649,16 @@ var[data-type]:hover::before {
   "preProcess": [
     null
   ],
-  "publishDate": "2020-02-10",
-  "publishISODate": "2020-02-10T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 10 February 2020"
+  "publishDate": "2020-02-25",
+  "publishISODate": "2020-02-25T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 25 February 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
-      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title p-name">Core Accessibility API Mappings 1.2</h1>
+      <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-02-10">10 February 2020</time>
+        <time class="dt-published" datetime="2020-02-25">25 February 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -3324,6 +3324,25 @@ var[data-type]:hover::before {
 					<span class="relation">Relation: <code>RELATION_DESCRIBED_BY</code> points to accessible nodes matching IDREFs, if the referenced objects are in the accessibility tree</span><br>
 					<span class="relation">Reverse Relation: <code>RELATION_DESCRIPTION_FOR</code> points to element</span><br>
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a> and <a href="#mapping_additional_relations">Mapping Additional Relations</a></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
+					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+				</td>
+			</tr>
+			<tr>
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-description"><code>aria-description</code></a></th>
+				<td class="attr-msaa-ia2">
+					<span class="property">Property: <code>accDescription</code>: <code>&lt;value&gt;</code></span><br>
+					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property">Property: <code>FullDescription</code>: <code>&lt;value&gt;</code></span><br>
+					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property">Property: <code>Description</code>: <code>&lt;value&gt;</code></span><br>
+					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
