@@ -1407,6 +1407,24 @@ var[data-type]:hover::before {
 					</td>
 				</tr>
 				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#comment"><code>comment</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>IA2_ROLE_COMMENT</code></span><br>
+						<span class="property">Object Attribute: <code>xml-roles:comment</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Group</code></span><br>
+						<span class="property">Localized Control Type: <code>comment</code></span><br>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_COMMENT</code></span><br>
+						<span class="property">Object Attribute: <code>xml-roles:comment</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+					</td>
+				</tr>
+				<tr>
 					<th><a class="role-reference" href="https://w3c.github.io/aria/#complementary"><code>complementary</code></a></th>
 					<td class="role-msaa-ia2">
 						<span class="property">Role: <code>IA2_ROLE_LANDMARK</code></span><br>
@@ -1931,6 +1949,24 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXLandmarkMain</code></span><br>
+					</td>
+				</tr>
+				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#mark"><code>mark</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>ROLE_SYSTEM_GROUPING</code></span><br>
+						<span class="property">Role: <code>IA2_ROLE_MARK</code></span><br>
+						<span class="property">Object Attribute: <code>xml-roles:mark</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Group</code></span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_MARK</code></span><br>
+            <span class="property">Object Attribute: <code>xml-roles:mark</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span>
 					</td>
 				</tr>
 				<tr>
@@ -2598,6 +2634,24 @@ var[data-type]:hover::before {
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXSubscriptStyleGroup</code></span><br>
+					</td>
+				</tr>
+				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#suggestion"><code>suggestion</code></a></th>
+					<td class="role-msaa-ia2">
+						<span class="property">Role: <code>IA2_ROLE_SUGGESTION</code></span><br>
+						<span class="property">Object Attribute: <code>xml-roles:suggestion</code></span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Control Type: <code>Group</code></span><br>
+						<span class="property">Localized Control Type: <code>suggestion</code></span><br>
+					</td>
+					<td class="role-atk">
+						<span class="property">Role: <code>ROLE_SUGGESTION</code></span><br>
+						<span class="property">Object Attribute: <code>xml-roles:suggestion</code></span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
 					</td>
 				</tr>
 				<tr>
@@ -4674,10 +4728,10 @@ var[data-type]:hover::before {
 	  <section id="mapping_additional_position">
 			<h4 id="x4-6-3-group-position"><bdi class="secno">4.6.3 </bdi>Group Position<a class="self-link" aria-label="§" href="#mapping_additional_position"></a></h4>
       <p><a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, and <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a> are all 1-based. When the <a class="termref internalDFN" href="#dfn-property" data-link-type="dfn">property</a> is not present or is "0", it indicates the property is not computed or not supported. If any of these properties are specified by the author as either "0" or a negative number, <a class="termref internalDFN" href="#dfn-user-agent" data-link-type="dfn">user agents</a> <em class="rfc2119" title="SHOULD">SHOULD</em> use "1" instead. </p>
-      <p>If <a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a> is not provided or inherited for an element of <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">role</a> <a class="role-reference" href="https://w3c.github.io/aria/#treeitem"><code>treeitem</code></a>, user agents implementing IAccessible2 or <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology-Service Provider Interface">AT-SPI</abbr> <em class="rfc2119" title="MUST">MUST</em> compute it by following the explicit or computed <code>RELATION_NODE_CHILD_OF</code> relations.</p>
+			<p>If <a class="property-reference" href="https://w3c.github.io/aria/#aria-level"><code>aria-level</code></a> is not provided or inherited for an element of <a class="termref internalDFN" href="#dfn-role" data-link-type="dfn">role</a> <a class="role-reference" href="https://w3c.github.io/aria/#treeitem"><code>treeitem</code></a> or <a class="role-reference" href="https://w3c.github.io/aria/#comment"><code>comment</code></a>, user agents implementing IAccessible2 or <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology-Service Provider Interface">AT-SPI</abbr> <em class="rfc2119" title="MUST">MUST</em> compute it by following the explicit or computed <code>RELATION_NODE_CHILD_OF</code> relations.</p>
 	  <p>If <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a> and <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a> are not provided, user agents <em class="rfc2119" title="MUST">MUST</em> compute them as follows:</p>
 		  <ul>
-			  <li>for <code>role="<a class="role-reference" href="https://w3c.github.io/aria/#treeitem">treeitem</a>"</code>, walk the tree backward and forward until the explicit or computed level becomes less than the current item's level. Count items only if they are at the same level as the current item.</li>
+				<li>for <code>role="<a class="role-reference" href="https://w3c.github.io/aria/#treeitem">treeitem</a>"</code> and <code>role="<a class="role-reference" href="https://w3c.github.io/aria/#comment">comment</a>"</code>, walk the tree backward and forward until the explicit or computed level becomes less than the current item's level. Count items only if they are at the same level as the current item.</li>
 			  <li>Otherwise, if the role supports <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a> and <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a>, process the parent (<abbr title="Document Object Model">DOM</abbr> parent or parent defined by <a class="property-reference" href="https://w3c.github.io/aria/#aria-owns"><code>aria-owns</code></a>), counting items that have the same role.</li>
 			  <li>Because these value are 1-based, include the current item  in the computation. For <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, include the current item and other group items if they are before the current item in the <abbr title="Document Object Model">DOM</abbr>. For <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a>, add to that the number of items in the same group after the current item in the <abbr title="Document Object Model">DOM</abbr>.</li>
 		  </ul>
@@ -5239,6 +5293,7 @@ var[data-type]:hover::before {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			
+			<li>25-Feb-2020: Add mappings for <code>aria-description</code>.</li>
 			<li>03-Nov-2019: Remove explicit AXRoleDescription values for <abbr title="macOS Accessibility Protocol">AX API</abbr>. User agents should follow the guidance described in the note.</li>
 			<li>22-Oct-2019: Add mappings for <code>strong</code> and <code>emphasis</code> roles for <abbr title="macOS Accessibility Protocol">AX API</abbr>.</li>
 			<li>22-Oct-2019: Add mappings for <code>code</code> role for <abbr title="macOS Accessibility Protocol">AX API</abbr>.</li>
