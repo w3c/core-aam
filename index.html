@@ -1,4 +1,4 @@
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 25.3.1"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta name="generator" content="ReSpec 25.4.2"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>/* --- ISSUES/NOTES --- */
 .issue-label {
     text-transform: initial;
 }
@@ -51,16 +51,6 @@ input.task-list-item-checkbox {
   bottom: 2px;
   border: none;
   display: inline-block;
-}
-
-.issue a.respec-label-dark {
-  color: #fff;
-  background-color: #000;
-}
-
-.issue a.respec-label-light {
-  color: #000;
-  background-color: #fff;
 }
 </style><style>/* dfn popup panel that list all local references to a dfn */
 dfn {
@@ -132,7 +122,40 @@ dfn {
 <title>Core Accessibility API Mappings 1.2</title>
 
 <script src="https://www.w3.org/scripts/jquery/1.11.3/jquery.min.js"></script>
-<style id="respec-mainstyle">/*****************************************************************
+
+
+
+
+	
+<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
+<link href="common/css/common.css" rel="stylesheet" type="text/css">
+<link href="css/core-aam.css" rel="stylesheet" type="text/css">
+
+
+<script src="common/script/jquery.details.min.js"></script>
+<script src="common/script/mapping-tables.js"></script>
+<script type="text/javascript">
+
+var mappingTableLabels = {
+  viewByTable: "View as a single table",
+  expand: "Expand all",
+  collapse: "Collapse all",
+  showHideCols: "Show/Hide Columns:",
+  showActionText: "Show",
+  hideActionText: "Hide",
+  showToolTipText: "Show column",
+  hideToolTipText: "Hide column",
+
+  // map where keys are @id of associated mapping table:
+  viewByLabels: {
+    "role-mapping-table": "View by roles",
+    "state-property-mapping-table": "View by state/property",
+    "event-mapping-table": "View by state/property"
+  }
+}
+</script>
+
+<script async="" src="/cdn-cgi/bm/cv/2172558837/api.js"></script><style id="respec-mainstyle">/*****************************************************************
  * ReSpec specific CSS
  *****************************************************************/
 @keyframes pop {
@@ -213,7 +236,7 @@ cite .bibref {
 }
 
 code {
-  color: #c83500;
+  color: #c63501;
 }
 
 th code {
@@ -418,40 +441,7 @@ h6 > a.self-link::before {
     display: none;
   }
 }
-</style>
-
-
-
-	
-<link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css">
-<link href="common/css/common.css" rel="stylesheet" type="text/css">
-<link href="css/core-aam.css" rel="stylesheet" type="text/css">
-
-
-<script src="common/script/jquery.details.min.js"></script>
-<script src="common/script/mapping-tables.js"></script>
-<script type="text/javascript">
-
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
-
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
-</script>
-
-<meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var {
+</style><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var {
   position: relative;
   cursor: pointer;
 }
@@ -601,64 +591,19 @@ var[data-type]:hover::before {
     "PR": "https://www.w3.org/TR/accname-aam-1.1/",
     "REC": "https://www.w3.org/TR/accname-aam-1.1/"
   },
-  "localBiblio": {
-    "ACCNAME-AAM": {
-      "aliasOf": "ACCNAME-AAM-1.1"
-    },
-    "ARIA-PRACTICES": {
-      "aliasOf": "WAI-ARIA-PRACTICES-1.1"
-    },
-    "CORE-AAM": {
-      "aliasOf": "CORE-AAM-1.1"
-    },
-    "DPUB-ARIA": {
-      "aliasOf": "DPUB-ARIA-1.0"
-    },
-    "GRAPHICS-ARIA": {
-      "aliasOf": "GRAPHICS-ARIA-1.0"
-    },
-    "GRAPHICS-AAM": {
-      "aliasOf": "GRAPHICS-AAM-1.0"
-    },
-    "EPUB-Content": {
-      "href": "http://www.idpf.org/epub/31/spec/epub-contentdocs.html",
-      "title": "EPUB Content Documents 3.1",
-      "publisher": "IDPF"
-    },
-    "HTML-AAM": {
-      "aliasOf": "HTML-AAM-1.0"
-    },
-    "MathML-Core": {
-      "href": "https://mathml-refresh.github.io/mathml-core/",
-      "title": "MathML Core",
-      "authors": [
-        "David Carlisle",
-        "Frédéric Wang"
-      ]
-    },
-    "SVG-AAM": {
-      "aliasOf": "SVG-AAM-1.0"
-    },
-    "SVG1": {
-      "aliasOf": "SVG"
-    },
-    "WAI-ARIA": {
-      "aliasOf": "WAI-ARIA-1.1"
-    }
-  },
   "preProcess": [
     null
   ],
-  "publishDate": "2020-02-26",
-  "publishISODate": "2020-02-26T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 26 February 2020"
+  "publishDate": "2020-03-30",
+  "publishISODate": "2020-03-30T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 30 March 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
       <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
       
       <h2>
         W3C Editor's Draft
-        <time class="dt-published" datetime="2020-02-26">26 February 2020</time>
+        <time class="dt-published" datetime="2020-03-30">30 March 2020</time>
       </h2>
       <dl>
         <dt>This version:</dt><dd>
@@ -689,7 +634,9 @@ var[data-type]:hover::before {
            (Editor until December 2012)</dd><dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal</span>
             (<a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a>)
            (Editor until January 2009)</dd>
-        <dt>Platform Mapping Maintainers:</dt><dd class="p-author h-card vcard" data-editor-id="96078"><span class="p-name fn">Melanie Richards</span>
+        <dt>
+                Authors:
+              </dt><dd class="p-author h-card vcard" data-editor-id="96078"><span class="p-name fn">Melanie Richards</span>
             (<a class="p-org org h-org h-card" href="https://microsoft.com/">Microsoft Corp.</a>)
            (UIA)</dd><dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>
             (<a class="p-org org h-org h-card" href="https://apple.com/accessibility">Apple, Inc.</a>)
@@ -885,8 +832,10 @@ var[data-type]:hover::before {
     <dd>
       <p>A <a href="#dfn-node" class="internalDFN" data-link-type="dfn">node</a> in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn">accessibility tree</a> of a platform <a href="#dfn-accessibility-api" class="internalDFN" data-link-type="dfn">accessibility <abbr title="application programming interface">API</abbr></a>. Accessible objects expose various <a class="termref internalDFN" data-lt="state" href="#dfn-state" data-link-type="dfn">states</a>, <a class="termref internalDFN" data-lt="property" href="#dfn-property" data-link-type="dfn">properties</a>, and <a class="termref internalDFN" data-lt="event" href="#dfn-event" data-link-type="dfn">events</a> for use by <a href="#dfn-assistive-technology" class="internalDFN" data-link-type="dfn">assistive technologies</a>.  In the context of markup languages (e.g., <abbr title="Hypertext Markup Language">HTML</abbr> and <abbr title="Scalable Vector Graphics">SVG</abbr>) in general, and of <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> in particular, markup <a class="termref internalDFN" data-lt="element" href="#dfn-element" data-link-type="dfn">elements</a> and their <a class="termref internalDFN" data-lt="attribute" href="#dfn-attribute" data-link-type="dfn">attributes</a> are represented as accessible objects.  </p>
     </dd>
-    
-    
+    <dt><dfn id="dfn-activation-behavior" data-dfn-type="dfn">Activation behavior</dfn></dt>
+    <dd>
+      <p>The action taken when an <a href="#dfn-event" class="internalDFN" data-link-type="dfn">event</a>, typically initiated by users through an input device, causes an element to fulfill a defined role. The role may be defined for that element by the host language, or by author-defined variables, or both. The role for any given element may be a generic action, or may be unique to that element. For example, the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> or <abbr title="Scalable Vector Graphics">SVG</abbr> <code>&lt;a&gt;</code> element shall be to cause the user agent to traverse the link specified in the <code>href</code> attribute, with the further optional parameter of specifying the browsing context for the traversal (such as the current window or tab, a named window, or a new window); the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> <code>&lt;input&gt;</code> element with the <code>type</code> attribute value <code>submit</code> shall be to send the values of the form elements to an author-defined <abbr title="Internationalized Resource Identifiers">IRI</abbr> by the author-defined <abbr title="Hypertext Transfer Protocol">HTTP</abbr> method.</p>
+    </dd>
     <dt><dfn data-lt="assistive technology|Assistive Technologies" id="dfn-assistive-technology" data-dfn-type="dfn">Assistive Technologies</dfn></dt>
     <dd><p>Hardware and/or software that:</p>
 			<ul>
@@ -956,7 +905,7 @@ var[data-type]:hover::before {
     </dd>
     <dt><dfn data-lt="live region|live regions|Live Region" id="dfn-live-region" data-dfn-type="dfn">Live Region</dfn></dt>
     <dd>
-      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. This practice has become commonplace with the growing use of Ajax. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
+      <p>Live regions are perceivable regions of a web page that are typically updated as a result of an external event when user focus may be elsewhere. These regions are not always updated as a result of a user interaction. Examples of live regions include a chat log, stock ticker, or a sport scoring section that updates periodically to reflect game statistics. Since these asynchronous areas are expected to update outside the user's area of focus, assistive technologies such as screen readers have either been unaware of their existence or unable to process them for the user. <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> has provided a collection of properties that allow the author to identify these live regions and process them: aria-live, aria-relevant, aria-atomic, and aria-busy.</p>
     </dd>
     <dt><dfn id="dfn-primary-content-element" data-dfn-type="dfn">Primary Content Element</dfn></dt>
     <dd>
@@ -5331,7 +5280,7 @@ var[data-type]:hover::before {
 	<div data-include="acknowledgements/funders.html" data-include-replace="true"></div>
 </section>
 
-
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'57c491e45edfebe4',m:'7232bb5668ed9700dc37ee371d24e7375978f135-1585600032-1800-AbuFZcYa1E5QeedyV/kiFFfk/eFxXc1ERJBlx0mC1vVlBg+rQWgJ8lEBmvCbD/KH127wwW8Zk0nL9H4wdGENfgu7cgpytyff6GKTsmyoXFrHZDazUB2nL92B5+cLWuOyXvztiSgyOFwEGjWUsPizAovUfaDPs0xudzW/HuBpb9IhZEZVLnqzG+EGGeIupx8FgQ==',s:[0xfd130a1f11,0x5627e559d8],fb:0,}})();</script>
 
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
         <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
