@@ -35,12 +35,11 @@ var mappingTableLabels = {
 }
 </script>
 
-<script async="" src="/cdn-cgi/bm/cv/2172558837/api.js"></script><style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
-  "useExperimentalStyles": true,
-  "includePermalinks": true,
+<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style><meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent."><link rel="canonical" href="https://www.w3.org/TR/core-aam-1.2/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+  "github": "w3c/core-aam",
+  "doJsonLd": true,
   "lint": true,
   "specStatus": "ED",
-  "diffTool": "http://www.aptest.com/standards/htmldiff/htmldiff.pl",
   "shortName": "core-aam-1.2",
   "copyrightStart": "2014",
   "license": "document",
@@ -149,16 +148,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2020-07-10",
-  "publishISODate": "2020-07-10T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 10 July 2020"
+  "publishDate": "2020-11-05",
+  "publishISODate": "2020-11-05T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 05 November 2020"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2020-07-10">10 July 2020</time>
+      <time class="dt-published" datetime="2020-11-05">05 November 2020</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -202,7 +201,15 @@ var mappingTableLabels = {
            (ATK / AT-SPI)</dd><dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>
             (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
            (MSAA, IAccessible2)</dd>
-      
+      <dt>Participate:</dt><dd>
+    <a href="https://github.com/w3c/core-aam/">GitHub w3c/core-aam</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/core-aam/issues/">File a bug</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/core-aam/commits/gh-pages">Commit history</a>
+  </dd><dd>
+    <a href="https://github.com/w3c/core-aam/pulls/">Pull requests</a>
+  </dd>
     </dl>
     
     
@@ -237,8 +244,10 @@ var mappingTableLabels = {
     Editor's Draft.
     
   </p><p>
-    
-    Comments regarding this document are welcome.
+    <a href="https://github.com/w3c/core-aam/issues/">GitHub Issues</a> are preferred for
+          discussion of this specification.
+        
+    Alternatively, you can send comments to our mailing list.
           Please send them to
           <a href="mailto:public-aria@w3.org">public-aria@w3.org</a>
           (<a href="https://lists.w3.org/Archives/Public/public-aria/">archives</a>).
@@ -269,7 +278,7 @@ var mappingTableLabels = {
   </p><p>
                   This document is governed by the
                   <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intro_aapi"><bdi class="secno">1.1 </bdi>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a class="tocxref" href="#comparing-accessibility-apis"><bdi class="secno">1.2 </bdi>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#atk-at-spi"><bdi class="secno">1.2.1 </bdi><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI</a></li><li class="tocline"><a class="tocxref" href="#uia-ui-automation"><bdi class="secno">1.2.2 </bdi><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a class="tocxref" href="#accessible-names-and-descriptions"><bdi class="secno">1.2.3 </bdi>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfc-2119-keywords"><bdi class="secno">2.1 </bdi>RFC-2119 Keywords</a></li><li class="tocline"><a class="tocxref" href="#normative-and-informative-sections"><bdi class="secno">2.2 </bdi>Normative and Informative Sections</a></li><li class="tocline"><a class="tocxref" href="#features-deprecated-in-wai-aria"><bdi class="secno">2.3 </bdi>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">3. </bdi>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#mapping"><bdi class="secno">4. </bdi>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><bdi class="secno">4.1 </bdi>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><bdi class="secno">4.2 </bdi>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><bdi class="secno">4.3 </bdi>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><bdi class="secno">4.4 </bdi>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><bdi class="secno">4.4.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><bdi class="secno">4.4.2 </bdi>Role Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_state-property"><bdi class="secno">4.5 </bdi>State and Property Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#statePropertyMappingGeneralRules"><bdi class="secno">4.5.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_state-property_table"><bdi class="secno">4.5.2 </bdi>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#not_mapped"><bdi class="secno">4.5.2.1 </bdi>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><bdi class="secno">4.6 </bdi>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><bdi class="secno">4.6.1 </bdi>Name and Description</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations"><bdi class="secno">4.6.2 </bdi>Relations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_reverse_relations"><bdi class="secno">4.6.2.1 </bdi>Reverse Relations</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_implied"><bdi class="secno">4.6.2.2 </bdi>Implied reverse relations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional_position"><bdi class="secno">4.6.3 </bdi>Group Position</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><bdi class="secno">4.7 </bdi>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><bdi class="secno">4.8 </bdi>Events</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_events_state-change"><bdi class="secno">4.8.1 </bdi>State and Property Change Events</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_visibility"><bdi class="secno">4.8.2 </bdi>Changes to document content or node visibility</a></li><li class="tocline"><a class="tocxref" href="#focus_state_event_table"><bdi class="secno">4.8.3 </bdi>Focus Changes</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_selection"><bdi class="secno">4.8.4 </bdi>Selection</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_menus"><bdi class="secno">4.8.5 </bdi>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#changelog"><bdi class="secno">A. </bdi>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft</a></li><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation"><bdi class="secno">A.2 </bdi>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intro_aapi"><bdi class="secno">1.1 </bdi>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a class="tocxref" href="#comparing-accessibility-apis"><bdi class="secno">1.2 </bdi>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#atk-at-spi"><bdi class="secno">1.2.1 </bdi><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI</a></li><li class="tocline"><a class="tocxref" href="#uia-ui-automation"><bdi class="secno">1.2.2 </bdi><abbr title="User Interface Automation">UIA</abbr> (<abbr title="user interface">UI</abbr> Automation)</a></li><li class="tocline"><a class="tocxref" href="#accessible-names-and-descriptions"><bdi class="secno">1.2.3 </bdi>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfc-2119-keywords"><bdi class="secno">2.1 </bdi>RFC-2119 Keywords</a></li><li class="tocline"><a class="tocxref" href="#normative-and-informative-sections"><bdi class="secno">2.2 </bdi>Normative and Informative Sections</a></li><li class="tocline"><a class="tocxref" href="#features-deprecated-in-wai-aria"><bdi class="secno">2.3 </bdi>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">3. </bdi>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#mapping"><bdi class="secno">4. </bdi>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><bdi class="secno">4.1 </bdi>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><bdi class="secno">4.2 </bdi>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><bdi class="secno">4.3 </bdi>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><bdi class="secno">4.4 </bdi>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><bdi class="secno">4.4.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><bdi class="secno">4.4.2 </bdi>Role Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_state-property"><bdi class="secno">4.5 </bdi>State and Property Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#statePropertyMappingGeneralRules"><bdi class="secno">4.5.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_state-property_table"><bdi class="secno">4.5.2 </bdi>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#not_mapped"><bdi class="secno">4.5.2.1 </bdi>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><bdi class="secno">4.6 </bdi>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><bdi class="secno">4.6.1 </bdi>Name and Description</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations"><bdi class="secno">4.6.2 </bdi>Relations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_reverse_relations"><bdi class="secno">4.6.2.1 </bdi>Reverse Relations</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_implied"><bdi class="secno">4.6.2.2 </bdi>Implied reverse relations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional_position"><bdi class="secno">4.6.3 </bdi>Group Position</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><bdi class="secno">4.7 </bdi>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><bdi class="secno">4.8 </bdi>Events</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_events_state-change"><bdi class="secno">4.8.1 </bdi>State and Property Change Events</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_visibility"><bdi class="secno">4.8.2 </bdi>Changes to document content or node visibility</a></li><li class="tocline"><a class="tocxref" href="#focus_state_event_table"><bdi class="secno">4.8.3 </bdi>Focus Changes</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_selection"><bdi class="secno">4.8.4 </bdi>Selection</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_menus"><bdi class="secno">4.8.5 </bdi>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#changelog"><bdi class="secno">A. </bdi>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft</a></li><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation"><bdi class="secno">A.2 </bdi>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>
         Normative references
       </a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.2 </bdi>
         Informative references
@@ -565,6 +574,10 @@ var mappingTableLabels = {
     <dt><dfn id="dfn-understandable" data-dfn-type="dfn">Understandable</dfn></dt>
     <dd>
       <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
+    </dd>
+    <dt><dfn data-lt="unicode braille|Unicode Braille Patterns" id="dfn-unicode-braille" data-dfn-type="dfn">Unicode Braille Patterns</dfn></dt>
+    <dd>
+      <p>In Unicode, braille is represented in a block called Braille Patterns (U+2800..U+28FF). The block contains all 256 possible patterns of an 8-dot braille cell; this includes the complete 6-dot cell range which is represented by U+2800..U+283F. In all braille systems, the braille pattern dots-0 (U+2800) is used to represent a space or the lack of content; it is also called a blank Braille pattern. See <cite><a href="https://en.wikipedia.org/wiki/Braille_Patterns">Braille Patterns on Wikipedia</a>.</cite></p>
     </dd>
     <dt><dfn data-lt="user agent|user agents|User Agent" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
     <dd>
@@ -4840,14 +4853,208 @@ var mappingTableLabels = {
 	</section>
 	</section>
 	<section class="appendix informative section" id="acknowledgements">
-	<h2 id="b-acknowledgments"><bdi class="secno">B. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
-	<p>The following people contributed to the development of this document.</p>
-	<div data-include="acknowledgements/aria-wg-active.html" data-include-replace="true"></div>
-	<div data-include="acknowledgements/aria-contributors.html" data-include-replace="true"></div>
-	<div data-include="acknowledgements/funders.html" data-include-replace="true"></div>
+		<h2 id="b-acknowledgments"><bdi class="secno">B. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgements"></a></h2><p><em>This section is non-normative.</em></p>
+		<p>The following people contributed to the development of this document.</p>
+		<section class="section" id="ack_group">
+	<h3 id="b-1-participants-active-in-the-aria-wg-at-the-time-of-publication"><bdi class="secno">B.1 </bdi>Participants active in the ARIA WG at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
+	<ul>
+		<li>Ann Abbott (Invited Expert)</li>
+		<li>Irfan Ali (Educational Testing Service)</li>
+		<li>Amelia Bellamy-Royds (Invited Expert)</li>
+		<li>Zoë Bijl (Invited Expert)</li>
+		<li>David Bolter (Mozilla Foundation)</li>
+		<li>Bogdan Brinza (Microsoft Corporation)</li>
+		<li>Shari Butler (Pearson plc)</li>
+		<li>Thaddeus Cambron (Invited Expert)</li>
+		<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr> Staff)</li>
+		<li>James Craig (Apple Inc.) </li>
+		<li>Joanmarie Diggs (Igalia)</li>
+		<li>John Foliot (Deque Systems, Inc.)</li>
+		<li>Bryan Garaventa (SSB BART Group)</li>
+		<li>Matt Garrish (DAISY Consortium)</li>
+		<li>Becky Gibson (Invited Expert)</li>
+		<li>Glen Gordon (The Paciello Group, LLC)</li>
+		<li>Jon Gunderson (University of Illinois at Urbana-Champaign)</li>
+		<li>Matthew King (Facebook)</li>
+		<li>JaEun Jemma Ku (University of Illinois at Urbana-Champaign)</li>
+		<li>Charles LaPierre (Benetech)</li>
+		<li>Aaron Leventhal (Google, Inc.)</li>
+		<li>Dominic Mazzoni (Google, Inc.)</li>
+		<li>Shane McCarron (Invited Expert, Aptest)</li>
+		<li>Jan McSorley (Pearson plc)</li>
+		<li>James Nurthen (Adobe) </li>
+		<li>Ian Pouncey (The Paciello Group, LLC)</li>
+		<li>Ruoxi Ran (<abbr title="World Wide Web Consortium">W3C</abbr> Staff)</li>
+		<li>Janina Sajka (Invited Expert, The Linux Foundation)</li>
+		<li>Stefan Schnabel (SAP SE) </li>
+		<li>Lisa Seeman-Kestenbaum (Invited Expert) </li>
+		<li>Tzviya Siegman (Wiley)</li>
+		<li>Alexander Surkov (Mozilla Foundation)</li>
+		<li>Job van Achterberg (Invited Expert)</li>
+		<li>Evan Yamanishi (W. W. Norton)</li>
+		<li>Jason White (Educational Testing Service)</li>
+	</ul>
 </section>
 
-<script type="text/javascript">(function(){window['__CF$cv$params']={r:'5b0cd5974a0de708',m:'8ebe55da54fc00c44b4ebfae010c80ff2a79c19d-1594410842-1800-AUAobA94G1c/Iz5BUXzZfzEOtqKUnD4QRfKrEy0rkt3exwTBLeMHDJcuCATwXNlkjnTUAQPN4bEGsrz9lduYJcUfzSS5nuEVvy3v+xvUoRHfZY5NkWcRyoA4IsIq7WQuB4BrTwXzOPqRhKWmBTNlDFA85OeS9WTvdmYCZhtKMyFJ8w+klTyjk2tgepdDmBp0Gw==',s:[0x7ed9612163,0x20654a24da],}})();</script>
+		<section class="section" id="ack_others">
+	<h3 id="b-2-other-aria-contributors-commenters-and-previously-active-participants"><bdi class="secno">B.2 </bdi>Other ARIA contributors, commenters, and previously active participants<a class="self-link" aria-label="§" href="#ack_others"></a></h3>
+	<ul>
+		<li>Shadi Abou-Zahra (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Jim Allan (TSB)</li>
+		<li>Jonny Axelsson (Opera Software)</li>
+		<li>David Baron (Mozilla Foundation)</li>
+		<li>Art Barstow (Nokia Corporation)</li>
+		<li>Simon Bates</li>
+		<li>Christy Blew (University of Illinois at Urbana-Champaign)</li>
+		<li>Chris Blouch (AOL)</li>
+		<li>Judy Brewer (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
+		<li>Mark Birbeck (Sidewinder Labs)</li>
+		<li>Sally Cain (Royal National Institute of Blind People (RNIB))</li>
+		<li>Gerardo Capiel (Benetech)</li>
+		<li>Ben Caldwell (Trace)</li>
+		<li>Sofia Celic-Li</li>
+		<li>Jaesik Chang (Samsung Electronics Co., Ltd.)</li>
+		<li>Alex Qiang Chen (University of Manchester)</li>
+		<li>Charles Chen (Google, Inc.)</li>
+		<li>Christian Cohrs</li>
+		<li>Deborah Dahl</li>
+		<li>Erik Dahlström (Opera Software)</li>
+		<li>Dimitar Denev (Frauenhofer Gesellschaft)</li>
+		<li>Micah Dubinko (Invited Expert)</li>
+		<li>Mandana Eibegger</li>
+		<li>Beth Epperson (Websense)</li>
+		<li>Fred Esch (IBM Corporation)</li>
+		<li>Donald Evans (AOL)</li>
+		<li>Steve Faulkner (The Paciello Group, LLC) </li>
+		<li>Chris Fleizach (Apple Inc.)</li>
+		<li>Kelly Ford (Microsoft Corporation)</li>
+		<li>Geoff Freed (Invited Expert, NCAM)</li>
+		<li>Christopher Gallelo (Microsoft Corporation)</li>
+		<li>Billy Gregory (The Paciello Group, LLC)</li>
+		<li>Karl Groves (The Paciello Group, LLC)</li>
+		<li>Birkir Gunnarsson (Deque Systems, Inc.)</li>
+		<li>Kentarou Fukuda (IBM Corporation)</li>
+		<li>Bryan Garaventa</li>
+		<li>Guido Geloso</li>
+		<li>Ali Ghassemi</li>
+		
+		<li>Alfred S. Gilman</li>
+		<li>Andres Gonzalez (Adobe Systems Inc.)</li>
+		<li>Scott González (JQuery Foundation)</li>
+		<li>James Graham</li>
+		<li>Georgios Grigoriadis (SAP AG)</li>
+		<li>Jeff Grimes (Oracle)</li>
+		<li>Loretta Guarino Reid (Google, Inc.)</li>
+		<li>Markus Gylling (DAISY Consortium)</li>
+		<li>Markku Hakkinen (Educational Testing Service)</li>
+		<li>Katie Haritos-Shea (Knowbility)</li>
+		<li>Barbara Hartel</li>
+		<li>James Hawkins (Google, Inc.)</li>
+		<li>Benjamin Hawkes-Lewis</li>
+		<li>Sean Hayes (Microsoft Corporation)</li>
+		<li>Mona Heath (University of Illinois at Urbana-Champaign)</li>
+		<li>Jan Heck</li>
+		<li>Shawn Henry</li>
+		<li>Tina Homboe</li>
+		<li>Nicholas Hoyt</li>
+		<li>John Hrvatin (Microsoft Corporation)</li>
+		<li>Takahiro Inada</li>
+		<li>Masayasu Ishikawa (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Jim Jewitt</li>
+		<li>Kenny Johar (Microsoft Corporation)</li>
+		<li>Shilpi Kapoor (BarrierBreak Technologies)</li>
+		<li>Masahiko Kaneko (Microsoft Corporation)</li>
+		<li>Marjolein Katsma</li>
+		<li>Susann Keohane (IBM Corporation)</li>
+		<li>George Kerscher (International Digital Publishing Forum)</li>
+		<li>Jason Kiss (Department of Internal Affairs, New Zealand Government)</li>
+		<li>Todd Kloots</li>
+		<li>Jamie Knight (British Broadcasting Corporation)</li>
+		<li>Johannes Koch</li>
+		<li>Gerard K. Cohen</li>
+		<li>Sam Kuper</li>
+		<li>Earl Johnson (Sun)</li>
+		<li>Jael Kurz</li>
+		<li>Rajesh Lal (Nokia Corporation)</li>
+		<li>Diego La Monica (International Webmasters Association / <abbr title="Hypertext Markup Language">HTML</abbr> Writers Guild (IWA-HWG))</li>
+		
+		<li>Gez Lemon (International Webmasters Association / <abbr title="Hypertext Markup Language">HTML</abbr> Writers Guild (IWA-HWG))</li>
+		<li>Alex Li (SAP)</li>
+		<li>Chris Lilley</li>
+		<li>Thomas Logan (HiSoftware Inc.)</li>
+		<li>Brian Loh</li>
+		<li>William Loughborough (Invited Expert)</li>
+		<li>Linda Mao (Microsoft)</li>
+		<li>David MacDonald (Invited Expert, CanAdapt Solutions Inc.)</li>
+		<li>Carolyn MacLeod</li>
+		<li>Anders Markussen (Opera Software)</li>
+		<li>Krzysztof Maczyński </li>
+		<li>Matthew May (Adobe Systems Inc.)</li>
+		<li>Mark McCarthy</li>
+		<li>Charles McCathie Nevile (Yandex)</li>
+		<li>Heather Migliorisi (Invited Expert)</li>
+		<li>Mary Jo Mueller (IBM Corporation)</li>
+		<li>Alexandre Morgaut (4D)</li>
+		<li>Ann Navarro (Invited Expert)</li>
+		<li>Joshue O Connor (Invited Expert, CFIT)</li>
+		<li>Artur Ortega (Microsoft Corporation)</li>
+		<li>Sailesh Panchang (Deque)</li>
+		<li>Lisa Pappas (Society for Technical Communication (STC))</li>
+		<li>Marta Pawlowlska (Samsung Electronics Co., Ltd.)</li>
+		<li>Dave Pawson (RNIB)</li>
+		<li>Steven Pemberton (CWI Amsterdam)</li>
+		<li>Simon Pieters (Opera Software)</li>
+		<li>Jean-Bernard Piot (4D)</li>
+		<li>David Poehlman, Simon Pieters (Opera Software)</li>
+		<li>Sarah Pulis (Media Access Australia)</li>
+		<li>T.V. Raman (Google, Inc.)</li>
+		<li>Jan Richards</li>
+		<li>Gregory Rosmaita (Invited Expert)</li>
+		<li>Tony Ross (Microsoft Corporation)</li>
+		<li>Alex Russell (Dojo Foundation) (</li>
+		<li>Mark Sadecki (Invited Expert)</li>
+		<li>Mario Sánchez Prada (Samsung Electronics Co., Ltd. and Gnome Foundation)</li>
+		<li>Martin Schaus (SAP AG)</li>
+		<li>Doug Schepers (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Cynthia Shelly (Microsoft Corporation) </li>
+		<li>Joseph Scheuhammer (Invited Expert, Inclusive Design Research Centre, OCAD University) </li>
+		<li>Matthias Schmitt </li>
+		<li>Richard Schwerdtfeger (IBM, Knowbility)</li>
+		<li>Marc Silbey (Microsoft Corporation)</li>
+		<li>Leif Halvard Sili</li>
+		<li>Henri Sivonen (Mozilla)</li>
+		<li>Michael Smith (<abbr title="World Wide Web Consortium">W3C</abbr>)</li>
+		<li>Andi Snow-Weaver (IBM Corporation)</li>
+		<li>Ville Skyttä </li>
+		<li>Henny Swan (BBC)</li>
+		<li>Neil Soiffer (Design Science)</li>
+		<li>Vitaly Sourikov</li>
+		<li>Mike Squillace (IBM)</li>
+		<li>Maciej Stachowiak (Apple Inc.)</li>
+		<li>Christophe Strobbe</li>
+		<li>Suzanne Taylor (Pearson plc)</li>
+		<li>Terrill Thompson</li>
+		<li>David Todd</li>
+		<li>Gregg Vanderheiden (Invited Expert, Trace)</li>
+		<li>Anne van Kesteren</li>
+		<li>Léonie Watson (The Paciello Group, LLC)</li>
+		<li>Wen He (Tencent)</li>
+		<li>Wu Wei (<abbr title="World Wide Web Consortium">W3C</abbr> / RITT)</li>
+		<li>Ryan Williams (Oracle)</li>
+		<li>Tom Wlodkowski</li>
+		<li>Sam White (Apple Inc.)</li>
+		<li>Marco Zehe (Mozilla Foundation)</li>
+		<li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
+	</ul>
+</section>
+
+		<section class="section" id="ack_funders">
+	<h3 id="b-3-enabling-funders"><bdi class="secno">B.3 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
+	<p>This publication has been funded in part with U.S. Federal funds from the Department of Education, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067 and currently under contract number HHSP23301500054C. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
+</section>
+
+	</section>
+
 
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
       <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>
