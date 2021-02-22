@@ -139,16 +139,7 @@
     */
     
     // Working group info
-    wg:           "Accessible Rich Internet Applications Working Group",
-    wgURI:        "https://www.w3.org/WAI/ARIA/",
-    wgPublicList: "public-aria",
-
-    // URI of the patent status for this WG, for Rec-track documents
-    // !!!! IMPORTANT !!!!
-    // This is important for Rec-track documents, do not copy a patent URI from a random
-    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-    // Team Contact.
-    wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83726/status",
+    group: 83726,
     
     tocIntroductory: true,
     //maxTocLevel: 4,
@@ -156,9 +147,9 @@
     // Spec URLs
     ariaSpecURLs: {
       "ED": "https://w3c.github.io/aria/",
-      "WD" : "https://www.w3.org/TR/wai-aria-1.1/",
-      "CR" : "https://www.w3.org/TR/wai-aria-1.1/",
-      "PR" : "https://www.w3.org/TR/wai-aria-1.1/",
+      "WD" : "https://www.w3.org/TR/wai-aria-1.2/",
+      "CR" : "https://www.w3.org/TR/wai-aria-1.2/",
+      "PR" : "https://www.w3.org/TR/wai-aria-1.2/",
       "REC": "https://www.w3.org/TR/wai-aria/"
     },
     accNameURLs: {
@@ -200,7 +191,7 @@ var mappingTableLabels = {
 <body>
 <section id="abstract">
 	<p>This document describes how <a class="termref">user agents</a> should expose semantics of web content languages to <a class="termref">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. This helps users with disabilities to obtain and interact with information using <a class="termref">assistive technologies</a>. Documenting these mappings promotes interoperable exposure of roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent. </p>
-			<p>This Core Accessibility API Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref">roles</a>, states, and <a class="termref">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [[!WAI-ARIA-1.2]]. Other Accessibility API Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and WAI-ARIA extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility API Mappings 1.1</a> [[!CORE-AAM-1.1]] W3C Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
+			<p>This Core Accessibility API Mappings specification defines support that applies across multiple content technologies, including general keyboard navigation support and mapping of general-purpose <a class="termref">roles</a>, states, and <a class="termref">properties</a> provided in Web content via <cite><a href="http://www.w3.org/TR/wai-aria-1.2/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr></a></cite> [[WAI-ARIA-1.2]]. Other Accessibility API Mappings specifications depend on and extend this Core specification for specific technologies, including native technology features and WAI-ARIA extensions. This document updates and will eventually supersede the guidance in the <a href="http://www.w3.org/TR/core-aam-1.1/">Core Accessibility API Mappings 1.1</a> [[CORE-AAM-1.1]] W3C Recommendation. It is part of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> suite described in the <a href="http://www.w3.org/WAI/intro/aria.php"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> Overview</a>.</p>
 </section>
 <section id="sotd">
 	<p>This is a <a href="https://www.w3.org/2020/Process-20200915/#RecsCR">Candidate Recommendation</a> of Core-AAM 1.2 by the <a href="https://www.w3.org/WAI/ARIA/">Accessible Rich Internet Applications Working Group</a> of the <a href="http://www.w3.org/WAI/">Web Accessibility Initiative</a>. This is a Call for Implementations; the Accessible Rich Internet Applications Working Group requests that initial implementations be submitted by <strong>26 March 2021</strong>. The Working Group targets March 2021 to complete the testing process and produce the <a href="https://w3c.github.io/test-results/core-aam-1.2/">implementation report</a>. A <a href="http://www.w3.org/TR/wai-aria-1.1/#changelog">history of changes to WAI-ARIA 1.2</a> is available in the appendix. Some features are marked as <q><a href="#items-at-risk">at risk</a></q> due to concerns around implementation and testing challenges, and could be removed if testing does not document sufficient implementation. The Working Group
@@ -295,8 +286,6 @@ var mappingTableLabels = {
 <section id="glossary">
   <h2>Important Terms</h2>
 	<div data-include="common/terms.html" data-oninclude="restrictReferences"></div>
-</section>
-<section class="section" id="keyboard-focus">
 </section>
 <section id="mapping">
 	<h2>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></h2>
