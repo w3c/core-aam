@@ -148,16 +148,16 @@ var mappingTableLabels = {
   "preProcess": [
     null
   ],
-  "publishDate": "2021-01-20",
-  "publishISODate": "2021-01-20T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 20 January 2021"
+  "publishDate": "2021-02-22",
+  "publishISODate": "2021-02-22T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 22 February 2021"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2021-01-20">20 January 2021</time>
+      <time class="dt-published" datetime="2021-02-22">22 February 2021</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -440,12 +440,14 @@ var mappingTableLabels = {
     </dd>
     <dt><dfn data-lt="deprecated|deprecate|deprecation|Deprecated" id="dfn-deprecated" data-dfn-type="dfn">Deprecated</dfn></dt>
     <dd>
-      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">Deprecated Requirements</a> in the Conformance section.</p>
+      <p>A deprecated <a class="termref" href="#dfn-role">role</a>, <a class="termref" href="#dfn-state">state</a>, or <a class="termref" href="#dfn-property">property</a> is one which has been outdated by newer constructs or changed circumstances, and which may be removed in future versions of the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> specification. <a class="termref internalDFN" data-lt="user agent" href="#dfn-user-agent" data-link-type="dfn">User agents</a> are encouraged to continue to support items identified as deprecated for backward compatibility. For more information, see <a href="#deprecated" class="specref respec-offending-element" title="Linter (local-refs-exist): Broken local reference found in document. Please fix the links mentioned. See developer console. Occured" id="respec-offender-linter-local-refs-exist-broken-local-reference-found-in-document-please-fix-the-links-mentioned-see-developer-console-occured">Deprecated Requirements</a> in the Conformance section.</p>
     </dd>
     <dt><dfn data-lt="desktop focus|desktop focus events|Desktop focus event" id="dfn-desktop-focus" data-dfn-type="dfn">Desktop focus event</dfn></dt>
     <dd>
       <p>Event from/to the host operating system via the accessibility <abbr title="application programming interface">API</abbr>, notifying of a change of input focus.</p>
     </dd>
+	<dt><dfn id="dfn-domstring" data-dfn-type="dfn">DOMString</dfn>
+	</dt><dd>Sequence of 16-bit unsigned integers, typically interpreted as UTF-16 code units. This corresponds to the JavaScript primitive String type.</dd>
     <dt><dfn data-lt="element|elements|element's|Element" id="dfn-element" data-dfn-type="dfn">Element</dfn></dt>
     <dd>
       <p>In this specification, element is used as it is in markup languages. Elements are the structural elements in markup language that contains the data profile for <a class="termref internalDFN" data-lt="object" href="#dfn-object" data-link-type="dfn">objects</a>.</p>
@@ -575,11 +577,11 @@ var mappingTableLabels = {
     <dd>
       <p>Presentable to users in ways they can construct an appropriate meaning. References in this document relate to <cite><a href="https://www.w3.org/TR/WCAG21/#understandable"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1 Principle 3: Information and the operation of user interface must be understandable</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-wcag21" title="Web Content Accessibility Guidelines (WCAG) 2.1">WCAG21</a></cite>].</p>
     </dd>
-    <dt><dfn data-lt="unicode braille|Unicode Braille Patterns" id="dfn-unicode-braille" data-dfn-type="dfn">Unicode Braille Patterns</dfn></dt>
-    <dd>
-      <p>In Unicode, braille is represented in a block called Braille Patterns (U+2800..U+28FF). The block contains all 256 possible patterns of an 8-dot braille cell; this includes the complete 6-dot cell range which is represented by U+2800..U+283F. In all braille systems, the braille pattern dots-0 (U+2800) is used to represent a space or the lack of content; it is also called a blank Braille pattern. See <cite><a href="https://en.wikipedia.org/wiki/Braille_Patterns">Braille Patterns on Wikipedia</a>.</cite></p>
-    </dd>
-    <dt><dfn data-lt="user agent|user agents|User Agent" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
+	<dt><dfn data-lt="unicode braille|Unicode Braille Patterns" id="dfn-unicode-braille" data-dfn-type="dfn">Unicode Braille Patterns</dfn></dt>
+	<dd>
+		<p>In Unicode, braille is represented in a block called Braille Patterns (U+2800..U+28FF). The block contains all 256 possible patterns of an 8-dot braille cell; this includes the complete 6-dot cell range which is represented by U+2800..U+283F. In all braille systems, the braille pattern dots-0 (U+2800) is used to represent a space or the lack of content; it is also called a blank Braille pattern. See <cite><a href="https://en.wikipedia.org/wiki/Braille_Patterns">Braille Patterns on Wikipedia</a>.</cite></p>
+	</dd>
+	<dt><dfn data-lt="user agent|user agents|User Agent" id="dfn-user-agent" data-dfn-type="dfn">User Agent</dfn></dt>
     <dd>
       <p>Any software that retrieves, renders and facilitates end user interaction with Web content. This definition may differ from that used in other documents.</p>
     </dd>
