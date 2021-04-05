@@ -190,16 +190,16 @@ var mappingTableLabels = {
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishDate": "2021-03-29",
-  "publishISODate": "2021-03-29T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 29 March 2021"
+  "publishDate": "2021-04-05",
+  "publishISODate": "2021-04-05T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 05 April 2021"
 }</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry"><div class="head">
     <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2021-03-29">29 March 2021</time>
+      <time class="dt-published" datetime="2021-04-05">05 April 2021</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -2799,9 +2799,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>Grid.ColumnCount</code>: <code>&lt;value&gt;</code></span>
 				</td>
 				<td class="attr-atk">
-					<p>If the value of <code>aria-colcount</code> is <code>-1</code>, calculate the column count based on the number of columns in the <abbr title="Document Object Model">DOM</abbr> and expose that value as described below along with <code>STATE_INDETERMINATE</code>.</p>
-					<span class="property">Object Attribute: <code>colcount:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_get_n_columns()</code>: <code>&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>colcount</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_get_n_columns()</code> should return the actual number of columns.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXARIAColumnCount</code>: <code>&lt;value&gt;</code></span>
@@ -2817,8 +2816,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>GridItem.Column</code>: <code>&lt;value&gt;</code> (zero-based)</span>
 				</td>
 				<td class="attr-atk">
-					<span class="property">Object Attribute: <code>colindex:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_cell_get_position()</code>: <code>column=&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>colindex</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_cell_get_position()</code> should return the actual (zero-based) column index.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXARIAColumnIndex</code>: <code>&lt;value&gt;</code></span>
@@ -2849,8 +2848,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>GridItem.ColumnSpan</code>: <code>&lt;value&gt;</code></span>
 				</td>
 				<td class="attr-atk">
-					<span class="property">Object Attribute: <code>colspan:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_cell_get_row_column_span()</code>: <code>column_span=&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>colspan</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_cell_get_row_column_span()</code> should return the actual column span.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXColumnIndexRange.length</code>: <code>&lt;value&gt;</code></span>
@@ -3980,9 +3979,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>Grid.RowCount</code>: <code>&lt;value&gt;</code></span>
 				</td>
 				<td class="attr-atk">
-					<p>If the value of <code>aria-rowcount</code> is <code>-1</code>, calculate the row count based on the number of rows in the <abbr title="Document Object Model">DOM</abbr> and expose that value as described below along with <code>STATE_INDETERMINATE</code>.</p>
-					<span class="property">Object Attribute: <code>rowcount:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_get_n_rows()</code>: <code>&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>rowcount</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_get_n_rows()</code> should return the actual number of rows.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXARIARowCount</code>: <code>&lt;value&gt;</code></span>
@@ -3998,8 +3996,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>GridItem.Row</code>: <code>&lt;value&gt;</code> (zero-based)</span>
 				</td>
 				<td class="attr-atk">
-					<span class="property">Object Attribute: <code>rowindex:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_cell_get_position()</code>: <code>row=&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>rowindex</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_cell_get_position()</code> should return the actual (zero-based) row index.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXARIARowIndex</code>: <code>&lt;value&gt;</code></span>
@@ -4030,8 +4028,8 @@ var mappingTableLabels = {
 					<span class="property">Property: <code>GridItem.RowSpan</code>: <code>&lt;value&gt;</code></span>
 				</td>
 				<td class="attr-atk">
-					<span class="property">Object Attribute: <code>rowspan:&lt;value&gt;</code></span><br>
-					<span class="method">Method: <code>atk_table_cell_get_row_column_span()</code>: <code>row_span=&lt;value&gt;</code></span>
+					<span class="property">Object Attribute: <code>rowspan</code> should contain the author-provided value.</span><br>
+					<span class="method">Method: <code>atk_table_cell_get_row_column_span()</code> should return the actual row span.</span>
 				</td>
 				<td class="attr-axapi">
 					<span class="property">Property: <code>AXRowIndexRange.length</code>: <code>&lt;value&gt;</code></span>
@@ -4855,6 +4853,7 @@ var mappingTableLabels = {
 		<h3 id="a-1-substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft<a class="self-link" aria-label="§" href="#substantive-changes-since-the-last-public-working-draft"></a></h3>
 		<ul>
 			
+			<li>05-Apr-2021: Update <abbr title="Accessibility Toolkit">ATK</abbr> mappings for <code>aria-colindex</code>, <code>aria-colspan</code>, <code>aria-colcount</code>, <code>aria-rowindex</code>, <code>aria-rowspan</code>, and <code>aria-rowcount</code>.</li>
 			<li>06-Apr-2020: Update <abbr title="Accessibility Toolkit">ATK</abbr> mappings for <code>alert</code> and <code>alertdialog</code>.</li>
 			<li>25-Feb-2020: Add mappings for <code>comment</code>, <code>mark</code>, and <code>suggestion</code> roles. Include <code>comment</code> in calculation for <code>aria-label</code> and group position.</li>
 			<li>25-Feb-2020: Add mappings for <code>aria-description</code>.</li>
