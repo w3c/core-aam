@@ -7,8 +7,9 @@
 <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove"></script>
 <script src="common/script/resolveReferences.js" class="remove"></script>
 <script src="common/script/utility.js" class="remove"></script>
-<script src="common/biblio.js" class="remove"></script>
-	
+<script src="common/biblio.js" class="remove" defer="defer"></script>
+<script src="common/script/mapping-tables.js"></script>
+
 <link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css"/>
 <link href="common/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="css/core-aam.css" rel="stylesheet" type="text/css"/>
@@ -289,14 +290,14 @@ var mappingTableLabels = {
 <p>The WAI-ARIA specification <a href="#deprecated" class="specref">lists some features as deprecated</a>. Although this means authors are encouraged not to use such features, it is expected that the features could still be used in legacy content. Therefore, it is important that user agents continue to map these features to accessibility APIs, and doing so is part of conformance to this specification. When future versions of the WAI-ARIA specification change such features from deprecated to removed, they will be removed from the mappings as well and user agents will no longer be asked to continue support for those features.</p>
 </section>
 </section>
-<section id="glossary">
+<section class="informative" id="glossary">
   <h2>Important Terms</h2>
   <div>
 		<p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 		<dl class="termlist">
 			<dt><dfn>Accessibility Subtree</dfn></dt>
 			<dd>
-				<p>An <a>accessible object</a> in the <a>accessibility tree</a> and its descendants in that tree. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via <pref>aria-flowto</pref> unless those objects are also descendants in the <a>accessibility tree</a>.</p>
+				<p>An [=accessible object=] in the <a>accessibility tree</a> and its descendants in that tree. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via <pref>aria-flowto</pref> unless those objects are also descendants in the <a>accessibility tree</a>.</p>
 			</dd>
 			<dt><dfn>Accessibility Tree</dfn></dt>
 			<dd>
@@ -338,7 +339,7 @@ var mappingTableLabels = {
 	</section>
 	<section id="mapping_role">
 		<h2>Role mapping</h2>
-		<p>Platform <a class="termref" href="#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> traditionally have had a finite set of predefined <a class="termref">roles</a> that are expected by <a class="termref">assistive technologies</a> on that platform and only one or two roles may be exposed. In  contrast, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> allows multiple roles to be specified as an ordered set of space-separated valid role tokens. The additional roles are fallback roles similar to the concept of specifying multiple fonts in case the first choice font type is not supported.</p>
+		<p>Platform <a class="termref">accessibility APIs</a> traditionally have had a finite set of predefined <a class="termref">roles</a> that are expected by <a class="termref">assistive technologies</a> on that platform and only one or two roles may be exposed. In  contrast, <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> allows multiple roles to be specified as an ordered set of space-separated valid role tokens. The additional roles are fallback roles similar to the concept of specifying multiple fonts in case the first choice font type is not supported.</p>
 		<section id="roleMappingGeneralRules">
 		  <h2>General rules</h2>
 		  <p id="exposeRoleString">User agents MUST expose the <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> role string if the <abbr title="application programming interface">API</abbr> supports a mechanism to do so. This allows assistive technologies to do their own  additional processing of roles. </p>
@@ -4138,7 +4139,7 @@ var mappingTableLabels = {
           </tbody>
         </table>
 	  <p>In some cases, node changes may occur where the node is not an element or has no accessible object. For example, a numbered list bullet ("12.") may have a node in the accessibility tree but not in the <abbr title="Document Object Model">DOM</abbr> tree. For text within a paragraph marked in <abbr title="Hypertext Markup Language">HTML</abbr> as <code>&lt;strong&gt;</code>, the  <code>&lt;strong&gt;</code> element has a node in the  <abbr title="Document Object Model">DOM</abbr> tree but may not have one in the accessibility tree. The text itself will of course be in the accessibility tree along with the identification of the range of text that is formatted as strong. If any of the changes described in the table above occur on such a node, user agents SHOULD compute and fire relevant text change events as described above. </p>
-    <p>User agents SHOULD ensure that an assistive technology, running in process can receive notification of a node being removed prior to removal. This allows an assistive technology, such as a screen reader, to refer back to the corresponding <abbr title="Document Object Model">DOM</abbr> node being deleted. This is important for <a class="termref">live regions</a> where removals are important. For example, a screen reader would want to notify a user that another user has left a chat room. The event in <abbr title="Microsoft Active Accessibility">MSAA</abbr> would be<code> EVENT_OBJECT_HIDE</code>. For <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> this would be <code>children_changed::remove</code>. And in macOS, the event is <code>AXLiveRegionChanged</code>. This also requires the user agent to provide a unique ID in the <a class="termref" href="#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> notification identifying the unique node being removed.</p>
+    <p>User agents SHOULD ensure that an assistive technology, running in process can receive notification of a node being removed prior to removal. This allows an assistive technology, such as a screen reader, to refer back to the corresponding <abbr title="Document Object Model">DOM</abbr> node being deleted. This is important for <a class="termref">live regions</a> where removals are important. For example, a screen reader would want to notify a user that another user has left a chat room. The event in <abbr title="Microsoft Active Accessibility">MSAA</abbr> would be<code> EVENT_OBJECT_HIDE</code>. For <abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr> this would be <code>children_changed::remove</code>. And in macOS, the event is <code>AXLiveRegionChanged</code>. This also requires the user agent to provide a unique ID in the <a class="termref">accessibility API</a> notification identifying the unique node being removed.</p>
 		<p>When firing any of the above-mentioned change events, it is very  useful to provide information about whether the change was caused by  user input (as opposed to a timeout initiated from the page load,  etc.). This allows the assistive technology to have different rules for presenting  changes from the real world as opposed to from user action. Mouse  hovers are not considered explicit user input because they can occur  from accidental bumps of the mouse.</p>
 	  <p>To expose whether a change occurred from user input:</p>
 		<ul>
