@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<meta name="generator" content="ReSpec 26.6.0">
+<meta name="generator" content="ReSpec 26.13.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -309,17 +309,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishDate": "2021-04-24",
-  "publishISODate": "2021-04-24T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 24 April 2021"
+  "publishDate": "2021-08-25",
+  "publishISODate": "2021-08-25T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 25 August 2021"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
 <body class="h-entry" data-cite="core-aam accname wai-aria"><div class="head">
-    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
+    <a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72">
+  </a> <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1>
     
     <h2>
       W3C Editor's Draft
-      <time class="dt-published" datetime="2021-04-24">24 April 2021</time>
+      <time class="dt-published" datetime="2021-08-25">25 August 2021</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd>
@@ -334,37 +335,37 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       
       <dt>Latest Recommendation:</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd>
       <dt>Editors:</dt>
-      <dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>
-            (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
-          </dd><dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>
-            (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
-          </dd><dd class="p-author h-card vcard" data-editor-id="34017"><span class="p-name fn">Michael Cooper</span>
-            (<a class="p-org org h-org h-card" href="https://www.w3.org">W3C</a>)
-          </dd>
+      <dd class="editor p-author h-card vcard" data-editor-id="68182">
+    <span class="p-name fn">Joanmarie Diggs</span> (<a class="p-org org h-org" href="https://www.igalia.com">Igalia, S.L.</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="51089">
+    <span class="p-name fn">Alexander Surkov</span> (<a class="p-org org h-org" href="https://www.igalia.com">Igalia, S.L.</a>)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="34017">
+    <span class="p-name fn">Michael Cooper</span> (<a class="p-org org h-org" href="https://www.w3.org">W3C</a>)
+  </dd>
       <dt>
               Former editors:
-            </dt><dd class="p-author h-card vcard" data-editor-id="2460"><span class="p-name fn">Richard Schwerdtfeger</span>
-            (<a class="p-org org h-org h-card" href="https://www.knowbility.org/">Knowbility</a>)
-           (Editor until October 2017)</dd><dd class="p-author h-card vcard" data-editor-id="42279"><span class="p-name fn">Joseph Scheuhammer</span>
-            (<a class="p-org org h-org h-card" href="http://idrc.ocad.ca">Inclusive Design Research Centre, OCAD University</a>)
-           (Editor until May 2017)</dd><dd class="p-author h-card vcard" data-editor-id="35445"><span class="p-name fn">Andi Snow-Weaver</span>
-            (<a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a>)
-           (Editor until December 2012)</dd><dd class="p-author h-card vcard" data-editor-id="34329"><span class="p-name fn">Aaron Leventhal</span>
-            (<a class="p-org org h-org h-card" href="http://www.ibm.com">IBM</a>)
-           (Editor until January 2009)</dd>
-      <dt>Authors:</dt><dd class="p-author h-card vcard" data-editor-id="96078"><span class="p-name fn">Melanie Richards</span>
-            (<a class="p-org org h-org h-card" href="https://microsoft.com/">Microsoft Corp.</a>)
-           (UIA)</dd><dd class="p-author h-card vcard" data-editor-id="42459"><span class="p-name fn">James Craig</span>
-            (<a class="p-org org h-org h-card" href="https://apple.com/accessibility">Apple, Inc.</a>)
-           (AX API)</dd><dd class="p-author h-card vcard" data-editor-id="68182"><span class="p-name fn">Joanmarie Diggs</span>
-            (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
-           (ATK / AT-SPI)</dd><dd class="p-author h-card vcard" data-editor-id="51089"><span class="p-name fn">Alexander Surkov</span>
-            (<a class="p-org org h-org h-card" href="https://www.igalia.com">Igalia, S.L.</a>)
-           (MSAA, IAccessible2)</dd>
+            </dt><dd class="editor p-author h-card vcard" data-editor-id="2460">
+    <span class="p-name fn">Richard Schwerdtfeger</span> (<a class="p-org org h-org" href="https://www.knowbility.org/">Knowbility</a>) (Editor until October 2017)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="42279">
+    <span class="p-name fn">Joseph Scheuhammer</span> (<a class="p-org org h-org" href="http://idrc.ocad.ca">Inclusive Design Research Centre, OCAD University</a>) (Editor until May 2017)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="35445">
+    <span class="p-name fn">Andi Snow-Weaver</span> (<a class="p-org org h-org" href="http://www.ibm.com">IBM</a>) (Editor until December 2012)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="34329">
+    <span class="p-name fn">Aaron Leventhal</span> (<a class="p-org org h-org" href="http://www.ibm.com">IBM</a>) (Editor until January 2009)
+  </dd>
+      <dt>Authors:</dt><dd class="editor p-author h-card vcard" data-editor-id="96078">
+    <span class="p-name fn">Melanie Richards</span> (<a class="p-org org h-org" href="https://microsoft.com/">Microsoft Corp.</a>) (UIA)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="42459">
+    <span class="p-name fn">James Craig</span> (<a class="p-org org h-org" href="https://apple.com/accessibility">Apple, Inc.</a>) (AX API)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="68182">
+    <span class="p-name fn">Joanmarie Diggs</span> (<a class="p-org org h-org" href="https://www.igalia.com">Igalia, S.L.</a>) (ATK / AT-SPI)
+  </dd><dd class="editor p-author h-card vcard" data-editor-id="51089">
+    <span class="p-name fn">Alexander Surkov</span> (<a class="p-org org h-org" href="https://www.igalia.com">Igalia, S.L.</a>) (MSAA, IAccessible2)
+  </dd>
       <dt>Participate:</dt><dd>
     <a href="https://github.com/w3c/core-aam/">GitHub w3c/core-aam</a>
   </dd><dd>
-    <a href="https://github.com/w3c/core-aam/issues/">File a bug</a>
+    <a href="https://github.com/w3c/core-aam/issues/">File an issue</a>
   </dd><dd>
     <a href="https://github.com/w3c/core-aam/commits/gh-pages">Commit history</a>
   </dd><dd>
@@ -423,7 +424,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
        
     
                 <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83726/status">public list of any patent disclosures</a>
+                <a rel="disclosure" href="https://www.w3.org/groups/wg/aria/ipr">public list of any patent disclosures</a>
           made in connection with the deliverables of
           the group; that page also includes
           instructions for disclosing a patent. An individual who has actual
@@ -534,15 +535,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   <div>
 		<p>While some terms are defined in place, the following definitions are used throughout this document. </p>
 		<dl class="termlist">
-			<dt><dfn data-export="" id="dfn-accessibility-subtree" tabindex="0" role="link" aria-haspopup="dialog" title="Show what links to this definition">Accessibility Subtree</dfn></dt>
+			<dt><dfn data-export="" id="dfn-accessibility-subtree" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Accessibility Subtree</dfn></dt>
 			<dd>
 				<p>An <a data-link-type="dfn" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-accessibility-tree-2">accessibility tree</a> and its descendants in that tree. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via <pref>aria-flowto</pref> unless those objects are also descendants in the <a href="#dfn-accessibility-tree" class="internalDFN" data-link-type="dfn" id="ref-for-dfn-accessibility-tree-3">accessibility tree</a>.</p>
 			</dd>
-			<dt><dfn data-export="" id="dfn-accessibility-tree" tabindex="0" role="link" aria-haspopup="dialog" title="Show what links to this definition">Accessibility Tree</dfn></dt>
+			<dt><dfn data-export="" id="dfn-accessibility-tree" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Accessibility Tree</dfn></dt>
 			<dd>
 				<p>Tree of <a class="termref informative" data-lt="accessible object" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> that represents the structure of the user interface (<abbr title="user interface">UI</abbr>). Each node in the accessibility tree represents an element in the <abbr title="user interface">UI</abbr> as exposed through the <a data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a>; for example, a push button, a check box, or container.</p>
 			</dd>
-			<dt><dfn data-export="" id="dfn-activation-behavior" tabindex="0" role="link" aria-haspopup="dialog" title="Show what links to this definition">Activation behavior</dfn></dt>
+			<dt><dfn data-export="" id="dfn-activation-behavior" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">Activation behavior</dfn></dt>
 			<dd>
 				<p>The action taken when an <a data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-event">event</a>, typically initiated by users through an input device, causes an element to fulfill a defined role. The role may be defined for that element by the host language, or by author-defined variables, or both. The role for any given element may be a generic action, or may be unique to that element. For example, the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> or <abbr title="Scalable Vector Graphics">SVG</abbr> <code>&lt;a&gt;</code> element shall be to cause the user agent to traverse the link specified in the <code>href</code> attribute, with the further optional parameter of specifying the browsing context for the traversal (such as the current window or tab, a named window, or a new window); the activation behavior of an <abbr title="Hypertext Markup Language">HTML</abbr> <code>&lt;input&gt;</code> element with the <code>type</code> attribute value <code>submit</code> shall be to send the values of the form elements to an author-defined <abbr title="Internationalized Resource Identifiers">IRI</abbr> by the author-defined <abbr title="Hypertext Transfer Protocol">HTTP</abbr> method.</p>
 			</dd>
@@ -5010,7 +5011,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 <section id="references" class="appendix"><h2 id="c-references"><bdi class="secno">C. </bdi>References<a class="self-link" aria-label="§" href="#references"></a></h2><section id="normative-references">
     <h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references<a class="self-link" aria-label="§" href="#normative-references"></a></h3>
-    <dl class="bibliography"><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc8174">https://datatracker.ietf.org/doc/html/rfc8174</a></dd><dt id="bib-wai-aria-1.2">[WAI-ARIA-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.2/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.2</cite></a>. Joanmarie Diggs; James Nurthen; Michael Cooper.  W3C. 2 March 2021. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.2/">https://www.w3.org/TR/wai-aria-1.2/</a></dd></dl>
+    <dl class="bibliography"><dt id="bib-iaccessible2">[IAccessible2]</dt><dd><a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2">https://www.linuxfoundation.org/collaborate/workgroups/accessibility/iaccessible2</a></dd><dt id="bib-rfc2119">[RFC2119]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a></dd><dt id="bib-rfc8174">[RFC8174]</dt><dd><a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a></dd><dt id="bib-wai-aria-1.2">[WAI-ARIA-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-1.2/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.2</cite></a>. Joanmarie Diggs; James Nurthen; Michael Cooper.  W3C. 2 March 2021. W3C Candidate Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria-1.2/">https://www.w3.org/TR/wai-aria-1.2/</a></dd></dl>
   </section><section id="informative-references">
     <h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>Informative references<a class="self-link" aria-label="§" href="#informative-references"></a></h3>
     <dl class="bibliography"><dt id="bib-at-spi">[AT-SPI]</dt><dd><a href="https://developer.gnome.org/libatspi/stable/"><cite>Assistive Technology Service Provider Interface</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/libatspi/stable/">https://developer.gnome.org/libatspi/stable/</a></dd><dt id="bib-atk">[ATK]</dt><dd><a href="https://developer.gnome.org/atk/stable/"><cite>ATK - Accessibility Toolkit</cite></a>.  The GNOME Project. URL: <a href="https://developer.gnome.org/atk/stable/">https://developer.gnome.org/atk/stable/</a></dd><dt id="bib-axapi">[AXAPI]</dt><dd><a href="https://developer.apple.com/documentation/appkit/nsaccessibility"><cite>The NSAccessibility Protocol for macOS</cite></a>.  Apple, Inc. URL: <a href="https://developer.apple.com/documentation/appkit/nsaccessibility">https://developer.apple.com/documentation/appkit/nsaccessibility</a></dd><dt id="bib-core-aam-1.1">[CORE-AAM-1.1]</dt><dd><a href="https://www.w3.org/TR/core-aam-1.1/"><cite>Core Accessibility API Mappings 1.1</cite></a>. Joanmarie Diggs; Joseph Scheuhammer; Richard Schwerdtfeger; Michael Cooper; Andi Snow-Weaver; Aaron Leventhal.  W3C. 14 December 2017. W3C Recommendation. URL: <a href="https://www.w3.org/TR/core-aam-1.1/">https://www.w3.org/TR/core-aam-1.1/</a></dd><dt id="bib-ui-automation">[UI-AUTOMATION]</dt><dd><a href="https://docs.microsoft.com/en-us/windows/win32/winauto/ui-automation-specification"><cite>UI Automation</cite></a>.  Microsoft Corporation. URL: <a href="https://docs.microsoft.com/en-us/windows/win32/winauto/ui-automation-specification">https://docs.microsoft.com/en-us/windows/win32/winauto/ui-automation-specification</a></dd><dt id="bib-wai-aria">[wai-aria]</dt><dd><a href="https://www.w3.org/TR/wai-aria/"><cite>Accessible Rich Internet Applications (WAI-ARIA) 1.0</cite></a>. James Craig; Michael Cooper et al.  W3C. 20 March 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/wai-aria/">https://www.w3.org/TR/wai-aria/</a></dd><dt id="bib-wai-aria-practices-1.2">[WAI-ARIA-PRACTICES-1.2]</dt><dd><a href="https://www.w3.org/TR/wai-aria-practices-1.2/"><cite>WAI-ARIA Authoring Practices 1.2</cite></a>. Matthew King; JaEun Jemma Ku; James Nurthen; Zoë Bijl; Michael Cooper; Joseph Scheuhammer; Lisa Pappas; Richard Schwerdtfeger.  W3C. 18 December 2019. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-practices-1.2/">https://www.w3.org/TR/wai-aria-practices-1.2/</a></dd><dt id="bib-wai-aria-roadmap">[WAI-ARIA-ROADMAP]</dt><dd><a href="https://www.w3.org/TR/wai-aria-roadmap/"><cite>Roadmap for Accessible Rich Internet Applications (WAI-ARIA Roadmap)</cite></a>. Richard Schwerdtfeger.  W3C. 4 February 2008. W3C Working Draft. URL: <a href="https://www.w3.org/TR/wai-aria-roadmap/">https://www.w3.org/TR/wai-aria-roadmap/</a></dd></dl>
@@ -5141,7 +5142,7 @@ function deriveCoordinates(event) {
 function deriveAction(event) {
   const target = /** @type {HTMLElement} */ (event.target);
   const hitALink = !!target.closest("a");
-  if (target.closest("dfn, .index-term")) {
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
     return hitALink ? "none" : "show";
   }
   if (target.closest(".dfn-panel")) {
