@@ -547,7 +547,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     null,
     null
   ],
-  "postProcess": [],
+  "postProcess": [
+    null
+  ],
   "xref": [
     "core-aam",
     "accname",
@@ -645,7 +647,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </dd><dd class="editor p-author h-card vcard" data-editor-id="34329">
     <span class="p-name fn">Aaron Leventhal</span> (<a class="p-org org h-org" href="http://www.ibm.com">IBM</a>) (Editor until January 2009)
   </dd>
-        <dt>Authors:</dt><dd class="editor p-author h-card vcard" data-editor-id="96078">
+        <dt>Platform Mapping Maintainers:</dt><dd class="editor p-author h-card vcard" data-editor-id="96078">
     <span class="p-name fn">Melanie Richards</span> (<a class="p-org org h-org" href="https://microsoft.com/">Microsoft Corp.</a>) (UIA)
   </dd><dd class="editor p-author h-card vcard" data-editor-id="42459">
     <span class="p-name fn">James Craig</span> (<a class="p-org org h-org" href="https://apple.com/accessibility">Apple, Inc.</a>) (AX API)
@@ -1377,9 +1379,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
 					</td>
-					</tr>
+				</tr>
 				<tr>
-					<th><a class="role-reference" href="https://w3c.github.io/aria/#form"><code>form</code></a></th>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#form"><code>form</code></a> with an accessible name</th>
 					<td class="role-msaa-ia2">
 						<span class="property">Role: <code>IA2_ROLE_FORM</code></span><br>
 						<span class="property">Object Attribute: <code>xml-roles:form</code></span>
@@ -1396,6 +1398,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>&lt;nil&gt;</code></span><br>
+					</td>
+				</tr>
+				<tr>
+					<th><a class="role-reference" href="https://w3c.github.io/aria/#form"><code>form</code></a> without an accessible name</th>
+					<td class="role-msaa-ia2">
+						<span class="property">Do not expose the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-element">element</a> as a landmark. Use the native host language role of the element instead.</span>
+					</td>
+					<td class="role-uia">
+						<span class="property">Do not expose the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-element">element</a> as a landmark. Use the native host language role of the element instead.</span>
+					</td>
+					<td class="role-atk">
+						<span class="property">Do not expose the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-element">element</a> as a landmark. Use the native host language role of the element instead.</span>
+					</td>
+					<td class="role-axapi">
+						<span class="property">Do not expose the <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-element">element</a> as a landmark. Use the native host language role of the element instead.</span>
 					</td>
 				</tr>
 				<tr>
