@@ -52,7 +52,7 @@ function viewAsSingleTable(mappingTableInfo) {
   queryAll('tbody tr', mappingTableInfo.tableContainer).forEach(function (
     tr
   ) {
-    tr.id = mappingTableInfo.ids[getElementIndex(tr)];
+    tr.id = tr.getAttribute("data-id");
   });
 }
 
@@ -72,11 +72,7 @@ function viewAsDetails(mappingTableInfo) {
     const details = mappingTableInfo.detailsContainer.querySelector(
       'details'
     );
-    summary.id =
-      mappingTableInfo.ids[
-        // TODO: check that this works
-        getElementIndex(details) - getElementIndex(summary.parentNode)
-      ];
+    summary.id = summary.getAttribute("data-id");
   });
 }
 
@@ -148,9 +144,15 @@ function mappingTables() {
       var caption = row.querySelector('th').innerHTML;
       var summary = caption.replace(/<a [^>]+>|<\/a>/g, '');
       // get the tr's @id
-      var id = row.id;
+      if (row.id) {
+        var id = row.id;
+        row.setAttribute('data-id', id);
+      }
+      else {
+        var id = row.getAttribute('data-id');
+      }
       // store the row's @id
-      tableInfo.ids.push(id);
+      // tableInfo.ids.push(id);
       // remove the tr's @id since same id will be used in the relevant summary element
       row.removeAttribute('id');
       // store the row's cells in array rowCells
@@ -177,7 +179,7 @@ function mappingTables() {
       var details = document.createElement('details');
       details.className = 'map removeOnSave';
 
-      var detailsHTML = '<summary id="' + id + '">' + summary;
+      var detailsHTML = '<summary data-id="' + id + '" id="' + id + '">' + summary;
 
       // if attributes mapping table, append relevant elements to summary
       if (tableInfo.table.classList.contains('attributes')) {
@@ -358,7 +360,7 @@ function mapTables(respecEvents) {
     queryAll('tbody tr', mappingTableInfo.tableContainer).forEach(function (
       tr
     ) {
-      tr.id = mappingTableInfo.ids[getElementIndex(tr)];
+      tr.id = tr.getAttribute("data-id");
     });
   }
 
@@ -378,11 +380,7 @@ function mapTables(respecEvents) {
       const details = mappingTableInfo.detailsContainer.querySelector(
         'details'
       );
-      summary.id =
-        mappingTableInfo.ids[
-          // TODO: check that this works
-          getElementIndex(details) - getElementIndex(summary.parentNode)
-        ];
+      summary.id = summary.getAttribute("data-id");
     });
   }
 
