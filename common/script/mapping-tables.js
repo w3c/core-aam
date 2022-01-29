@@ -29,6 +29,7 @@ function viewAsSingleTable(mappingTableInfo) {
   queryAll('summary', mappingTableInfo.detailsContainer).forEach(function (
     summary
   ) {
+    summary.dataset['id'] = summary.id;
     summary.removeAttribute('id');
   });
   showElement(mappingTableInfo.tableContainer);
@@ -38,6 +39,7 @@ function viewAsSingleTable(mappingTableInfo) {
     tr
   ) {
     tr.id = tr.dataset['id'];
+    tr.removeAttribute('data-id');
   });
 }
 
@@ -47,6 +49,7 @@ function viewAsDetails(mappingTableInfo) {
   queryAll('tbody tr', mappingTableInfo.tableContainer).forEach(function (
     tr
   ) {
+    tr.dataset['id'] = tr.id;
     tr.removeAttribute('id');
   });
   showElement(mappingTableInfo.detailsContainer);
@@ -55,6 +58,7 @@ function viewAsDetails(mappingTableInfo) {
     summary
   ) {
     summary.id = summary.dataset['id'];
+    summary.removeAttribute('data-id');
   });
 }
 
@@ -93,7 +97,6 @@ function mappingTables() {
     viewSwitch.className = 'switch-view removeOnSave';
     viewSwitch.innerHTML = mappingTableLabels.viewByTable;
     viewSwitch.addEventListener('click', function () {
-      // array to store summary/tr @ids
       // if current view is details/summary
       if (tableInfo.detailsContainer.style.display !== 'none') {
         viewAsSingleTable(tableInfo);
@@ -151,7 +154,7 @@ function mappingTables() {
       var details = document.createElement('details');
       details.className = 'map';
 
-      var detailsHTML = '<summary id="' + id + '" data-id="' + id + '">' + summary;
+      var detailsHTML = '<summary id="' + id + '">' + summary;
 
       // if attributes mapping table, append relevant elements to summary
       if (tableInfo.table.classList.contains('attributes')) {
