@@ -14,7 +14,7 @@ function queryAll(selector, context) {
 }
 
 function getElementIndex(el) {
-  var i = 0;
+  var i = 1;
   while ((el = el.previousElementSibling)) {
     i++;
   }
