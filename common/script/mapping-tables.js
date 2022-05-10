@@ -29,7 +29,7 @@ function viewAsSingleTable(mappingTableInfo) {
   queryAll('summary', mappingTableInfo.detailsContainer).forEach(function (
     summary
   ) {
-    summary.dataset['id'] = summary.id;
+    summary.setAttribute('data-id', summary.id);  
     summary.removeAttribute('id');
   });
   showElement(mappingTableInfo.tableContainer);
@@ -38,7 +38,7 @@ function viewAsSingleTable(mappingTableInfo) {
   queryAll('tbody tr', mappingTableInfo.tableContainer).forEach(function (
     tr
   ) {
-    tr.id = tr.dataset['id'];
+    tr.id = tr.getAttribute('data-id');
     tr.removeAttribute('data-id');
   });
 }
@@ -49,7 +49,7 @@ function viewAsDetails(mappingTableInfo) {
   queryAll('tbody tr', mappingTableInfo.tableContainer).forEach(function (
     tr
   ) {
-    tr.dataset['id'] = tr.id;
+    tr.setAttribute('data-id', tr.id);
     tr.removeAttribute('id');
   });
   showElement(mappingTableInfo.detailsContainer);
@@ -57,7 +57,7 @@ function viewAsDetails(mappingTableInfo) {
   queryAll('summary', mappingTableInfo.detailsContainer).forEach(function (
     summary
   ) {
-    summary.id = summary.dataset['id'];
+    summary.id = summary.getAttribute('data-id');
     summary.removeAttribute('data-id');
   });
 }
@@ -75,7 +75,7 @@ function mappingTables() {
     // object to store information about a mapping table.
     var tableInfo = {};
     mappingTableInfos.push(tableInfo);
-
+    var alreadyProcessed = container.style.display  === 'none';
     // store a reference to the container and hide it
     tableInfo.tableContainer = container;
     hideElement(container);
@@ -84,13 +84,17 @@ function mappingTables() {
     tableInfo.table = container.querySelector('table');
 
     // create a container div to hold all the details element and insert after table
-    tableInfo.detailsContainer = document.createElement('div');
-    tableInfo.detailsContainer.className = 'details';
-    tableInfo.id = tableInfo.table.id + '-details';
-    tableInfo.tableContainer.insertAdjacentElement(
-      'afterend',
-      tableInfo.detailsContainer
-    );
+    if (document.getElementById(tableInfo.table.id + '-details')) {
+      tableInfo.detailsContainer = document.getElementById(tableInfo.table.id + '-details');
+    } else {
+      tableInfo.detailsContainer = document.createElement('div');
+      tableInfo.detailsContainer.className = 'details';
+      tableInfo.id = tableInfo.table.id + '-details';
+      tableInfo.tableContainer.insertAdjacentElement(
+        'afterend',
+        tableInfo.detailsContainer
+      );
+    }
 
     // add switch to view as single table or details/summary
     var viewSwitch = document.createElement('button');
@@ -111,79 +115,81 @@ function mappingTables() {
     });
 
     tableInfo.tableContainer.insertAdjacentElement('beforebegin', viewSwitch);
-
-    // store the table's column headers in array colHeaders
-    // TODO: figure out what browsers we have to support and replace this with Array#map if possible
-    var colHeaders = [];
-    queryAll('thead th', tableInfo.table).forEach(function (th) {
-      colHeaders.push(th.innerHTML);
-    });
-
-    // remove first column header from array
-    colHeaders.shift();
-    // for each row in the table, create details/summary..
-
-    queryAll('tbody tr', tableInfo.table).forEach(function (row) {
-      var caption = row.querySelector('th').innerHTML;
-      var summary = caption.replace(/<a [^>]+>|<\/a>/g, '');
-      // get the tr's @id
-      var id = row.dataset.id;
-      // remove the tr's @id since same id will be used in the relevant summary element
-      row.removeAttribute('id');
-      // store the row's cells in array rowCells
-      var rowCells = [];
-      // add row cells to array rowCells for use in the details' table
-      queryAll('td', row).forEach(function (cell) {
-        rowCells.push(cell.innerHTML);
+    if (!alreadyProcessed) {
+      // store the table's column headers in array colHeaders
+      // TODO: figure out what browsers we have to support and replace this with Array#map if possible
+      var colHeaders = [];
+      queryAll('thead th', tableInfo.table).forEach(function (th) {
+        colHeaders.push(th.innerHTML);
       });
-      // clone colHeaders array for use in details table row headers
-      var rowHeaders = colHeaders.slice(0);
-      // if attributes mapping table...
-      if (tableInfo.table.classList.contains('attributes')) {
-        // remove second column header from array
-        rowHeaders.shift();
-        // remove and store "HTML elements" cell from rowCells array for use in details' summary and table caption
-        var relevantElsCaption = rowCells.shift();
-        var relevantElsSummary = relevantElsCaption.replace(
-          /<a [^>]+>|<\/a>/g,
-          ''
-        );
-      }
 
-      // create content for each <details> element; add row header's content to summary
-      var details = document.createElement('details');
-      details.className = 'map';
+      // remove first column header from array
+      colHeaders.shift();
+      // for each row in the table, create details/summary..
 
-      var detailsHTML = '<summary id="' + id + '">' + summary;
+      queryAll('tbody tr', tableInfo.table).forEach(function (row) {
+        var caption = row.querySelector('th').innerHTML;
+        var summary = caption.replace(/<a [^>]+>|<\/a>/g, '');
+        // get the tr's @id
+        var id = row.id || row.getAttribute('data-id');
+        // remove the tr's @id since same id will be used in the relevant summary element
+        row.removeAttribute('id');
+        row.setAttribute('data-id', id);
+        // store the row's cells in array rowCells
+        var rowCells = [];
+        // add row cells to array rowCells for use in the details' table
+        queryAll('td', row).forEach(function (cell) {
+          rowCells.push(cell.innerHTML);
+        });
+        // clone colHeaders array for use in details table row headers
+        var rowHeaders = colHeaders.slice(0);
+        // if attributes mapping table...
+        if (tableInfo.table.classList.contains('attributes')) {
+          // remove second column header from array
+          rowHeaders.shift();
+          // remove and store "HTML elements" cell from rowCells array for use in details' summary and table caption
+          var relevantElsCaption = rowCells.shift();
+          var relevantElsSummary = relevantElsCaption.replace(
+            /<a [^>]+>|<\/a>/g,
+            ''
+          );
+        }
 
-      // if attributes mapping table, append relevant elements to summary
-      if (tableInfo.table.classList.contains('attributes')) {
-        detailsHTML += ' [' + relevantElsSummary + ']';
-      }
+        // create content for each <details> element; add row header's content to summary
+        var details = document.createElement('details');
+        details.className = 'map';
 
-      detailsHTML += '</summary><table><caption>' + caption;
+        var detailsHTML = '<summary id="' + id + '">' + summary;
 
-      if (tableInfo.table.classList.contains('attributes')) {
-        detailsHTML += ' [' + relevantElsCaption + ']';
-      }
+        // if attributes mapping table, append relevant elements to summary
+        if (tableInfo.table.classList.contains('attributes')) {
+          detailsHTML += ' [' + relevantElsSummary + ']';
+        }
 
-      detailsHTML += '</caption><tbody>';
+        detailsHTML += '</summary><table><caption>' + caption;
 
-      // add table rows using appropriate header from detailsRowHead array and relevant value from rowCells array
-      for (var i = 0, len = rowCells.length; i < len; i++) {
-        detailsHTML +=
-          '<tr><th>' +
-          rowHeaders[i] +
-          '</th><td>' +
-          rowCells[i] +
-          '</td></tr>';
-      }
-      detailsHTML += '</tbody></table></details>';
-      details.innerHTML = detailsHTML;
+        if (tableInfo.table.classList.contains('attributes')) {
+          detailsHTML += ' [' + relevantElsCaption + ']';
+        }
 
-      // append the <details> element to the detailsContainer div
-      tableInfo.detailsContainer.appendChild(details);
-    });
+        detailsHTML += '</caption><tbody>';
+
+        // add table rows using appropriate header from detailsRowHead array and relevant value from rowCells array
+        for (var i = 0, len = rowCells.length; i < len; i++) {
+          detailsHTML +=
+            '<tr><th>' +
+            rowHeaders[i] +
+            '</th><td>' +
+            rowCells[i] +
+            '</td></tr>';
+        }
+        detailsHTML += '</tbody></table></details>';
+        details.innerHTML = detailsHTML;
+
+        // append the <details> element to the detailsContainer div
+        tableInfo.detailsContainer.appendChild(details);
+      });
+    }
 
     // add 'expand/collapse all' functionality
     var expandAllButton = document.createElement('button');
@@ -228,7 +234,7 @@ function mappingTables() {
 
     // add collapsible table columns functionality
     var showHideCols = document.createElement('div');
-    showHideCols.className = 'show-hide-cols removeOnSave';
+    showHideCols.className = 'show-hide-cols';
     showHideCols.innerHTML =
       '<span>' + mappingTableLabels.showHideCols + '</span>';
 
