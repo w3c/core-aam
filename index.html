@@ -20,131 +20,124 @@
     lint: true,
     
     // specification status (e.g., WD, LC, NOTE, etc.). If in doubt use ED.
-    specStatus:           "CR",
-    crEnd:                "2022-11-11",
+    specStatus: "CR",
+    crEnd: "2022-12-02",
     implementationReportURI: "https://w3c.github.io/test-results/core-aam-1.2/",
     //perEnd:               "2013-07-23",
     //publishDate:           "2013-08-22",
-
+    
     // the specifications short name, as in http://www.w3.org/TR/short-name/
-    shortName:            "core-aam-1.2",
-          
+    shortName: "core-aam-1.2",
+    
     // if you wish the publication date to be other than today, set this
     //publishDate:  "2014-12-11",
-    copyrightStart:  "2014",
-
+    copyrightStart: "2014",
+    
     // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
     // and its maturity status
     //previousPublishDate:  "2014-06-12",
     //previousMaturity:     "WD",
-    prevRecURI:           "https://www.w3.org/TR/core-aam-1.1/",
+    prevRecURI: "https://www.w3.org/TR/core-aam-1.1/",
     //previousDiffURI:      "http://www.w3.org/TR/2014/REC-wai-aria-implementation-20140320/",
-
+    
     // if there a publicly available Editors Draft, this is the link
-    edDraftURI:           "https://w3c.github.io/core-aam/",
-
+    edDraftURI: "https://w3c.github.io/core-aam/",
+    
     // if this is a LCWD, uncomment and set the end of its review period
     // lcEnd: "2012-02-21",
-
+    
     // editors, add as many as you like
     // only "name" is required
-    editors:  [
-        { name: "Joanmarie Diggs",
-          company: "Igalia, S.L.",
-          companyURL: "https://www.igalia.com",
-          w3cid: 68182
-        },
-        {
-          name: "Alexander Surkov",
-          company: "Igalia, S.L.",
-          companyURL: "https://www.igalia.com",
-          w3cid: 51089
-        },
-        { name: "Michael Cooper",
-          company: "W3C",
-          companyURL: "https://www.w3.org",
-          w3cid: 34017
-        }
-    ],
-    formerEditors: [
-        { name: "Richard Schwerdtfeger",
-          company: "Knowbility",
-          companyURL: "https://www.knowbility.org/",
-          w3cid: 2460,
-          note: "Editor until October 2017"
-        },
-        { name: "Joseph Scheuhammer",
-          company: "Inclusive Design Research Centre, OCAD University",
-          companyURL:"http://idrc.ocad.ca",
-          w3cid: 42279,
-          note: "Editor until May 2017"
-        },
-        { name: "Andi Snow-Weaver",
-          company: "IBM",
-          companyURL: "http://www.ibm.com",
-          w3cid: 35445,
-          note: "Editor until December 2012"
-        },
-        { name: "Aaron Leventhal",
-          company: "IBM",
-          companyURL: "http://www.ibm.com",
-          w3cid: 34329,
-          note: "Editor until January 2009"
-        },
-    ],
-    // authors, add as many as you like. 
+    editors:[ {
+      name: "Joanmarie Diggs",
+      company: "Igalia, S.L.",
+      companyURL: "https://www.igalia.com",
+      w3cid: 68182
+    }, {
+      name: "Alexander Surkov",
+      company: "Igalia, S.L.",
+      companyURL: "https://www.igalia.com",
+      w3cid: 51089
+    }, {
+      name: "Michael Cooper",
+      company: "W3C",
+      companyURL: "https://www.w3.org",
+      w3cid: 34017
+    }],
+    formerEditors:[ {
+      name: "Richard Schwerdtfeger",
+      company: "Knowbility",
+      companyURL: "https://www.knowbility.org/",
+      w3cid: 2460,
+      note: "Editor until October 2017"
+    }, {
+      name: "Joseph Scheuhammer",
+      company: "Inclusive Design Research Centre, OCAD University",
+      companyURL: "http://idrc.ocad.ca",
+      w3cid: 42279,
+      note: "Editor until May 2017"
+    }, {
+      name: "Andi Snow-Weaver",
+      company: "IBM",
+      companyURL: "http://www.ibm.com",
+      w3cid: 35445,
+      note: "Editor until December 2012"
+    }, {
+      name: "Aaron Leventhal",
+      company: "IBM",
+      companyURL: "http://www.ibm.com",
+      w3cid: 34329,
+      note: "Editor until January 2009"
+    },],
+    // authors, add as many as you like.
     // This is optional, uncomment if you have authors as well as editors.
     // only "name" is required. Same format as editors.
-
-    authors:  [
-        { 
-          name: "Melanie Richards",
-          company: "Microsoft Corp.", 
-          companyURL: "https://microsoft.com/",
-          note: "UIA",
-          w3cid: 96078
-        },
-        { 
-          name: "James Craig", 
-          company: "Apple, Inc.", 
-          companyURL: "https://apple.com/accessibility",
-          note: "AX API",
-          w3cid: 42459
-        },
-        { name: "Joanmarie Diggs",
-          company: "Igalia, S.L.",
-          companyURL: "https://www.igalia.com",
-          w3cid: 68182,
-          note: "ATK / AT-SPI"
-        },
-        { 
-          name: "Alexander Surkov", 
-          company: "Igalia, S.L.",
-          companyURL: "https://www.igalia.com",
-          note: "MSAA, IAccessible2",
-          w3cid: 51089
-        },
-    ],
-
-	/*
-    alternateFormats: [
-          { uri: 'aria-implementation-diff.html',
-            label: "Diff from Previous Recommendation" } ,
-          { uri: 'aria-implementation.ps',
-            label: "PostScript version" },
-          { uri: 'aria-implementation.pdf',
-            label: "PDF version" }
-	],
-    */
+    
+    authors:[ {
+      name: "Melanie Richards",
+      company: "Microsoft Corp.",
+      companyURL: "https://microsoft.com/",
+      note: "UIA",
+      w3cid: 96078
+    }, {
+      name: "James Craig",
+      company: "Apple, Inc.",
+      companyURL: "https://apple.com/accessibility",
+      note: "AX API",
+      w3cid: 42459
+    }, {
+      name: "Joanmarie Diggs",
+      company: "Igalia, S.L.",
+      companyURL: "https://www.igalia.com",
+      w3cid: 68182,
+      note: "ATK / AT-SPI"
+    }, {
+      name: "Alexander Surkov",
+      company: "Igalia, S.L.",
+      companyURL: "https://www.igalia.com",
+      note: "MSAA, IAccessible2",
+      w3cid: 51089
+    },],
+    
+    /*
+     alternateFormats: [
+     { uri: 'aria-implementation-diff.html',
+     label: "Diff from Previous Recommendation" } ,
+     { uri: 'aria-implementation.ps',
+     label: "PostScript version" },
+     { uri: 'aria-implementation.pdf',
+     label: "PDF version" }
+     ],
+     */
     
     // Working group info
-	group: "aria",
-
+    group: "aria",
+    
     // wg:           "Accessible Rich Internet Applications Working Group",
     // wgURI:        "https://www.w3.org/WAI/ARIA/",
     wgPublicList: "public-aria",
     github: "w3c/core-aam",
-
+    
     // URI of the patent status for this WG, for Rec-track documents
     // !!!! IMPORTANT !!!!
     // This is important for Rec-track documents, do not copy a patent URI from a random
@@ -158,25 +151,24 @@
     // Spec URLs
     ariaSpecURLs: {
       "ED": "https://w3c.github.io/aria/",
-      "WD" : "https://www.w3.org/TR/wai-aria-1.1/",
-      "CR" : "https://www.w3.org/TR/wai-aria-1.1/",
-      "PR" : "https://www.w3.org/TR/wai-aria-1.1/",
+      "WD": "https://www.w3.org/TR/wai-aria-1.1/",
+      "CR": "https://www.w3.org/TR/wai-aria-1.1/",
+      "PR": "https://www.w3.org/TR/wai-aria-1.1/",
       "REC": "https://www.w3.org/TR/wai-aria/"
     },
     accNameURLs: {
       "ED": "https://w3c.github.io/accname/",
-      "WD" : "https://www.w3.org/TR/accname-aam-1.1/",
+      "WD": "https://www.w3.org/TR/accname-aam-1.1/",
       "FPWD": "https://www.w3.org/TR/accname-aam-1.1/",
-      "CR" : "https://www.w3.org/TR/accname-aam-1.1/",
-      "PR" : "https://www.w3.org/TR/accname-aam-1.1/",
+      "CR": "https://www.w3.org/TR/accname-aam-1.1/",
+      "PR": "https://www.w3.org/TR/accname-aam-1.1/",
       "REC": "https://www.w3.org/TR/accname-aam-1.1/"
     },
-
-    preProcess: [ linkCrossReferences, mappingTables ],
-	postProcess: [ addPlatformMaintainers ],
-	xref: ["dom", "accname", "wai-aria", "infra"]
-  }
-</script>
+    
+    preProcess:[linkCrossReferences, mappingTables],
+    postProcess:[addPlatformMaintainers],
+    xref:[ "dom", "accname", "wai-aria", "infra"]
+  }</script>
 <script type="text/javascript">
 
 var mappingTableLabels = {
