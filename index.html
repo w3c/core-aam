@@ -313,15 +313,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishISODate": "2023-04-06T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 06 April 2023"
+  "publishISODate": "2023-04-07T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 07 April 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-06">06 April 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-07">07 April 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -503,7 +503,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <p>For instance, in <abbr title="Microsoft Active Accessibility">MSAA</abbr>, all <a class="termref informative" data-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible objects</a> support the <code>accName</code> property, which stores the object's <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible name</a>. Where the object also supports having an <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>, <abbr title="Microsoft Active Accessibility">MSAA</abbr> stores this property in the object's <code>accDescription</code> property.</p>
         <p>Software using <abbr title="Accessibility Toolkit">ATK</abbr> can read and write to an object's <code>accessible-name</code> and <code>accessible-description</code> properties. In turn, <abbr title="assistive technology">AT</abbr>-SPI can query the values of those properties through its <code>atspi_accessible_get_name</code> and <code>atspi_accessible_get_description</code> functions.</p>
         <p>Automation elements in the <abbr title="User Interface Automation">UIA</abbr> accessibility tree have a <code>Name</code> property. Where the object also supports having an <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>, <abbr title="User Interface Automation">UIA</abbr> stores this property in the object's <code>FullDescription</code> property.</p>
-        <p>The approach to <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible names</a> and <a class="termref informative" data-lt="accessible description" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible descriptions</a> in <abbr title="macOS Accessibility Protocol">AX API</abbr> is somewhat different to the other platform <abbr title="Application Programming Interfaces">APIs</abbr>. <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">Accessible names</a> are exposed using the <code>AXTitle</code> property when the name is visually rendered, while the <code>AXDescription</code> property is used when the object's name is not rendered visually. An object's <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>, where provided, should always be exposed in the <code>AXHelp</code> property.</p>
+        <p>The approach to <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">accessible names</a> and <a class="termref informative" data-lt="accessible description" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible descriptions</a> in <abbr title="macOS Accessibility Protocol">AX API</abbr> is somewhat different to the other platform <abbr title="Application Programming Interfaces">APIs</abbr>. <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-name">Accessible names</a> are exposed using the <code>AXTitle</code> property when the name is visually rendered, while the <code>AXDescription</code> property is used when the object's name is not rendered visually. An object's <a class="termref informative" href="https://www.w3.org/TR/accname-1.2/#dfn-accessible-description">accessible description</a>, where provided by <a class="state-reference" href="https://w3c.github.io/aria/#aria-description"><code>aria-description</code></a> or <a class="state-reference" href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a>, should be exposed in the <code>accessibilityCustomContent</code> <abbr title="Application Programming Interface">API</abbr>. Otherwise, it should be exposed as <code>AXHelp</code>.</p>
         <p>For more detail, see the <a class="accname" href="https://w3c.github.io/accname/">Accessible Name and Description Computation</a> specification.</p>
       </section>
     </section>
@@ -3974,8 +3974,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a> and <a href="#mapping_additional_relations">Mapping Additional Relations</a></span>
 				</td>
 				<td class="attr-axapi">
-					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
-					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+					<span class="api">In the accessibilityCustomContent <abbr title="Application Programming Interface">API</abbr>, expose as an <code>AXCustomContent</code> object with <code>{ label: "description" }</code> and `<code>value</code>` set to the description string.</span><br>
+-                                       <span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td>
 			</tr>
 			<tr data-id="ariaDescription">
@@ -3993,8 +3993,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td>
 				<td class="attr-axapi">
-					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
-					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+					<span class="api">In the accessibilityCustomContent <abbr title="Application Programming Interface">API</abbr>, expose as an <code>AXCustomContent</code> object with <code>{ label: "description" }</code> and `<code>value</code>` set to the description string.</span><br>
+                                        <span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td>
 			</tr>
 			<tr data-id="ariaDetails">
@@ -5502,8 +5502,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="relation">Reverse Relation: <code>RELATION_DESCRIPTION_FOR</code> points to element</span><br>
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a> and <a href="#mapping_additional_relations">Mapping Additional Relations</a></span>
 				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
-					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
-					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+					<span class="api">In the accessibilityCustomContent <abbr title="Application Programming Interface">API</abbr>, expose as an <code>AXCustomContent</code> object with <code>{ label: "description" }</code> and `<code>value</code>` set to the description string.</span><br>
+-                                       <span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td></tr></tbody></table></details><details class="map"><summary id="ariaDescription"><code>aria-description</code></summary><table><caption><a class="property-reference" href="https://w3c.github.io/aria/#aria-description"><code>aria-description</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
 					<span class="property">Property: <code>accDescription</code>: <code>&lt;value&gt;</code></span><br>
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
@@ -5514,8 +5514,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="property">Property: <code>Description</code>: <code>&lt;value&gt;</code></span><br>
 					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
-					<span class="property">Property: <code>AXHelp</code>: <code>&lt;value&gt;</code></span><br>
-					<span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
+					<span class="api">In the accessibilityCustomContent <abbr title="Application Programming Interface">API</abbr>, expose as an <code>AXCustomContent</code> object with <code>{ label: "description" }</code> and `<code>value</code>` set to the description string.</span><br>
+                                        <span class="seealso">See also: <a href="#mapping_additional_nd">Name Computation</a></span>
 				</td></tr></tbody></table></details><details class="map"><summary id="ariaDetails"><code>aria-details</code></summary><table><caption><a class="property-reference" href="https://w3c.github.io/aria/#aria-details"><code>aria-details</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
 					<span class="relation">Relation: <code>IA2_RELATION_DETAILS</code> points to accessible nodes matching IDREFs, if the referenced objects are in the accessibility tree</span><br>
 					<span class="relation">Reverse Relation: <code>IA2_RELATION_DETAILS_FOR</code> points to element</span><br>
