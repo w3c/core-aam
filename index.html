@@ -313,15 +313,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishISODate": "2023-04-07T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 07 April 2023"
+  "publishISODate": "2023-04-09T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 09 April 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-07">07 April 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-09">09 April 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -981,6 +981,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDeleteStyleGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestedDeletion = 1;</code> for all text contained in a <code>deletion</code></span>
 					</td>
 				</tr>
 				<tr data-id="role-map-dialog">
@@ -1263,6 +1264,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXInsertStyleGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestedInsertion = 1;</code> for all text contained in a <code>insertion</code></span>
 					</td>
 				</tr>
 				<tr data-id="role-map-link">
@@ -1421,10 +1423,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					</td>
 					<td class="role-atk">
 						<span class="property">Role: <code>ROLE_MARK</code></span><br>
-            <span class="property">Object Attribute: <code>xml-roles:mark</code></span>
+                                                <span class="property">Object Attribute: <code>xml-roles:mark</code></span>
 					</td>
 					<td class="role-axapi">
-						<span class="property">AXRole: <code>AXGroup</code></span>
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXRoleDescription: <code>highlight</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXHighlight = 1;</code> for all text contained in a <code>mark</code></span>
 					</td>
 				</tr>
 				<tr data-id="role-map-marquee">
@@ -2094,6 +2098,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					</td>
 					<td class="role-axapi">
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestion = 1;</code> for all text contained in a <code>suggestion</code></span>
 					</td>
 				</tr>
 				<tr data-id="role-map-superscript">
@@ -2661,6 +2666,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr><sup>[<a href="#ftn.note1">Note 1</a>]</sup></th><td>
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXDeleteStyleGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestedDeletion = 1;</code> for all text contained in a <code>deletion</code></span>
 					</td></tr></tbody></table></details><details class="map"><summary id="role-map-dialog"><code>dialog</code></summary><table><caption><a class="role-reference" href="https://w3c.github.io/aria/#dialog"><code>dialog</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2</th><td>
 						<span class="property">Role: <code>ROLE_SYSTEM_DIALOG</code></span>
 					</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
@@ -2838,6 +2844,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr><sup>[<a href="#ftn.note1">Note 1</a>]</sup></th><td>
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
 						<span class="property">AXSubrole: <code>AXInsertStyleGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestedInsertion = 1;</code> for all text contained in a <code>insertion</code></span>
 					</td></tr></tbody></table></details><details class="map"><summary id="role-map-link"><code>link</code></summary><table><caption><a class="role-reference" href="https://w3c.github.io/aria/#link"><code>link</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2</th><td>
 						<span class="property">Role: <code>ROLE_SYSTEM_LINK</code></span><br>
 						<span class="property">State: <code>STATE_SYSTEM_LINKED</code></span><br>
@@ -2941,9 +2948,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 						<span class="property">Control Type: <code>Group</code></span>
 					</td></tr><tr><th><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology - Service Provider Interface">AT-SPI</abbr></th><td>
 						<span class="property">Role: <code>ROLE_MARK</code></span><br>
-            <span class="property">Object Attribute: <code>xml-roles:mark</code></span>
+                                                <span class="property">Object Attribute: <code>xml-roles:mark</code></span>
 					</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr><sup>[<a href="#ftn.note1">Note 1</a>]</sup></th><td>
-						<span class="property">AXRole: <code>AXGroup</code></span>
+						<span class="property">AXRole: <code>AXGroup</code></span><br>
+						<span class="property">AXRoleDescription: <code>highlight</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXHighlight = 1;</code> for all text contained in a <code>mark</code></span>
 					</td></tr></tbody></table></details><details class="map"><summary id="role-map-marquee"><code>marquee</code></summary><table><caption><a class="role-reference" href="https://w3c.github.io/aria/#marquee"><code>marquee</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2</th><td>
 						<span class="property">Role: <code>ROLE_SYSTEM_ANIMATION</code></span><br>
 						<span class="property">Object Attribute: <code>xml-roles:marquee</code></span><br>
@@ -3366,6 +3375,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 						<span class="property">Object Attribute: <code>xml-roles:suggestion</code></span>
 					</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr><sup>[<a href="#ftn.note1">Note 1</a>]</sup></th><td>
 						<span class="property">AXRole: <code>AXGroup</code></span><br>
+                                                <span class="property">AXAttributedStringForTextMarkerRange: contains <code>AXIsSuggestion = 1;</code> for all text contained in a <code>suggestion</code></span>
 					</td></tr></tbody></table></details><details class="map"><summary id="role-map-superscript"><code>superscript</code></summary><table><caption><a class="role-reference" href="https://w3c.github.io/aria/#superscript"><code>superscript</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2</th><td>
 						<span class="property">Role: <code>ROLE_SYSTEM_GROUPING</code></span><br>
 						<span class="property">Role: <code>IA2_ROLE_TEXT_FRAME</code></span><br>
