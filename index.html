@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<meta name="generator" content="ReSpec 33.0.1">
+<meta name="generator" content="ReSpec 33.0.2">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -313,15 +313,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishISODate": "2023-04-09T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 09 April 2023"
+  "publishISODate": "2023-04-14T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 14 April 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-09">09 April 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2023-04-14">14 April 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -3730,6 +3730,51 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="property not-mapped"><a href="#not_mapped">Not mapped*</a></span>
 				</td>
 			</tr>
+			<tr data-id="ariaBraillelabel">
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-braillelabel"><code>aria-braillelabel</code></a></th>
+				<td class="attr-msaa-ia2">
+					<span class="property">Object Attribute: <code>braillelabel:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property">Property: <code>AriaProperties.braillelabel</code>: <code>&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property">Object Attribute: <code>braillelabel:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property">Property: AXBrailleLabel</span>
+				</td>
+			</tr>
+			<tr data-id="ariaBrailleroledescription">
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-brailleroledescription"><code>aria-brailleroledescription</code></a></th>
+				<td class="attr-msaa-ia2">
+					<span class="property">Object Attribute: <code>brailleroledescription:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property">Property: <code>AriaProperties.brailleroledescription</code>: <code>&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property">Object Attribute: <code>brailleroledescription:&lt;value&gt;</code></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property">Property: AXBrailleRoleDescription</span>
+				</td>
+			</tr>
+			<tr data-id="ariaBrailleroledescriptionUndefined">
+				<th><a class="property-reference" href="https://w3c.github.io/aria/#aria-brailleroledescription"><code>aria-brailleroledescription</code></a> is undefined or the empty string</th>
+				<td class="attr-msaa-ia2">
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td>
+				<td class="attr-uia">
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td>
+				<td class="attr-atk">
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td>
+				<td class="attr-axapi">
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td>
+			</tr>
 			<tr data-id="ariaBusyTrue">
 				<th><a class="state-reference" href="https://w3c.github.io/aria/#aria-busy"><code>aria-busy</code></a>=<code>true</code></th>
 				<td class="attr-msaa-ia2">
@@ -5361,6 +5406,30 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="property not-mapped"><a href="#not_mapped">Not mapped*</a></span>
 				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
 					<span class="property not-mapped"><a href="#not_mapped">Not mapped*</a></span>
+				</td></tr></tbody></table></details><details class="map"><summary id="ariaBraillelabel"><code>aria-braillelabel</code></summary><table><caption><a class="property-reference" href="https://w3c.github.io/aria/#aria-braillelabel"><code>aria-braillelabel</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
+					<span class="property">Object Attribute: <code>braillelabel:&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
+					<span class="property">Property: <code>AriaProperties.braillelabel</code>: <code>&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology-Service Provider Interface">AT-SPI</abbr></th><td>
+					<span class="property">Object Attribute: <code>braillelabel:&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
+					<span class="property">Property: AXBrailleLabel</span>
+				</td></tr></tbody></table></details><details class="map"><summary id="ariaBrailleroledescription"><code>aria-brailleroledescription</code></summary><table><caption><a class="property-reference" href="https://w3c.github.io/aria/#aria-brailleroledescription"><code>aria-brailleroledescription</code></a></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
+					<span class="property">Object Attribute: <code>brailleroledescription:&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
+					<span class="property">Property: <code>AriaProperties.brailleroledescription</code>: <code>&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology-Service Provider Interface">AT-SPI</abbr></th><td>
+					<span class="property">Object Attribute: <code>brailleroledescription:&lt;value&gt;</code></span>
+				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
+					<span class="property">Property: AXBrailleRoleDescription</span>
+				</td></tr></tbody></table></details><details class="map"><summary id="ariaBrailleroledescriptionUndefined"><code>aria-brailleroledescription</code> is undefined or the empty string</summary><table><caption><a class="property-reference" href="https://w3c.github.io/aria/#aria-brailleroledescription"><code>aria-brailleroledescription</code></a> is undefined or the empty string</caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td></tr><tr><th><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="Assistive Technology-Service Provider Interface">AT-SPI</abbr></th><td>
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
+				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
+					<span class="property not-mapped"><a href="#not_mapped">Not mapped</a></span>
 				</td></tr></tbody></table></details><details class="map"><summary id="ariaBusyTrue"><code>aria-busy</code>=<code>true</code></summary><table><caption><a class="state-reference" href="https://w3c.github.io/aria/#aria-busy"><code>aria-busy</code></a>=<code>true</code></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
 					<span class="property">State: <code>STATE_SYSTEM_BUSY</code></span>
 				</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
