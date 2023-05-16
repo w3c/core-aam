@@ -355,7 +355,7 @@ var mappingTableLabels = {
 &lt;a href="#" role="button"&gt; &lt;!-- computedrole returns "button" --&gt;</pre>
 
       </aside>
-      <p>When an element has a role but is not contained in the required context (for example, an orphaned `listitem` used outside of a `list` context), User Agents MUST ignore the role token, and return the `computedrole` as if the ignored role token had not been included.</p>
+      <p>When an element has a role but is not contained in the required context (for example, an orphaned `listitem` without the required accessible parent of role `list`), User Agents MUST ignore the role token, and return the `computedrole` as if the ignored role token had not been included.</p>
       <aside class="example">
 
 <!-- ReSpec needs these examples to be unindented. -->
