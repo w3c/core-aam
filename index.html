@@ -365,7 +365,7 @@ var mappingTableLabels = {
   &lt;div role="listitem"&gt; &lt;!-- computedrole returns "listitem" in the required context. --&gt;</pre>
 
       </aside>
-      <p>When host language elements do not have an exact or equivalent mapping to a valid, non-abstract role, the related Accessibilty API Mapping extension specification MAY specify a unique `computedrole` string as the return value for interoperability testing purposes, such as `&lt;video&gt; -&gt; "html-video"` in [[HTML-AAM]]. However, authors MUST NOT use any non-concrete `computedrole` string in the `role` attribute, and User Agents MUST ignore any non-concrete role token.</p>
+      <p>When host language elements do not have an exact or equivalent mapping to a valid, non-abstract role, the related Accessibilty API Mapping extension specification MAY specify a unique `computedrole` string as the return value for interoperability testing purposes, such as `&lt;video&gt; -&gt; "html-video"` in [[HTML-AAM]]. However, authors MUST NOT use any host-language-prefixed `computedrole` string in the `role` attribute (such as `html-video`), unless the token also matches valid, defined role (such as `dpub-chapter`). User Agents MUST ignore any abstract or invalid role token.</p>
       <aside class="example">
 
 <!-- ReSpec needs these examples to be unindented. -->
