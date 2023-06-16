@@ -7,7 +7,6 @@
 <script src="common/script/resolveReferences.js" class="remove"></script>
 <script src="common/script/utility.js" class="remove"></script>
 <script src="common/biblio.js" class="remove" defer></script>
-<script src="common/script/mapping-tables.js"></script>
 
 <link href="common/css/mapping-tables.css" rel="stylesheet" type="text/css"/>
 <link href="common/css/common.css" rel="stylesheet" type="text/css"/>
@@ -168,30 +167,42 @@
       "REC": "https://www.w3.org/TR/accname-aam-1.1/"
     },
 
-    preProcess: [ linkCrossReferences, mappingTables ],
+    preProcess: [ linkCrossReferences ],
 	postProcess: [ addPlatformMaintainers ],
 	xref: ["dom", "accname", "wai-aria", "infra"]
   }
 </script>
 <script type="text/javascript">
 
-var mappingTableLabels = {
-  viewByTable: "View as a single table",
-  expand: "Expand all",
-  collapse: "Collapse all",
-  showHideCols: "Show/Hide Columns:",
-  showActionText: "Show",
-  hideActionText: "Hide",
-  showToolTipText: "Show column",
-  hideToolTipText: "Hide column",
+document.addEventListener("DOMContentLoaded", () => {
+  var expandCollapseDetails = function (detCont, action) {
+    detCont.querySelectorAll('details').forEach(function (details) {
+      details.open = action !== 'collapse'
+    });
+  };
 
-  // map where keys are @id of associated mapping table:
-  viewByLabels: {
-    "role-mapping-table": "View by roles",
-    "state-property-mapping-table": "View by state/property",
-    "event-mapping-table": "View by state/property"
-  }
-}
+  document.querySelectorAll('button.expand').forEach(function (b){
+    b.addEventListener('click', function () {
+      detailsContainer = b.parentElement;
+      expandCollapseDetails(detailsContainer, 'expand');
+      b.disabled = true;
+      b.parentElement
+        .querySelector('button.collapse')
+        .removeAttribute('disabled');
+    });
+  });
+
+  document.querySelectorAll('button.collapse').forEach(function (b){
+    b.addEventListener('click', function () {
+      detailsContainer = b.parentElement;
+      expandCollapseDetails(detailsContainer, 'collapse');
+      b.disabled = true;
+      b.parentElement
+        .querySelector('button.expand')
+        .removeAttribute('disabled');
+    });
+  });
+});
 </script>
 
 </head>
@@ -352,7 +363,6 @@ var mappingTableLabels = {
     </section>
     <section id="mapping_role_table">
 		<h3>Role Mapping Table</h3>
-      <p class="note">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p>
 <div class="details">
 <button class="expand">Expand all</button>
 <button disabled="" class="collapse">Collapse all</button>
@@ -4273,7 +4283,6 @@ var mappingTableLabels = {
       <p>There are a number of occurrences in the table where a given state or property is declared "Not mapped".  In some cases, this occurs for the default value of the state/property, and is equivalent to its absence.  User agents might find it quicker to map the value than check to see if it is the default. For computational efficiency, user agents MAY expose the state or property value if doing so is equivalent to not mapping it.  These cases are marked with an asterisk.  </p>
       <p>In other cases, it is mandatory that the state/property not be mapped, since exposing it implies a related affordance.  An example is <a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a>.  Its absence not only indicates that the accessible object is not grabbed, but further defines it as not grab-able.  These cases are marked as "Not mapped" without an asterisk.  </p> 
     </section>
-    <p class="note">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p>
 <div class="details">
 <button class="expand">Expand all</button>
 <button disabled="" class="collapse">Collapse all</button>
@@ -7625,7 +7634,6 @@ var mappingTableLabels = {
         <p>[=User agents=]  MUST notify <a class="termref">assistive technology</a> of <a class="termref">state</a> changes as defined in the table below, SHOULD notify assistive technology of [=ARIA/property=] changes if the <a class="termref">accessibility API</a> defines a change <a class="termref">event</a> for the property, and SHOULD NOT notify assistive technology of property changes if the accessibility <abbr title="application programming interface">API</abbr> does not define a change event for the property. For example, IAccessible2 defines an event to be used when <a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a> changes. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> properties that are expected to change include <a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a>, <a class="property-reference" href="#aria-valuenow"><code>aria-valuenow</code></a>, and <a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a>.</p>
         <p class="note">In some <abbr title="Application Programming Interfaces">APIs</abbr>, AT will only be notified of events to which it has  subscribed.</p>
         <p>For simplicity and  performance the user agent MAY trim out change events for state or property changes that <a class="termref">assistive technologies</a> typically ignore, such as events that are happening in a window that does not currently have focus.        </p>
-        <p class="note">Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this document.</p>
 <div class="details">
 <button class="expand">Expand all</button>
 <button disabled="" class="collapse">Collapse all</button>
