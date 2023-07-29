@@ -172,39 +172,6 @@
 	xref: ["dom", "accname", "wai-aria", "infra"]
   }
 </script>
-<script type="text/javascript">
-
-document.addEventListener("DOMContentLoaded", () => {
-  var expandCollapseDetails = function (detCont, action) {
-    detCont.querySelectorAll('details').forEach(function (details) {
-      details.open = action !== 'collapse'
-    });
-  };
-
-  document.querySelectorAll('button.expand').forEach(function (b){
-    b.addEventListener('click', function () {
-      detailsContainer = b.parentElement;
-      expandCollapseDetails(detailsContainer, 'expand');
-      b.disabled = true;
-      b.parentElement
-        .querySelector('button.collapse')
-        .removeAttribute('disabled');
-    });
-  });
-
-  document.querySelectorAll('button.collapse').forEach(function (b){
-    b.addEventListener('click', function () {
-      detailsContainer = b.parentElement;
-      expandCollapseDetails(detailsContainer, 'collapse');
-      b.disabled = true;
-      b.parentElement
-        .querySelector('button.expand')
-        .removeAttribute('disabled');
-    });
-  });
-});
-</script>
-
 </head>
 <body>
 <section id="abstract">
@@ -362,13 +329,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   <p class="note">User agents can provide this role string, for example, in response to the WebDriver function <a href="https://w3c.github.io/webdriver/#get-computed-role">`getComputedRole`</a>.</p>
     </section>
     <section id="mapping_role_table">
-		<h3>Role Mapping Table</h3>
-<div class="details">
-<button class="expand">Expand all</button>
-<button disabled="" class="collapse">Collapse all</button>
-<details class='map'>
-	<summary id=role-map-alert><code>alert</code></summary>
-	<table>
+		<h3>Role Mapping Tables</h3>
+		<h5 id=role-map-alert><code>alert</code></h5><table>
 		<caption><a class="role-reference" href="#alert"><code>alert</code></a></caption>
 		<tbody>
 		<tr>
@@ -409,10 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-alertdialog><code>alertdialog</code></summary>
-	<table>
+	</table><h5 id=role-map-alertdialog><code>alertdialog</code></h5><table>
 		<caption><a class="role-reference" href="#alertdialog"><code>alertdialog</code></a></caption>
 		<tbody>
 		<tr>
@@ -452,10 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-application><code>application</code></summary>
-	<table>
+	</table><h5 id=role-map-application><code>application</code></h5><table>
 		<caption><a class="role-reference" href="#application"><code>application</code></a></caption>
 		<tbody>
 		<tr>
@@ -491,10 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-article><code>article</code></summary>
-	<table>
+	</table><h5 id=role-map-article><code>article</code></h5><table>
 		<caption><a class="role-reference" href="#article"><code>article</code></a></caption>
 		<tbody>
 		<tr>
@@ -533,10 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-banner><code>banner</code></summary>
-	<table>
+	</table><h5 id=role-map-banner><code>banner</code></h5><table>
 		<caption><a class="role-reference" href="#banner"><code>banner</code></a></caption>
 		<tbody>
 		<tr>
@@ -576,10 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-blockquote><code>blockquote</code></summary>
-	<table>
+	</table><h5 id=role-map-blockquote><code>blockquote</code></h5><table>
 		<caption><a class="role-reference" href="#blockquote"><code>blockquote</code></a></caption>
 		<tbody>
 		<tr>
@@ -616,10 +563,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-button><code>button</code> with default values for <code>aria-pressed</code> and <code>aria-haspopup</code></summary>
-	<table>
+	</table><h5 id=role-map-button><code>button</code> with default values for <code>aria-pressed</code> and <code>aria-haspopup</code></h5><table>
 		<caption><a class="role-reference" href="#button"><code>button</code></a> with default values for <a class="property-reference" href="#aria-pressed"><code>aria-pressed</code></a> and <a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a></caption>
 		<tbody>
 		<tr>
@@ -654,10 +598,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-button-haspopup><code>button</code> with non-<code>false</code> value for <code>aria-haspopup</code></summary>
-	<table>
+	</table><h5 id=role-map-button-haspopup><code>button</code> with non-<code>false</code> value for <code>aria-haspopup</code></h5><table>
 		<caption><a class="role-reference" href="#button"><code>button</code></a> with non-<code>false</code> value for <code>aria-haspopup</code></caption>
 		<tbody>
 		<tr>
@@ -692,10 +633,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-button-pressed><code>button</code> with defined value for <code>aria-pressed</code></summary>
-	<table>
+	</table><h5 id=role-map-button-pressed><code>button</code> with defined value for <code>aria-pressed</code></h5><table>
 		<caption><a class="role-reference" href="#button"><code>button</code></a> with defined value for <a class="property-reference" href="#aria-pressed"><code>aria-pressed</code></a></caption>
 		<tbody>
 		<tr>
@@ -731,10 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-caption><code>caption</code></summary>
-	<table>
+	</table><h5 id=role-map-caption><code>caption</code></h5><table>
 		<caption><a class="role-reference" href="#caption"><code>caption</code></a></caption>
 		<tbody>
 		<tr>
@@ -770,10 +705,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-cell><code>cell</code></summary>
-	<table>
+	</table><h5 id=role-map-cell><code>cell</code></h5><table>
 		<caption><a class="role-reference" href="#cell"><code>cell</code></a></caption>
 		<tbody>
 		<tr>
@@ -813,10 +745,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-checkbox><code>checkbox</code></summary>
-	<table>
+	</table><h5 id=role-map-checkbox><code>checkbox</code></h5><table>
 		<caption><a class="role-reference" href="#checkbox"><code>checkbox</code></a></caption>
 		<tbody>
 		<tr>
@@ -855,10 +784,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-code><code>code</code></summary>
-	<table>
+	</table><h5 id=role-map-code><code>code</code></h5><table>
 		<caption><a class="role-reference" href="#code"><code>code</code></a></caption>
 		<tbody>
 		<tr>
@@ -896,10 +822,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-columnheader><code>columnheader</code></summary>
-	<table>
+	</table><h5 id=role-map-columnheader><code>columnheader</code></h5><table>
 		<caption><a class="role-reference" href="#columnheader"><code>columnheader</code></a></caption>
 		<tbody>
 		<tr>
@@ -939,10 +862,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-combobox><code>combobox</code></summary>
-	<table>
+	</table><h5 id=role-map-combobox><code>combobox</code></h5><table>
 		<caption><a class="role-reference" href="#combobox"><code>combobox</code></a></caption>
 		<tbody>
 		<tr>
@@ -981,10 +901,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-comment><code>comment</code></summary>
-	<table>
+	</table><h5 id=role-map-comment><code>comment</code></h5><table>
 		<caption><a class="role-reference" href="#comment"><code>comment</code></a></caption>
 		<tbody>
 		<tr>
@@ -1021,10 +938,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-complementary><code>complementary</code></summary>
-	<table>
+	</table><h5 id=role-map-complementary><code>complementary</code></h5><table>
 		<caption><a class="role-reference" href="#complementary"><code>complementary</code></a></caption>
 		<tbody>
 		<tr>
@@ -1064,10 +978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-contentinfo><code>contentinfo</code></summary>
-	<table>
+	</table><h5 id=role-map-contentinfo><code>contentinfo</code></h5><table>
 		<caption><a class="role-reference" href="#contentinfo"><code>contentinfo</code></a></caption>
 		<tbody>
 		<tr>
@@ -1107,10 +1018,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-definition><code>definition</code></summary>
-	<table>
+	</table><h5 id=role-map-definition><code>definition</code></h5><table>
 		<caption><a class="role-reference" href="#definition"><code>definition</code></a></caption>
 		<tbody>
 		<tr>
@@ -1147,10 +1055,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-deletion><code>deletion</code></summary>
-	<table>
+	</table><h5 id=role-map-deletion><code>deletion</code></h5><table>
 		<caption><a class="role-reference" href="#deletion"><code>deletion</code></a></caption>
 		<tbody>
 		<tr>
@@ -1188,10 +1093,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-dialog><code>dialog</code></summary>
-	<table>
+	</table><h5 id=role-map-dialog><code>dialog</code></h5><table>
 		<caption><a class="role-reference" href="#dialog"><code>dialog</code></a></caption>
 		<tbody>
 		<tr>
@@ -1227,10 +1129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-directory><code>directory</code></summary>
-	<table>
+	</table><h5 id=role-map-directory><code>directory</code></h5><table>
 		<caption><a class="role-reference" href="#directory"><code>directory</code></a></caption>
 		<tbody>
 		<tr>
@@ -1265,10 +1164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-document><code>document</code></summary>
-	<table>
+	</table><h5 id=role-map-document><code>document</code></h5><table>
 		<caption><a class="role-reference" href="#document"><code>document</code></a></caption>
 		<tbody>
 		<tr>
@@ -1304,10 +1200,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-emphasis><code>emphasis</code></summary>
-	<table>
+	</table><h5 id=role-map-emphasis><code>emphasis</code></h5><table>
 		<caption><a class="role-reference" href="#emphasis"><code>emphasis</code></a></caption>
 		<tbody>
 		<tr>
@@ -1345,10 +1238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-feed><code>feed</code></summary>
-	<table>
+	</table><h5 id=role-map-feed><code>feed</code></h5><table>
 		<caption><a class="role-reference" href="#feed"><code>feed</code></a></caption>
 		<tbody>
 		<tr>
@@ -1386,10 +1276,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-figure><code>figure</code></summary>
-	<table>
+	</table><h5 id=role-map-figure><code>figure</code></h5><table>
 		<caption><a class="role-reference" href="#figure"><code>figure</code></a></caption>
 		<tbody>
 		<tr>
@@ -1427,10 +1314,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-form><code>form</code> with an accessible name</summary>
-	<table>
+	</table><h5 id=role-map-form><code>form</code> with an accessible name</h5><table>
 		<caption><a class="role-reference" href="#form"><code>form</code></a> with an accessible name</caption>
 		<tbody>
 		<tr>
@@ -1469,10 +1353,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-form-nameless><code>form</code> without an accessible name</summary>
-	<table>
+	</table><h5 id=role-map-form-nameless><code>form</code> without an accessible name</h5><table>
 		<caption><a class="role-reference" href="#form"><code>form</code></a> without an accessible name</caption>
 		<tbody>
 		<tr>
@@ -1506,10 +1387,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-generic><code>generic</code></summary>
-	<table>
+	</table><h5 id=role-map-generic><code>generic</code></h5><table>
 		<caption><a class="role-reference" href="#generic"><code>generic</code></a></caption>
 		<tbody>
 		<tr>
@@ -1545,10 +1423,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-grid><code>grid</code></summary>
-	<table>
+	</table><h5 id=role-map-grid><code>grid</code></h5><table>
 		<caption><a class="role-reference" href="#grid"><code>grid</code></a></caption>
 		<tbody>
 		<tr>
@@ -1597,10 +1472,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-gridcell><code>gridcell</code></summary>
-	<table>
+	</table><h5 id=role-map-gridcell><code>gridcell</code></h5><table>
 		<caption><a class="role-reference" href="#gridcell"><code>gridcell</code></a></caption>
 		<tbody>
 		<tr>
@@ -1642,10 +1514,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-group><code>group</code></summary>
-	<table>
+	</table><h5 id=role-map-group><code>group</code></h5><table>
 		<caption><a class="role-reference" href="#group"><code>group</code></a></caption>
 		<tbody>
 		<tr>
@@ -1680,10 +1549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-heading><code>heading</code></summary>
-	<table>
+	</table><h5 id=role-map-heading><code>heading</code></h5><table>
 		<caption><a class="role-reference" href="#heading"><code>heading</code></a></caption>
 		<tbody>
 		<tr>
@@ -1720,10 +1586,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-img><code>img</code></summary>
-	<table>
+	</table><h5 id=role-map-img><code>img</code></h5><table>
 		<caption><a class="role-reference" href="#img"><code>img</code></a></caption>
 		<tbody>
 		<tr>
@@ -1760,10 +1623,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-insertion><code>insertion</code></summary>
-	<table>
+	</table><h5 id=role-map-insertion><code>insertion</code></h5><table>
 		<caption><a class="role-reference" href="#insertion"><code>insertion</code></a></caption>
 		<tbody>
 		<tr>
@@ -1801,10 +1661,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-link><code>link</code></summary>
-	<table>
+	</table><h5 id=role-map-link><code>link</code></h5><table>
 		<caption><a class="role-reference" href="#link"><code>link</code></a></caption>
 		<tbody>
 		<tr>
@@ -1844,10 +1701,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-list><code>list</code></summary>
-	<table>
+	</table><h5 id=role-map-list><code>list</code></h5><table>
 		<caption><a class="role-reference" href="#list"><code>list</code></a></caption>
 		<tbody>
 		<tr>
@@ -1883,10 +1737,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-listbox><code>listbox</code> not owned by or child of <code>combobox</code></summary>
-	<table>
+	</table><h5 id=role-map-listbox><code>listbox</code> not owned by or child of <code>combobox</code></h5><table>
 		<caption><a class="role-reference" href="#listbox"><code>listbox</code></a> not owned by or child of <code>combobox</code></caption>
 		<tbody>
 		<tr>
@@ -1926,10 +1777,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-listbox-in-combobox><code>listbox</code> owned by or child of <code>combobox</code></summary>
-	<table>
+	</table><h5 id=role-map-listbox-in-combobox><code>listbox</code> owned by or child of <code>combobox</code></h5><table>
 		<caption><a class="role-reference" href="#listbox"><code>listbox</code></a> owned by or child of <code>combobox</code></caption>
 		<tbody>
 		<tr>
@@ -1969,10 +1817,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-listitem><code>listitem</code></summary>
-	<table>
+	</table><h5 id=role-map-listitem><code>listitem</code></h5><table>
 		<caption><a class="role-reference" href="#listitem"><code>listitem</code></a></caption>
 		<tbody>
 		<tr>
@@ -2010,10 +1855,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-log><code>log</code></summary>
-	<table>
+	</table><h5 id=role-map-log><code>log</code></h5><table>
 		<caption><a class="role-reference" href="#log"><code>log</code></a></caption>
 		<tbody>
 		<tr>
@@ -2057,10 +1899,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-main><code>main</code></summary>
-	<table>
+	</table><h5 id=role-map-main><code>main</code></h5><table>
 		<caption><a class="role-reference" href="#main"><code>main</code></a></caption>
 		<tbody>
 		<tr>
@@ -2099,10 +1938,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-mark><code>mark</code></summary>
-	<table>
+	</table><h5 id=role-map-mark><code>mark</code></h5><table>
 		<caption><a class="role-reference" href="#mark"><code>mark</code></a></caption>
 		<tbody>
 		<tr>
@@ -2141,10 +1977,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-marquee><code>marquee</code></summary>
-	<table>
+	</table><h5 id=role-map-marquee><code>marquee</code></h5><table>
 		<caption><a class="role-reference" href="#marquee"><code>marquee</code></a></caption>
 		<tbody>
 		<tr>
@@ -2186,10 +2019,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-math><code>math</code></summary>
-	<table>
+	</table><h5 id=role-map-math><code>math</code></h5><table>
 		<caption><a class="role-reference" href="#math"><code>math</code></a></caption>
 		<tbody>
 		<tr>
@@ -2225,10 +2055,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-menu><code>menu</code></summary>
-	<table>
+	</table><h5 id=role-map-menu><code>menu</code></h5><table>
 		<caption><a class="role-reference" href="#menu"><code>menu</code></a></caption>
 		<tbody>
 		<tr>
@@ -2267,10 +2094,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-menubar><code>menubar</code></summary>
-	<table>
+	</table><h5 id=role-map-menubar><code>menubar</code></h5><table>
 		<caption><a class="role-reference" href="#menubar"><code>menubar</code></a></caption>
 		<tbody>
 		<tr>
@@ -2309,10 +2133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-menuitem><code>menuitem</code></summary>
-	<table>
+	</table><h5 id=role-map-menuitem><code>menuitem</code></h5><table>
 		<caption><a class="role-reference" href="#menuitem"><code>menuitem</code></a></caption>
 		<tbody>
 		<tr>
@@ -2347,10 +2168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-menuitemcheckbox><code>menuitemcheckbox</code></summary>
-	<table>
+	</table><h5 id=role-map-menuitemcheckbox><code>menuitemcheckbox</code></h5><table>
 		<caption><a class="role-reference" href="#menuitemcheckbox"><code>menuitemcheckbox</code></a></caption>
 		<tbody>
 		<tr>
@@ -2391,10 +2209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-menuitemradio><code>menuitemradio</code></summary>
-	<table>
+	</table><h5 id=role-map-menuitemradio><code>menuitemradio</code></h5><table>
 		<caption><a class="role-reference" href="#menuitemradio"><code>menuitemradio</code></a></caption>
 		<tbody>
 		<tr>
@@ -2436,10 +2251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-meter><code>meter</code></summary>
-	<table>
+	</table><h5 id=role-map-meter><code>meter</code></h5><table>
 		<caption><a class="role-reference" href="#meter"><code>meter</code></a></caption>
 		<tbody>
 		<tr>
@@ -2478,10 +2290,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-navigation><code>navigation</code></summary>
-	<table>
+	</table><h5 id=role-map-navigation><code>navigation</code></h5><table>
 		<caption><a class="role-reference" href="#navigation"><code>navigation</code></a></caption>
 		<tbody>
 		<tr>
@@ -2520,10 +2329,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-none><code>none</code></summary>
-	<table>
+	</table><h5 id=role-map-none><code>none</code></h5><table>
 		<caption><a class="role-reference" href="#none"><code>none</code></a></caption>
 		<tbody>
 		<tr>
@@ -2557,10 +2363,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-note><code>note</code></summary>
-	<table>
+	</table><h5 id=role-map-note><code>note</code></h5><table>
 		<caption><a class="role-reference" href="#note"><code>note</code></a></caption>
 		<tbody>
 		<tr>
@@ -2596,10 +2399,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-option><code>option</code> not inside <code>combobox</code></summary>
-	<table>
+	</table><h5 id=role-map-option><code>option</code> not inside <code>combobox</code></h5><table>
 		<caption><a class="role-reference" href="#option"><code>option</code></a> not inside <code>combobox</code></caption>
 		<tbody>
 		<tr>
@@ -2639,10 +2439,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-option-in-combobox><code>option</code> inside <code>combobox</code></summary>
-	<table>
+	</table><h5 id=role-map-option-in-combobox><code>option</code> inside <code>combobox</code></h5><table>
 		<caption><a class="role-reference" href="#option"><code>option</code></a> inside <code>combobox</code></caption>
 		<tbody>
 		<tr>
@@ -2682,10 +2479,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-paragraph><code>paragraph</code></summary>
-	<table>
+	</table><h5 id=role-map-paragraph><code>paragraph</code></h5><table>
 		<caption><a class="role-reference" href="#paragraph"><code>paragraph</code></a></caption>
 		<tbody>
 		<tr>
@@ -2721,10 +2515,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-presentation><code>presentation</code></summary>
-	<table>
+	</table><h5 id=role-map-presentation><code>presentation</code></h5><table>
 		<caption><a class="role-reference" href="#presentation"><code>presentation</code></a></caption>
 		<tbody>
 		<tr>
@@ -2758,10 +2549,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-progressbar><code>progressbar</code></summary>
-	<table>
+	</table><h5 id=role-map-progressbar><code>progressbar</code></h5><table>
 		<caption><a class="role-reference" href="#progressbar"><code>progressbar</code></a></caption>
 		<tbody>
 		<tr>
@@ -2801,10 +2589,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-radio><code>radio</code></summary>
-	<table>
+	</table><h5 id=role-map-radio><code>radio</code></h5><table>
 		<caption><a class="role-reference" href="#radio"><code>radio</code></a></caption>
 		<tbody>
 		<tr>
@@ -2845,10 +2630,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-radiogroup><code>radiogroup</code></summary>
-	<table>
+	</table><h5 id=role-map-radiogroup><code>radiogroup</code></h5><table>
 		<caption><a class="role-reference" href="#radiogroup"><code>radiogroup</code></a></caption>
 		<tbody>
 		<tr>
@@ -2883,10 +2665,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-region><code>region</code> with an accessible name</summary>
-	<table>
+	</table><h5 id=role-map-region><code>region</code> with an accessible name</h5><table>
 		<caption><a class="role-reference" href="#region"><code>region</code></a> with an accessible name</caption>
 		<tbody>
 		<tr>
@@ -2926,10 +2705,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-region-nameless><code>region</code> without an accessible name</summary>
-	<table>
+	</table><h5 id=role-map-region-nameless><code>region</code> without an accessible name</h5><table>
 		<caption><a class="role-reference" href="#region"><code>region</code></a> without an accessible name</caption>
 		<tbody>
 		<tr>
@@ -2963,10 +2739,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-row><code>row</code> not inside <code>treegrid</code></summary>
-	<table>
+	</table><h5 id=role-map-row><code>row</code> not inside <code>treegrid</code></h5><table>
 		<caption><a class="role-reference" href="#row"><code>row</code></a> not inside <code>treegrid</code></caption>
 		<tbody>
 		<tr>
@@ -3003,10 +2776,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-row-in-treegrid><code>row</code> inside <code>treegrid</code></summary>
-	<table>
+	</table><h5 id=role-map-row-in-treegrid><code>row</code> inside <code>treegrid</code></h5><table>
 		<caption><a class="role-reference" href="#row"><code>row</code></a> inside <code>treegrid</code></caption>
 		<tbody>
 		<tr>
@@ -3043,10 +2813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-rowgroup><code>rowgroup</code></summary>
-	<table>
+	</table><h5 id=role-map-rowgroup><code>rowgroup</code></h5><table>
 		<caption><a class="role-reference" href="#rowgroup"><code>rowgroup</code></a></caption>
 		<tbody>
 		<tr>
@@ -3080,10 +2847,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-rowheader><code>rowheader</code></summary>
-	<table>
+	</table><h5 id=role-map-rowheader><code>rowheader</code></h5><table>
 		<caption><a class="role-reference" href="#rowheader"><code>rowheader</code></a></caption>
 		<tbody>
 		<tr>
@@ -3120,10 +2884,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-scrollbar><code>scrollbar</code></summary>
-	<table>
+	</table><h5 id=role-map-scrollbar><code>scrollbar</code></h5><table>
 		<caption><a class="role-reference" href="#scrollbar"><code>scrollbar</code></a></caption>
 		<tbody>
 		<tr>
@@ -3162,10 +2923,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-search><code>search</code></summary>
-	<table>
+	</table><h5 id=role-map-search><code>search</code></h5><table>
 		<caption><a class="role-reference" href="#search"><code>search</code></a></caption>
 		<tbody>
 		<tr>
@@ -3204,10 +2962,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-searchbox><code>searchbox</code></summary>
-	<table>
+	</table><h5 id=role-map-searchbox><code>searchbox</code></h5><table>
 		<caption><a class="role-reference" href="#searchbox"><code>searchbox</code></a></caption>
 		<tbody>
 		<tr>
@@ -3246,10 +3001,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-separator><code>separator</code> (non-focusable)</summary>
-	<table>
+	</table><h5 id=role-map-separator><code>separator</code> (non-focusable)</h5><table>
 		<caption><a class="role-reference" href="#separator"><code>separator</code></a> (non-focusable)</caption>
 		<tbody>
 		<tr>
@@ -3284,10 +3036,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-separator-focusable><code>separator</code> (focusable)</summary>
-	<table>
+	</table><h5 id=role-map-separator-focusable><code>separator</code> (focusable)</h5><table>
 		<caption><a class="role-reference" href="#separator"><code>separator</code></a> (focusable)</caption>
 		<tbody>
 		<tr>
@@ -3326,10 +3075,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-slider><code>slider</code></summary>
-	<table>
+	</table><h5 id=role-map-slider><code>slider</code></h5><table>
 		<caption><a class="role-reference" href="#slider"><code>slider</code></a></caption>
 		<tbody>
 		<tr>
@@ -3368,10 +3114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-spinbutton><code>spinbutton</code></summary>
-	<table>
+	</table><h5 id=role-map-spinbutton><code>spinbutton</code></h5><table>
 		<caption><a class="role-reference" href="#spinbutton"><code>spinbutton</code></a></caption>
 		<tbody>
 		<tr>
@@ -3410,10 +3153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-status><code>status</code></summary>
-	<table>
+	</table><h5 id=role-map-status><code>status</code></h5><table>
 		<caption><a class="role-reference" href="#status"><code>status</code></a></caption>
 		<tbody>
 		<tr>
@@ -3456,10 +3196,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-strong><code>strong</code></summary>
-	<table>
+	</table><h5 id=role-map-strong><code>strong</code></h5><table>
 		<caption><a class="role-reference" href="#strong"><code>strong</code></a></caption>
 		<tbody>
 		<tr>
@@ -3497,10 +3234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-subscript><code>subscript</code></summary>
-	<table>
+	</table><h5 id=role-map-subscript><code>subscript</code></h5><table>
 		<caption><a class="role-reference" href="#subscript"><code>subscript</code></a></caption>
 		<tbody>
 		<tr>
@@ -3538,10 +3272,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-suggestion><code>suggestion</code></summary>
-	<table>
+	</table><h5 id=role-map-suggestion><code>suggestion</code></h5><table>
 		<caption><a class="role-reference" href="#suggestion"><code>suggestion</code></a></caption>
 		<tbody>
 		<tr>
@@ -3579,10 +3310,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-superscript><code>superscript</code></summary>
-	<table>
+	</table><h5 id=role-map-superscript><code>superscript</code></h5><table>
 		<caption><a class="role-reference" href="#superscript"><code>superscript</code></a></caption>
 		<tbody>
 		<tr>
@@ -3620,10 +3348,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-switch><code>switch</code></summary>
-	<table>
+	</table><h5 id=role-map-switch><code>switch</code></h5><table>
 		<caption><a class="role-reference" href="#switch"><code>switch</code></a></caption>
 		<tbody>
 		<tr>
@@ -3667,10 +3392,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-tab><code>tab</code></summary>
-	<table>
+	</table><h5 id=role-map-tab><code>tab</code></h5><table>
 		<caption><a class="role-reference" href="#tab"><code>tab</code></a></caption>
 		<tbody>
 		<tr>
@@ -3707,10 +3429,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-table><code>table</code></summary>
-	<table>
+	</table><h5 id=role-map-table><code>table</code></h5><table>
 		<caption><a class="role-reference" href="#table"><code>table</code></a></caption>
 		<tbody>
 		<tr>
@@ -3754,10 +3473,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-tablist><code>tablist</code></summary>
-	<table>
+	</table><h5 id=role-map-tablist><code>tablist</code></h5><table>
 		<caption><a class="role-reference" href="#tablist"><code>tablist</code></a></caption>
 		<tbody>
 		<tr>
@@ -3797,10 +3513,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-tabpanel><code>tabpanel</code></summary>
-	<table>
+	</table><h5 id=role-map-tabpanel><code>tabpanel</code></h5><table>
 		<caption><a class="role-reference" href="#tabpanel"><code>tabpanel</code></a></caption>
 		<tbody>
 		<tr>
@@ -3835,10 +3548,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-term><code>term</code></summary>
-	<table>
+	</table><h5 id=role-map-term><code>term</code></h5><table>
 		<caption><a class="role-reference" href="#term"><code>term</code></a></caption>
 		<tbody>
 		<tr>
@@ -3875,10 +3585,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-textbox><code>textbox</code> when <code>aria-multiline</code> is <code>false</code></summary>
-	<table>
+	</table><h5 id=role-map-textbox><code>textbox</code> when <code>aria-multiline</code> is <code>false</code></h5><table>
 		<caption><a class="role-reference" href="#textbox"><code>textbox</code></a> when <code>aria-multiline</code> is <code>false</code></caption>
 		<tbody>
 		<tr>
@@ -3916,10 +3623,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-textbox-multiline><code>textbox</code> when <code>aria-multiline</code> is <code>true</code></summary>
-	<table>
+	</table><h5 id=role-map-textbox-multiline><code>textbox</code> when <code>aria-multiline</code> is <code>true</code></h5><table>
 		<caption><a class="role-reference" href="#textbox"><code>textbox</code></a> when <code>aria-multiline</code> is <code>true</code></caption>
 		<tbody>
 		<tr>
@@ -3957,10 +3661,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-time><code>time</code></summary>
-	<table>
+	</table><h5 id=role-map-time><code>time</code></h5><table>
 		<caption><a class="role-reference" href="#time"><code>time</code></a></caption>
 		<tbody>
 		<tr>
@@ -3999,10 +3700,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-timer><code>timer</code></summary>
-	<table>
+	</table><h5 id=role-map-timer><code>timer</code></h5><table>
 		<caption><a class="role-reference" href="#timer"><code>timer</code></a></caption>
 		<tbody>
 		<tr>
@@ -4045,10 +3743,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-toolbar><code>toolbar</code></summary>
-	<table>
+	</table><h5 id=role-map-toolbar><code>toolbar</code></h5><table>
 		<caption><a class="role-reference" href="#toolbar"><code>toolbar</code></a></caption>
 		<tbody>
 		<tr>
@@ -4083,10 +3778,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-tooltip><code>tooltip</code></summary>
-	<table>
+	</table><h5 id=role-map-tooltip><code>tooltip</code></h5><table>
 		<caption><a class="role-reference" href="#tooltip"><code>tooltip</code></a></caption>
 		<tbody>
 		<tr>
@@ -4121,10 +3813,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-tree><code>tree</code></summary>
-	<table>
+	</table><h5 id=role-map-tree><code>tree</code></h5><table>
 		<caption><a class="role-reference" href="#tree"><code>tree</code></a></caption>
 		<tbody>
 		<tr>
@@ -4163,10 +3852,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-treegrid><code>treegrid</code></summary>
-	<table>
+	</table><h5 id=role-map-treegrid><code>treegrid</code></h5><table>
 		<caption><a class="role-reference" href="#treegrid"><code>treegrid</code></a></caption>
 		<tbody>
 		<tr>
@@ -4207,10 +3893,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=role-map-treeitem><code>treeitem</code></summary>
-	<table>
+	</table><h5 id=role-map-treeitem><code>treeitem</code></h5><table>
 		<caption><a class="role-reference" href="#treeitem"><code>treeitem</code></a></caption>
 		<tbody>
 		<tr>
@@ -4250,8 +3933,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		</tr>
 		</tbody>
 	</table>
-</details>
-</div>
+
           <div class="note" id="ftn.note1"><p>
         	<sup>[Note 1]</sup>
         	User agent should return a user-presentable, localized string value for the AXRoleDescription.</p>
@@ -4277,18 +3959,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </ol>
     </section>
   <section id="mapping_state-property_table">
-    <h3>State and Property Mapping Table</h3>
+    <h3>State and Property Mapping Tables</h3>
     <section id="not_mapped">
       <h4>Not Mapped</h4>
       <p>There are a number of occurrences in the table where a given state or property is declared "Not mapped".  In some cases, this occurs for the default value of the state/property, and is equivalent to its absence.  User agents might find it quicker to map the value than check to see if it is the default. For computational efficiency, user agents MAY expose the state or property value if doing so is equivalent to not mapping it.  These cases are marked with an asterisk.  </p>
       <p>In other cases, it is mandatory that the state/property not be mapped, since exposing it implies a related affordance.  An example is <a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a>.  Its absence not only indicates that the accessible object is not grabbed, but further defines it as not grab-able.  These cases are marked as "Not mapped" without an asterisk.  </p> 
     </section>
-<div class="details">
-<button class="expand">Expand all</button>
-<button disabled="" class="collapse">Collapse all</button>
-<details class='map'>
-	<summary id=ariaActiveDescendant><code>aria-activedescendant</code></summary>
-	<table>
+<h5 id=ariaActiveDescendant><code>aria-activedescendant</code></h5><table>
 		<caption><a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a></caption>
 		<tbody>
 		<tr>
@@ -4317,10 +3994,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaAtomicTrue><code>aria-atomic</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaAtomicTrue><code>aria-atomic</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-atomic"><code>aria-atomic</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -4358,10 +4032,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaAtomicFalse><code>aria-atomic</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaAtomicFalse><code>aria-atomic</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-atomic"><code>aria-atomic</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -4401,10 +4072,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaAutocompleteInlineListBoth><code>aria-autocomplete</code>=<code>inline</code>, <code>list</code>, or <code>both</code></summary>
-	<table>
+	</table><h5 id=ariaAutocompleteInlineListBoth><code>aria-autocomplete</code>=<code>inline</code>, <code>list</code>, or <code>both</code></h5><table>
 		<caption><a class="property-reference" href="#aria-autocomplete"><code>aria-autocomplete</code></a>=<code>inline</code>, <code>list</code>, or <code>both</code></caption>
 		<tbody>
 		<tr>
@@ -4434,10 +4102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaAutocompleteNone><code>aria-autocomplete</code>=<code>none</code></summary>
-	<table>
+	</table><h5 id=ariaAutocompleteNone><code>aria-autocomplete</code>=<code>none</code></h5><table>
 		<caption><a class="property-reference" href="#aria-autocomplete"><code>aria-autocomplete</code></a>=<code>none</code></caption>
 		<tbody>
 		<tr>
@@ -4465,10 +4130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaBraillelabel><code>aria-braillelabel</code></summary>
-	<table>
+	</table><h5 id=ariaBraillelabel><code>aria-braillelabel</code></h5><table>
 		<caption><a class="property-reference" href="#aria-braillelabel"><code>aria-braillelabel</code></a></caption>
 		<tbody>
 		<tr>
@@ -4496,10 +4158,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaBrailleroledescription><code>aria-brailleroledescription</code></summary>
-	<table>
+	</table><h5 id=ariaBrailleroledescription><code>aria-brailleroledescription</code></h5><table>
 		<caption><a class="property-reference" href="#aria-brailleroledescription"><code>aria-brailleroledescription</code></a></caption>
 		<tbody>
 		<tr>
@@ -4527,10 +4186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaBrailleroledescriptionUndefined><code>aria-brailleroledescription</code> is undefined or the empty string</summary>
-	<table>
+	</table><h5 id=ariaBrailleroledescriptionUndefined><code>aria-brailleroledescription</code> is undefined or the empty string</h5><table>
 		<caption><a class="property-reference" href="#aria-brailleroledescription"><code>aria-brailleroledescription</code></a> is undefined or the empty string</caption>
 		<tbody>
 		<tr>
@@ -4558,10 +4214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaBusyTrue><code>aria-busy</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaBusyTrue><code>aria-busy</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-busy"><code>aria-busy</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -4589,10 +4242,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaBusyFalse><code>aria-busy</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaBusyFalse><code>aria-busy</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-busy"><code>aria-busy</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -4620,10 +4270,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCheckedTrue><code>aria-checked</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaCheckedTrue><code>aria-checked</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -4655,10 +4302,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCheckedFalse><code>aria-checked</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaCheckedFalse><code>aria-checked</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -4690,10 +4334,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCheckedMixed><code>aria-checked</code>=<code>mixed</code></summary>
-	<table>
+	</table><h5 id=ariaCheckedMixed><code>aria-checked</code>=<code>mixed</code></h5><table>
 		<caption><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a>=<code>mixed</code></caption>
 		<tbody>
 		<tr>
@@ -4725,10 +4366,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCheckedUndefined><code>aria-checked</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaCheckedUndefined><code>aria-checked</code> is undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -4756,10 +4394,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaColCount><code>aria-colcount</code></summary>
-	<table>
+	</table><h5 id=ariaColCount><code>aria-colcount</code></h5><table>
 		<caption><a class="property-reference" href="#aria-colcount"><code>aria-colcount</code></a></caption>
 		<tbody>
 		<tr>
@@ -4789,10 +4424,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaColIndex><code>aria-colindex</code></summary>
-	<table>
+	</table><h5 id=ariaColIndex><code>aria-colindex</code></h5><table>
 		<caption><a class="property-reference" href="#aria-colindex"><code>aria-colindex</code></a></caption>
 		<tbody>
 		<tr>
@@ -4822,10 +4454,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaColIndexText><code>aria-colindextext</code></summary>
-	<table>
+	</table><h5 id=ariaColIndexText><code>aria-colindextext</code></h5><table>
 		<caption><a class="property-reference" href="#aria-colindextext"><code>aria-colindextext</code></a></caption>
 		<tbody>
 		<tr>
@@ -4853,10 +4482,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaColSpan><code>aria-colspan</code></summary>
-	<table>
+	</table><h5 id=ariaColSpan><code>aria-colspan</code></h5><table>
 		<caption><a class="property-reference" href="#aria-colspan"><code>aria-colspan</code></a></caption>
 		<tbody>
 		<tr>
@@ -4886,10 +4512,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaControls><code>aria-controls</code></summary>
-	<table>
+	</table><h5 id=ariaControls><code>aria-controls</code></h5><table>
 		<caption><a class="property-reference" href="#aria-controls"><code>aria-controls</code></a></caption>
 		<tbody>
 		<tr>
@@ -4921,10 +4544,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCurrent><code>aria-current</code> with non-<code>false</code> allowed value</summary>
-	<table>
+	</table><h5 id=ariaCurrent><code>aria-current</code> with non-<code>false</code> allowed value</h5><table>
 		<caption><a class="state-reference" href="#aria-current"><code>aria-current</code></a> with non-<code>false</code> allowed value</caption>
 		<tbody>
 		<tr>
@@ -4953,10 +4573,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCurrentUnrecognizedValue><code>aria-current</code> with unrecognized value</summary>
-	<table>
+	</table><h5 id=ariaCurrentUnrecognizedValue><code>aria-current</code> with unrecognized value</h5><table>
 		<caption><a class="state-reference" href="#aria-current"><code>aria-current</code></a> with unrecognized value</caption>
 		<tbody>
 		<tr>
@@ -4985,10 +4602,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaCurrentUndefined><code>aria-current</code> is <code>false</code> or undefined</summary>
-	<table>
+	</table><h5 id=ariaCurrentUndefined><code>aria-current</code> is <code>false</code> or undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-current"><code>aria-current</code></a> is <code>false</code> or undefined</caption>
 		<tbody>
 		<tr>
@@ -5016,10 +4630,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDescribedBy><code>aria-describedby</code></summary>
-	<table>
+	</table><h5 id=ariaDescribedBy><code>aria-describedby</code></h5><table>
 		<caption><a class="property-reference" href="#aria-describedby"><code>aria-describedby</code></a></caption>
 		<tbody>
 		<tr>
@@ -5056,10 +4667,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDescription><code>aria-description</code></summary>
-	<table>
+	</table><h5 id=ariaDescription><code>aria-description</code></h5><table>
 		<caption><a class="property-reference" href="#aria-description"><code>aria-description</code></a></caption>
 		<tbody>
 		<tr>
@@ -5091,10 +4699,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDetails><code>aria-details</code></summary>
-	<table>
+	</table><h5 id=ariaDetails><code>aria-details</code></h5><table>
 		<caption><a class="property-reference" href="#aria-details"><code>aria-details</code></a></caption>
 		<tbody>
 		<tr>
@@ -5126,10 +4731,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDisabledTrue><code>aria-disabled</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaDisabledTrue><code>aria-disabled</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-disabled"><code>aria-disabled</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -5158,10 +4760,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDisabledFalse><code>aria-disabled</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaDisabledFalse><code>aria-disabled</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-disabled"><code>aria-disabled</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5189,10 +4788,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDropeffectMoveLinkExecutePopup><code>aria-dropeffect</code>=<code>copy</code>, <code>move</code>, <code>link</code>, <code>execute</code>, or <code>popup</code></summary>
-	<table>
+	</table><h5 id=ariaDropeffectMoveLinkExecutePopup><code>aria-dropeffect</code>=<code>copy</code>, <code>move</code>, <code>link</code>, <code>execute</code>, or <code>popup</code></h5><table>
 		<caption><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a>=<code>copy</code>, <code>move</code>, <code>link</code>, <code>execute</code>, or <code>popup</code></caption>
 		<tbody>
 		<tr>
@@ -5220,10 +4816,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaDropeffectNone><code>aria-dropeffect</code>=<code>none</code></summary>
-	<table>
+	</table><h5 id=ariaDropeffectNone><code>aria-dropeffect</code>=<code>none</code></h5><table>
 		<caption><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a>=<code>none</code></caption>
 		<tbody>
 		<tr>
@@ -5253,10 +4846,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaErrorMessage><code>aria-errormessage</code></summary>
-	<table>
+	</table><h5 id=ariaErrorMessage><code>aria-errormessage</code></h5><table>
 		<caption><a class="property-reference" href="#aria-errormessage"><code>aria-errormessage</code></a></caption>
 		<tbody>
 		<tr>
@@ -5288,10 +4878,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaExpandedTrue><code>aria-expanded</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaExpandedTrue><code>aria-expanded</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-expanded"><code>aria-expanded</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -5320,10 +4907,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaExpandedFalse><code>aria-expanded</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaExpandedFalse><code>aria-expanded</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-expanded"><code>aria-expanded</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5352,10 +4936,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaExpandedUndefined><code>aria-expanded</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaExpandedUndefined><code>aria-expanded</code> is undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-expanded"><code>aria-expanded</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -5383,10 +4964,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaFlowto><code>aria-flowto</code></summary>
-	<table>
+	</table><h5 id=ariaFlowto><code>aria-flowto</code></h5><table>
 		<caption><a class="property-reference" href="#aria-flowto"><code>aria-flowto</code></a></caption>
 		<tbody>
 		<tr>
@@ -5418,10 +4996,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaGrabbedTrue><code>aria-grabbed</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaGrabbedTrue><code>aria-grabbed</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -5449,10 +5024,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaGrabbedFalse><code>aria-grabbed</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaGrabbedFalse><code>aria-grabbed</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5480,10 +5052,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaGrabbedUndefined><code>aria-grabbed</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaGrabbedUndefined><code>aria-grabbed</code> is undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -5511,10 +5080,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupTrue><code>aria-haspopup</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupTrue><code>aria-haspopup</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -5545,10 +5111,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupFalse><code>aria-haspopup</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupFalse><code>aria-haspopup</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5577,10 +5140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupDialog><code>aria-haspopup</code>=<code>dialog</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupDialog><code>aria-haspopup</code>=<code>dialog</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>dialog</code></caption>
 		<tbody>
 		<tr>
@@ -5611,10 +5171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupListbox><code>aria-haspopup</code>=<code>listbox</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupListbox><code>aria-haspopup</code>=<code>listbox</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>listbox</code></caption>
 		<tbody>
 		<tr>
@@ -5645,10 +5202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupMenu><code>aria-haspopup</code>=<code>menu</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupMenu><code>aria-haspopup</code>=<code>menu</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>menu</code></caption>
 		<tbody>
 		<tr>
@@ -5679,10 +5233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHaspopupTree><code>aria-haspopup</code>=<code>tree</code></summary>
-	<table>
+	</table><h5 id=ariaHaspopupTree><code>aria-haspopup</code>=<code>tree</code></h5><table>
 		<caption><a class="property-reference" href="#aria-haspopup"><code>aria-haspopup</code></a>=<code>tree</code></caption>
 		<tbody>
 		<tr>
@@ -5713,10 +5264,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHiddenTrue><code>aria-hidden</code>=<code>true</code> on unfocused element</summary>
-	<table>
+	</table><h5 id=ariaHiddenTrue><code>aria-hidden</code>=<code>true</code> on unfocused element</h5><table>
 		<caption><a class="state-reference" href="#aria-hidden"><code>aria-hidden</code></a>=<code>true</code> on unfocused element</caption>
 		<tbody>
 		<tr>
@@ -5748,10 +5296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHiddenTrueElementExposed><code>aria-hidden</code>=<code>true</code> when element is focused or fires an accessibility event</summary>
-	<table>
+	</table><h5 id=ariaHiddenTrueElementExposed><code>aria-hidden</code>=<code>true</code> when element is focused or fires an accessibility event</h5><table>
 		<caption><a class="state-reference" href="#aria-hidden"><code>aria-hidden</code></a>=<code>true</code> when element is focused or fires an accessibility event</caption>
 		<tbody>
 		<tr>
@@ -5783,10 +5328,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaHiddenFalse><code>aria-hidden</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaHiddenFalse><code>aria-hidden</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-hidden"><code>aria-hidden</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5814,10 +5356,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaInvalidTrue><code>aria-invalid</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaInvalidTrue><code>aria-invalid</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -5847,10 +5386,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaInvalidFalse><code>aria-invalid</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaInvalidFalse><code>aria-invalid</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -5878,10 +5414,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaInvalidSpellingGrammar><code>aria-invalid</code>=<code>spelling</code> or <code>grammar</code></summary>
-	<table>
+	</table><h5 id=ariaInvalidSpellingGrammar><code>aria-invalid</code>=<code>spelling</code> or <code>grammar</code></h5><table>
 		<caption><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a>=<code>spelling</code> or <code>grammar</code></caption>
 		<tbody>
 		<tr>
@@ -5911,10 +5444,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaInvalidUnrecognizedValue><code>aria-invalid</code> with unrecognized value</summary>
-	<table>
+	</table><h5 id=ariaInvalidUnrecognizedValue><code>aria-invalid</code> with unrecognized value</h5><table>
 		<caption><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a> with unrecognized value</caption>
 		<tbody>
 		<tr>
@@ -5944,10 +5474,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaKeyshortcuts><code>aria-keyshortcuts</code></summary>
-	<table>
+	</table><h5 id=ariaKeyshortcuts><code>aria-keyshortcuts</code></h5><table>
 		<caption><a class="property-reference" href="#aria-keyshortcuts"><code>aria-keyshortcuts</code></a></caption>
 		<tbody>
 		<tr>
@@ -5975,10 +5502,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLabel><code>aria-label</code></summary>
-	<table>
+	</table><h5 id=ariaLabel><code>aria-label</code></h5><table>
 		<caption><a class="property-reference" href="#aria-label"><code>aria-label</code></a></caption>
 		<tbody>
 		<tr>
@@ -6010,10 +5534,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLabelledBy><code>aria-labelledby</code></summary>
-	<table>
+	</table><h5 id=ariaLabelledBy><code>aria-labelledby</code></h5><table>
 		<caption><a class="property-reference" href="#aria-labelledby"><code>aria-labelledby</code></a></caption>
 		<tbody>
 		<tr>
@@ -6052,10 +5573,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLevel><code>aria-level</code> on non-<code>heading</code></summary>
-	<table>
+	</table><h5 id=ariaLevel><code>aria-level</code> on non-<code>heading</code></h5><table>
 		<caption><a class="property-reference" href="#aria-level"><code>aria-level</code></a> on non-<code>heading</code></caption>
 		<tbody>
 		<tr>
@@ -6086,10 +5604,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLevelHeading><code>aria-level</code> on <code>heading</code></summary>
-	<table>
+	</table><h5 id=ariaLevelHeading><code>aria-level</code> on <code>heading</code></h5><table>
 		<caption><a class="property-reference" href="#aria-level"><code>aria-level</code></a> on <code>heading</code></caption>
 		<tbody>
 		<tr>
@@ -6118,10 +5633,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLiveAssertive><code>aria-live</code>=<code>assertive</code></summary>
-	<table>
+	</table><h5 id=ariaLiveAssertive><code>aria-live</code>=<code>assertive</code></h5><table>
 		<caption><a class="property-reference" href="#aria-live"><code>aria-live</code></a>=<code>assertive</code></caption>
 		<tbody>
 		<tr>
@@ -6157,10 +5669,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLivePolite><code>aria-live</code>=<code>polite</code></summary>
-	<table>
+	</table><h5 id=ariaLivePolite><code>aria-live</code>=<code>polite</code></h5><table>
 		<caption><a class="property-reference" href="#aria-live"><code>aria-live</code></a>=<code>polite</code></caption>
 		<tbody>
 		<tr>
@@ -6196,10 +5705,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaLiveOff><code>aria-live</code>=<code>off</code></summary>
-	<table>
+	</table><h5 id=ariaLiveOff><code>aria-live</code>=<code>off</code></h5><table>
 		<caption><a class="property-reference" href="#aria-live"><code>aria-live</code></a>=<code>off</code></caption>
 		<tbody>
 		<tr>
@@ -6231,10 +5737,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaModalTrue><code>aria-modal</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaModalTrue><code>aria-modal</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-modal"><code>aria-modal</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6262,10 +5765,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaModalFalse><code>aria-modal</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaModalFalse><code>aria-modal</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-modal"><code>aria-modal</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6293,10 +5793,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaMultilineTrue><code>aria-multiline</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaMultilineTrue><code>aria-multiline</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6327,10 +5824,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaMultilineFalse><code>aria-multiline</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaMultilineFalse><code>aria-multiline</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-multiline"><code>aria-multiline</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6361,10 +5855,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaMultiselectableTrue><code>aria-multiselectable</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaMultiselectableTrue><code>aria-multiselectable</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6397,10 +5888,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaMultiselectableFalse><code>aria-multiselectable</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaMultiselectableFalse><code>aria-multiselectable</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-multiselectable"><code>aria-multiselectable</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6430,10 +5918,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaOrientationHorizontal><code>aria-orientation</code>=<code>horizontal</code></summary>
-	<table>
+	</table><h5 id=ariaOrientationHorizontal><code>aria-orientation</code>=<code>horizontal</code></h5><table>
 		<caption><a class="property-reference" href="#aria-orientation"><code>aria-orientation</code></a>=<code>horizontal</code></caption>
 		<tbody>
 		<tr>
@@ -6463,10 +5948,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaOrientationVertical><code>aria-orientation</code>=<code>vertical</code></summary>
-	<table>
+	</table><h5 id=ariaOrientationVertical><code>aria-orientation</code>=<code>vertical</code></h5><table>
 		<caption><a class="property-reference" href="#aria-orientation"><code>aria-orientation</code></a>=<code>vertical</code></caption>
 		<tbody>
 		<tr>
@@ -6496,10 +5978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaOrientationUndefined><code>aria-orientation</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaOrientationUndefined><code>aria-orientation</code> is undefined</h5><table>
 		<caption><a class="property-reference" href="#aria-orientation"><code>aria-orientation</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -6528,10 +6007,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaOwns><code>aria-owns</code></summary>
-	<table>
+	</table><h5 id=ariaOwns><code>aria-owns</code></h5><table>
 		<caption><a class="property-reference" href="#aria-owns"><code>aria-owns</code></a></caption>
 		<tbody>
 		<tr>
@@ -6565,10 +6041,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPlaceholder><code>aria-placeholder</code></summary>
-	<table>
+	</table><h5 id=ariaPlaceholder><code>aria-placeholder</code></h5><table>
 		<caption><a class="property-reference" href="#aria-placeholder"><code>aria-placeholder</code></a></caption>
 		<tbody>
 		<tr>
@@ -6596,10 +6069,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPosinset><code>aria-posinset</code></summary>
-	<table>
+	</table><h5 id=ariaPosinset><code>aria-posinset</code></h5><table>
 		<caption><a class="property-reference" href="#aria-posinset"><code>aria-posinset</code></a></caption>
 		<tbody>
 		<tr>
@@ -6631,10 +6101,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPressedTrue><code>aria-pressed</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaPressedTrue><code>aria-pressed</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6665,10 +6132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPressedMixed><code>aria-pressed</code>=<code>mixed</code></summary>
-	<table>
+	</table><h5 id=ariaPressedMixed><code>aria-pressed</code>=<code>mixed</code></h5><table>
 		<caption><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a>=<code>mixed</code></caption>
 		<tbody>
 		<tr>
@@ -6699,10 +6163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPressedFalse><code>aria-pressed</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaPressedFalse><code>aria-pressed</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6733,10 +6194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaPressedUndefined><code>aria-pressed</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaPressedUndefined><code>aria-pressed</code> is undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -6764,10 +6222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaReadonlyTrue><code>aria-readonly</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaReadonlyTrue><code>aria-readonly</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-readonly"><code>aria-readonly</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6798,10 +6253,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaReadonlyFalse><code>aria-readonly</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaReadonlyFalse><code>aria-readonly</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-readonly"><code>aria-readonly</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6830,10 +6282,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaReadonlyUnspecifiedOnGridcell><code>aria-readonly</code> is unspecified on <code>gridcell</code></summary>
-	<table>
+	</table><h5 id=ariaReadonlyUnspecifiedOnGridcell><code>aria-readonly</code> is unspecified on <code>gridcell</code></h5><table>
 		<caption><a class="property-reference" href="#aria-readonly"><code>aria-readonly</code></a> is unspecified on <code>gridcell</code></caption>
 		<tbody>
 		<tr>
@@ -6861,10 +6310,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRelevant><code>aria-relevant</code></summary>
-	<table>
+	</table><h5 id=ariaRelevant><code>aria-relevant</code></h5><table>
 		<caption><a class="property-reference" href="#aria-relevant"><code>aria-relevant</code></a></caption>
 		<tbody>
 		<tr>
@@ -6900,10 +6346,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRequiredTrue><code>aria-required</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaRequiredTrue><code>aria-required</code>=<code>true</code></h5><table>
 		<caption><a class="property-reference" href="#aria-required"><code>aria-required</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -6931,10 +6374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRequiredFalse><code>aria-required</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaRequiredFalse><code>aria-required</code>=<code>false</code></h5><table>
 		<caption><a class="property-reference" href="#aria-required"><code>aria-required</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -6962,10 +6402,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRoleDescription><code>aria-roledescription</code></summary>
-	<table>
+	</table><h5 id=ariaRoleDescription><code>aria-roledescription</code></h5><table>
 		<caption><a class="property-reference" href="#aria-roledescription"><code>aria-roledescription</code></a></caption>
 		<tbody>
 		<tr>
@@ -6993,10 +6430,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRoleDescriptionEmptyString><code>aria-roledescription</code> is undefined or the empty string</summary>
-	<table>
+	</table><h5 id=ariaRoleDescriptionEmptyString><code>aria-roledescription</code> is undefined or the empty string</h5><table>
 		<caption><a class="property-reference" href="#aria-roledescription"><code>aria-roledescription</code></a> is undefined or the empty string</caption>
 		<tbody>
 		<tr>
@@ -7024,10 +6458,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRowCount><code>aria-rowcount</code></summary>
-	<table>
+	</table><h5 id=ariaRowCount><code>aria-rowcount</code></h5><table>
 		<caption><a class="property-reference" href="#aria-rowcount"><code>aria-rowcount</code></a></caption>
 		<tbody>
 		<tr>
@@ -7057,10 +6488,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRowIndex><code>aria-rowindex</code></summary>
-	<table>
+	</table><h5 id=ariaRowIndex><code>aria-rowindex</code></h5><table>
 		<caption><a class="property-reference" href="#aria-rowindex"><code>aria-rowindex</code></a></caption>
 		<tbody>
 		<tr>
@@ -7090,10 +6518,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRowIndexText><code>aria-rowindextext</code></summary>
-	<table>
+	</table><h5 id=ariaRowIndexText><code>aria-rowindextext</code></h5><table>
 		<caption><a class="property-reference" href="#aria-rowindextext"><code>aria-rowindextext</code></a></caption>
 		<tbody>
 		<tr>
@@ -7121,10 +6546,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaRowSpan><code>aria-rowspan</code></summary>
-	<table>
+	</table><h5 id=ariaRowSpan><code>aria-rowspan</code></h5><table>
 		<caption><a class="property-reference" href="#aria-rowspan"><code>aria-rowspan</code></a></caption>
 		<tbody>
 		<tr>
@@ -7154,10 +6576,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSelectedTrue><code>aria-selected</code>=<code>true</code></summary>
-	<table>
+	</table><h5 id=ariaSelectedTrue><code>aria-selected</code>=<code>true</code></h5><table>
 		<caption><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a>=<code>true</code></caption>
 		<tbody>
 		<tr>
@@ -7189,10 +6608,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSelectedFalse><code>aria-selected</code>=<code>false</code></summary>
-	<table>
+	</table><h5 id=ariaSelectedFalse><code>aria-selected</code>=<code>false</code></h5><table>
 		<caption><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a>=<code>false</code></caption>
 		<tbody>
 		<tr>
@@ -7224,10 +6640,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSelectedUndefined><code>aria-selected</code> is undefined</summary>
-	<table>
+	</table><h5 id=ariaSelectedUndefined><code>aria-selected</code> is undefined</h5><table>
 		<caption><a class="state-reference" href="#aria-selected"><code>aria-selected</code></a> is undefined</caption>
 		<tbody>
 		<tr>
@@ -7255,10 +6668,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSetsize><code>aria-setsize</code></summary>
-	<table>
+	</table><h5 id=ariaSetsize><code>aria-setsize</code></h5><table>
 		<caption><a class="property-reference" href="#aria-setsize"><code>aria-setsize</code></a></caption>
 		<tbody>
 		<tr>
@@ -7292,10 +6702,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSortAscending><code>aria-sort</code>=<code>ascending</code></summary>
-	<table>
+	</table><h5 id=ariaSortAscending><code>aria-sort</code>=<code>ascending</code></h5><table>
 		<caption><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a>=<code>ascending</code></caption>
 		<tbody>
 		<tr>
@@ -7324,10 +6731,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSortDescending><code>aria-sort</code>=<code>descending</code></summary>
-	<table>
+	</table><h5 id=ariaSortDescending><code>aria-sort</code>=<code>descending</code></h5><table>
 		<caption><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a>=<code>descending</code></caption>
 		<tbody>
 		<tr>
@@ -7356,10 +6760,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSortOther><code>aria-sort</code>=<code>other</code></summary>
-	<table>
+	</table><h5 id=ariaSortOther><code>aria-sort</code>=<code>other</code></h5><table>
 		<caption><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a>=<code>other</code></caption>
 		<tbody>
 		<tr>
@@ -7388,10 +6789,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaSortNone><code>aria-sort</code>=<code>none</code></summary>
-	<table>
+	</table><h5 id=ariaSortNone><code>aria-sort</code>=<code>none</code></h5><table>
 		<caption><a class="property-reference" href="#aria-sort"><code>aria-sort</code></a>=<code>none</code></caption>
 		<tbody>
 		<tr>
@@ -7419,10 +6817,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaValueMax><code>aria-valuemax</code></summary>
-	<table>
+	</table><h5 id=ariaValueMax><code>aria-valuemax</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuemax"><code>aria-valuemax</code></a></caption>
 		<tbody>
 		<tr>
@@ -7454,10 +6849,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaValueMin><code>aria-valuemin</code></summary>
-	<table>
+	</table><h5 id=ariaValueMin><code>aria-valuemin</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuemin"><code>aria-valuemin</code></a></caption>
 		<tbody>
 		<tr>
@@ -7489,10 +6881,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaValueNow><code>aria-valuenow</code></summary>
-	<table>
+	</table><h5 id=ariaValueNow><code>aria-valuenow</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuenow"><code>aria-valuenow</code></a></caption>
 		<tbody>
 		<tr>
@@ -7525,10 +6914,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=ariaValueText><code>aria-valuetext</code></summary>
-	<table>
+	</table><h5 id=ariaValueText><code>aria-valuetext</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a></caption>
 		<tbody>
 		<tr>
@@ -7562,8 +6948,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		</tr>
 		</tbody>
 	</table>
-</details>
-</div>
   </section>
 	</section>
 	<section id="mapping_additional">
@@ -7634,12 +7018,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>[=User agents=]  MUST notify <a class="termref">assistive technology</a> of <a class="termref">state</a> changes as defined in the table below, SHOULD notify assistive technology of [=ARIA/property=] changes if the <a class="termref">accessibility API</a> defines a change <a class="termref">event</a> for the property, and SHOULD NOT notify assistive technology of property changes if the accessibility <abbr title="application programming interface">API</abbr> does not define a change event for the property. For example, IAccessible2 defines an event to be used when <a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a> changes. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> properties that are expected to change include <a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a>, <a class="property-reference" href="#aria-valuenow"><code>aria-valuenow</code></a>, and <a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a>.</p>
         <p class="note">In some <abbr title="Application Programming Interfaces">APIs</abbr>, AT will only be notified of events to which it has  subscribed.</p>
         <p>For simplicity and  performance the user agent MAY trim out change events for state or property changes that <a class="termref">assistive technologies</a> typically ignore, such as events that are happening in a window that does not currently have focus.        </p>
-<div class="details">
-<button class="expand">Expand all</button>
-<button disabled="" class="collapse">Collapse all</button>
-<details class='map'>
-	<summary id=event-aria-activedescendant><code>aria-activedescendant</code></summary>
-	<table>
+<h5 id=event-aria-activedescendant><code>aria-activedescendant</code></h5><table>
 		<caption><a class="property-reference" href="#aria-activedescendant"><code>aria-activedescendant</code></a></caption>
 		<tbody>
 		<tr>
@@ -7673,10 +7052,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-busy><code>aria-busy</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-busy><code>aria-busy</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-busy"><code>aria-busy</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7705,10 +7081,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-checked><code>aria-checked</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-checked><code>aria-checked</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-checked"><code>aria-checked</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7737,10 +7110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-current><code>aria-current</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-current><code>aria-current</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-current"><code>aria-current</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7769,10 +7139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-disabled><code>aria-disabled</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-disabled><code>aria-disabled</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-disabled"><code>aria-disabled</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7801,10 +7168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-describedby><code>aria-describedby</code></summary>
-	<table>
+	</table><h5 id=event-aria-describedby><code>aria-describedby</code></h5><table>
 		<caption><a class="property-reference" href="#aria-describedby"><code>aria-describedby</code></a></caption>
 		<tbody>
 		<tr>
@@ -7833,10 +7197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-dropeffect><code>aria-dropeffect</code> (property)</summary>
-	<table>
+	</table><h5 id=event-aria-dropeffect><code>aria-dropeffect</code> (property)</h5><table>
 		<caption><a class="property-reference" href="#aria-dropeffect"><code>aria-dropeffect</code></a> (property)</caption>
 		<tbody>
 		<tr>
@@ -7865,10 +7226,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-expanded><code>aria-expanded</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-expanded><code>aria-expanded</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-expanded"><code>aria-expanded</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7899,10 +7257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-grabbed><code>aria-grabbed</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-grabbed><code>aria-grabbed</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-grabbed"><code>aria-grabbed</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7932,10 +7287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-hidden><code>aria-hidden</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-hidden><code>aria-hidden</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-hidden"><code>aria-hidden</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7966,10 +7318,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-invalid><code>aria-invalid</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-invalid><code>aria-invalid</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-invalid"><code>aria-invalid</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -7998,10 +7347,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-label><code>aria-label</code> and <code>aria-labelledby</code></summary>
-	<table>
+	</table><h5 id=event-aria-label><code>aria-label</code> and <code>aria-labelledby</code></h5><table>
 		<caption><a class="property-reference" href="#aria-label"><code>aria-label</code></a> and <a class="property-reference" href="#aria-labelledby"><code>aria-labelledby</code></a></caption>
 		<tbody>
 		<tr>
@@ -8031,10 +7377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-pressed><code>aria-pressed</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-pressed><code>aria-pressed</code> (state)</h5><table>
 		<caption><a class="state-reference" href="#aria-pressed"><code>aria-pressed</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -8063,10 +7406,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-readonly><code>aria-readonly</code></summary>
-	<table>
+	</table><h5 id=event-aria-readonly><code>aria-readonly</code></h5><table>
 		<caption><a class="property-reference" href="#aria-readonly"><code>aria-readonly</code></a></caption>
 		<tbody>
 		<tr>
@@ -8095,10 +7435,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-required><code>aria-required</code></summary>
-	<table>
+	</table><h5 id=event-aria-required><code>aria-required</code></h5><table>
 		<caption><a class="property-reference" href="#aria-required"><code>aria-required</code></a></caption>
 		<tbody>
 		<tr>
@@ -8127,10 +7464,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-selected><code>aria-selected</code> (state)</summary>
-	<table>
+	</table><h5 id=event-aria-selected><code>aria-selected</code> (state)</h5><table>
 		<caption><a class="property-reference" href="#aria-selected"><code>aria-selected</code></a> (state)</caption>
 		<tbody>
 		<tr>
@@ -8158,10 +7492,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-valuenow><code>aria-valuenow</code></summary>
-	<table>
+	</table><h5 id=event-aria-valuenow><code>aria-valuenow</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuenow"><code>aria-valuenow</code></a></caption>
 		<tbody>
 		<tr>
@@ -8190,10 +7521,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			</td>
 		</tr>
 		</tbody>
-	</table>
-</details><details class='map'>
-	<summary id=event-aria-valuetext><code>aria-valuetext</code></summary>
-	<table>
+	</table><h5 id=event-aria-valuetext><code>aria-valuetext</code></h5><table>
 		<caption><a class="property-reference" href="#aria-valuetext"><code>aria-valuetext</code></a></caption>
 		<tbody>
 		<tr>
@@ -8223,8 +7551,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		</tr>
 		</tbody>
 	</table>
-</details>
-</div>
         </section>
     <section id="mapping_events_visibility">
 		  <h3>Changes to document content or node visibility</h3>
