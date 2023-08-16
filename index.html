@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<meta name="generator" content="ReSpec 34.1.4">
+<meta name="generator" content="ReSpec 34.1.6">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -166,7 +166,7 @@ var mappingTableLabels = {
   "name": "Core Accessibility API Mappings 1.2",
   "inLanguage": "en-US",
   "license": "https://www.w3.org/Consortium/Legal/2023/software-license",
-  "datePublished": "2023-07-05",
+  "datePublished": "2023-08-16",
   "copyrightHolder": {
     "name": "World Wide Web Consortium",
     "url": "https://www.w3.org/"
@@ -658,20 +658,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishISODate": "2023-07-05T00:00:00.000Z",
-  "generatedSubtitle": "W3C Candidate Recommendation Draft 05 July 2023"
+  "publishISODate": "2023-08-16T00:00:00.000Z",
+  "generatedSubtitle": "W3C Candidate Recommendation Draft 16 August 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-CRD"></head>
 <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CRD">W3C Candidate Recommendation Draft</a> <time class="dt-published" datetime="2023-07-05">05 July 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CRD">W3C Candidate Recommendation Draft</a> <time class="dt-published" datetime="2023-08-16">16 August 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230705/">https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230705/</a>
+                <a class="u-url" href="https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230816/">https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230816/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
@@ -756,7 +756,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <p>
     This document was published by the <a href="https://www.w3.org/groups/wg/aria">Accessible Rich Internet Applications Working Group</a> as
     a Candidate Recommendation Draft using the
-        <a href="https://www.w3.org/2021/Process-20211102/#recs-and-notes">Recommendation track</a>. 
+        <a href="https://www.w3.org/2023/Process-20230612/#recs-and-notes">Recommendation track</a>. 
   </p><p>Publication as a Candidate Recommendation does not
   imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. A Candidate Recommendation Draft integrates
       changes from the previous Candidate Recommendation that the Working Group
@@ -785,7 +785,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         
   </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                  <a id="w3c_process_revision" href="https://www.w3.org/2023/Process-20230612/">12 June 2023 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
                 </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#intro"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intro_aapi"><bdi class="secno">1.1 </bdi>Accessibility <abbr title="Application Programming Interfaces">APIs</abbr> </a></li><li class="tocline"><a class="tocxref" href="#comparing-accessibility-apis"><bdi class="secno">1.2 </bdi>Comparing Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#atk-at-spi"><bdi class="secno">1.2.1 </bdi><abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI</a></li><li class="tocline"><a class="tocxref" href="#uia-ui-automation"><bdi class="secno">1.2.2 </bdi><abbr title="User Interface Automation">UIA</abbr> (UI Automation)</a></li><li class="tocline"><a class="tocxref" href="#accessible-names-and-descriptions"><bdi class="secno">1.2.3 </bdi>Accessible Names and Descriptions</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#rfc-2119-keywords"><bdi class="secno">2.1 </bdi>RFC-2119 Keywords</a></li><li class="tocline"><a class="tocxref" href="#normative-and-informative-sections"><bdi class="secno">2.2 </bdi>Normative and Informative Sections</a></li><li class="tocline"><a class="tocxref" href="#features-deprecated-in-wai-aria"><bdi class="secno">2.3 </bdi>Features Deprecated in <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li></ol></li><li class="tocline"><a class="tocxref" href="#glossary"><bdi class="secno">3. </bdi>Important Terms</a></li><li class="tocline"><a class="tocxref" href="#mapping"><bdi class="secno">4. </bdi>Mapping <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> to Accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_general"><bdi class="secno">4.1 </bdi>General rules for exposing <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> semantics</a></li><li class="tocline"><a class="tocxref" href="#mapping_conflicts"><bdi class="secno">4.2 </bdi>Conflicts between native markup semantics and <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr></a></li><li class="tocline"><a class="tocxref" href="#mapping_nodirect"><bdi class="secno">4.3 </bdi>Exposing attributes that do not directly map to accessibility <abbr title="application programming interface">API</abbr> properties</a></li><li class="tocline"><a class="tocxref" href="#mapping_role"><bdi class="secno">4.4 </bdi>Role mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#roleMappingGeneralRules"><bdi class="secno">4.4.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#roleMappingComputedRole"><bdi class="secno">4.4.2 </bdi>Computed Role</a></li><li class="tocline"><a class="tocxref" href="#mapping_role_table"><bdi class="secno">4.4.3 </bdi>Role Mapping Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_state-property"><bdi class="secno">4.5 </bdi>State and Property Mapping</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#statePropertyMappingGeneralRules"><bdi class="secno">4.5.1 </bdi>General rules</a></li><li class="tocline"><a class="tocxref" href="#mapping_state-property_table"><bdi class="secno">4.5.2 </bdi>State and Property Mapping Table</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#not_mapped"><bdi class="secno">4.5.2.1 </bdi>Not Mapped</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional"><bdi class="secno">4.6 </bdi>Special Processing Requiring Additional Computation</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_nd"><bdi class="secno">4.6.1 </bdi>Name and Description</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations"><bdi class="secno">4.6.2 </bdi>Relations</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_reverse_relations"><bdi class="secno">4.6.2.1 </bdi>Reverse Relations</a></li><li class="tocline"><a class="tocxref" href="#mapping_additional_relations_implied"><bdi class="secno">4.6.2.2 </bdi>Implied reverse relations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_additional_position"><bdi class="secno">4.6.3 </bdi>Group Position</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mapping_actions"><bdi class="secno">4.7 </bdi>Actions</a></li><li class="tocline"><a class="tocxref" href="#mapping_events"><bdi class="secno">4.8 </bdi>Events</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mapping_events_state-change"><bdi class="secno">4.8.1 </bdi>State and Property Change Events</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_visibility"><bdi class="secno">4.8.2 </bdi>Changes to document content or node visibility</a></li><li class="tocline"><a class="tocxref" href="#focus_state_event_table"><bdi class="secno">4.8.3 </bdi>Focus Changes</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_selection"><bdi class="secno">4.8.4 </bdi>Selection</a></li><li class="tocline"><a class="tocxref" href="#mapping_events_menus"><bdi class="secno">4.8.5 </bdi>Special Events for Menus</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#privacy-considerations"><bdi class="secno">5. </bdi>Privacy considerations</a></li><li class="tocline"><a class="tocxref" href="#security-considerations"><bdi class="secno">6. </bdi>Security considerations</a></li><li class="tocline"><a class="tocxref" href="#changelog"><bdi class="secno">A. </bdi>Change Log</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-last-public-working-draft"><bdi class="secno">A.1 </bdi>Substantive changes since the last public working draft</a></li><li class="tocline"><a class="tocxref" href="#substantive-changes-since-the-core-accessibility-api-mappings-1-1-recommendation"><bdi class="secno">A.2 </bdi>Substantive changes since the <span class="formerLink">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings 1.1 Recommendation</span></a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgements"><bdi class="secno">B. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">B.1 </bdi>Participants active in the ARIA WG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_others"><bdi class="secno">B.2 </bdi>Other ARIA contributors, commenters, and previously active participants</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">B.3 </bdi>Enabling funders</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">C. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">C.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">C.2 </bdi>Informative references</a></li></ol></li></ol></nav>
 <section id="intro" class="informative"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#intro" aria-label="Permalink for Section 1."></a></div><p><em>This section is non-normative.</em></p>
 	
@@ -4976,7 +4976,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="seealso">See also: <a href="#mapping_additional_relations">Mapping Additional Relations</a></span>
 				</td>
 				<td class="attr-axapi">
-					<span class="property">Property: <code>AXValidationError</code>: textual content of the referenced element</span>
+					<span class="property">Property: <code>AXErrorMessageElements</code>: pointers to accessible nodes matching IDREFs</span>
 				</td>
 			</tr>
 			<tr data-id="ariaExpandedTrue">
@@ -6479,7 +6479,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 					<span class="relation">Reverse Relation: <code>RELATION_ERROR_FOR</code> points to element</span><br>
 					<span class="seealso">See also: <a href="#mapping_additional_relations">Mapping Additional Relations</a></span>
 				</td></tr><tr><th><abbr title="macOS Accessibility Protocol">AX API</abbr></th><td>
-					<span class="property">Property: <code>AXValidationError</code>: textual content of the referenced element</span>
+					<span class="property">Property: <code>AXErrorMessageElements</code>: pointers to accessible nodes matching IDREFs</span>
 				</td></tr></tbody></table></details><details class="map"><summary id="ariaExpandedTrue"><code>aria-expanded</code>=<code>true</code></summary><table><caption><a class="state-reference" href="https://w3c.github.io/aria/#aria-expanded"><code>aria-expanded</code></a>=<code>true</code></caption><tbody><tr><th><abbr title="Microsoft Active Accessibility">MSAA</abbr> + IAccessible2 </th><td>
 					<span class="property">State: <code>STATE_SYSTEM_EXPANDED</code></span>
 				</td></tr><tr><th><abbr title="User Interface Automation">UIA</abbr></th><td>
@@ -8201,8 +8201,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dfn-accessibility-subtree-1" title="§ 4.8.2 Changes to document content or node visibility">§ 4.8.2 Changes to document content or node visibility</a> 
-  </li>
+      <a href="#ref-for-dfn-accessibility-subtree-1" title="§ 4.8.2 Changes to document content or node visibility">§ 4.8.2 Changes to document content or node visibility</a> 
+    </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-activation-behavior" aria-label="Links in this document to definition: Activation behavior">
       <span class="caret"></span>
