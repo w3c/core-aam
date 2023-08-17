@@ -3,6 +3,15 @@
 <meta name="generator" content="ReSpec 34.1.6">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
+span.example-title{text-transform:none}
+:is(aside,div).example,div.illegal-example{padding:.5em;margin:1em 0;position:relative;clear:both}
+div.illegal-example{color:red}
+div.illegal-example p{color:#000}
+:is(aside,div).example{border-left-width:.5em;border-left-style:solid;border-color:#e0cb52;background:#fcfaee}
+aside.example div.example{border-left-width:.1em;border-color:#999;background:#fff}
+.example pre{background-color:rgba(0,0,0,.03)}
+</style>
+<style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
 .warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
@@ -166,7 +175,7 @@ var mappingTableLabels = {
   "name": "Core Accessibility API Mappings 1.2",
   "inLanguage": "en-US",
   "license": "https://www.w3.org/Consortium/Legal/2023/software-license",
-  "datePublished": "2023-08-16",
+  "datePublished": "2023-08-17",
   "copyrightHolder": {
     "name": "World Wide Web Consortium",
     "url": "https://www.w3.org/"
@@ -236,6 +245,20 @@ var mappingTableLabels = {
     }
   ],
   "citation": [
+    {
+      "id": "https://www.w3.org/TR/html-aam-1.0/",
+      "type": "TechArticle",
+      "name": "HTML Accessibility API Mappings 1.0",
+      "url": "https://www.w3.org/TR/html-aam-1.0/",
+      "creator": [
+        {
+          "name": "Scott O'Hara"
+        }
+      ],
+      "publisher": {
+        "name": "W3C"
+      }
+    },
     {
       "id": "https://www.w3.org/TR/wai-aria-1.2/",
       "type": "TechArticle",
@@ -481,6 +504,20 @@ var mappingTableLabels = {
   ]
 }</script>
 <style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
 var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
@@ -658,20 +695,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "publishISODate": "2023-08-16T00:00:00.000Z",
-  "generatedSubtitle": "W3C Candidate Recommendation Draft 16 August 2023"
+  "publishISODate": "2023-08-17T00:00:00.000Z",
+  "generatedSubtitle": "W3C Candidate Recommendation Draft 17 August 2023"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-CRD"></head>
 <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CRD">W3C Candidate Recommendation Draft</a> <time class="dt-published" datetime="2023-08-16">16 August 2023</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#CRD">W3C Candidate Recommendation Draft</a> <time class="dt-published" datetime="2023-08-17">17 August 2023</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
         <dt>This version:</dt><dd>
-                <a class="u-url" href="https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230816/">https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230816/</a>
+                <a class="u-url" href="https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230817/">https://www.w3.org/TR/2023/CRD-core-aam-1.2-20230817/</a>
               </dd>
         <dt>Latest published version:</dt><dd>
                 <a href="https://www.w3.org/TR/core-aam-1.2/">https://www.w3.org/TR/core-aam-1.2/</a>
@@ -859,7 +896,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </section>
 </section>
 <section id="conformance"><div class="header-wrapper"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
         <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
@@ -937,8 +974,41 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     </section>
 		<section id="roleMappingComputedRole"><div class="header-wrapper"><h4 id="x4-4-2-computed-role"><bdi class="secno">4.4.2 </bdi>Computed Role</h4><a class="self-link" href="#roleMappingComputedRole" aria-label="Permalink for Section 4.4.2"></a></div>
 		  
-                  <p>The computed role of an element is a string that represents the role of the element for the purposes of specification comformance testing. When an element has a role but is not contained in the required context (for example, a role <code>listitem</code> used on an element outside of a <code>list</code>), the computed role of the element is unspecified.</p>
-                  <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">User agents can provide this role string, for example, in response to the WebDriver function <a href="https://w3c.github.io/webdriver/#get-computed-role"><code>getComputedRole</code></a>.</p></div>
+      <p>The <code>computedrole</code> of an element is a string that represents the role of the element as computed by the browser engine. The <code>computedrole</code> is used primarily for the purposes of developer tools and specification comformance and interoperability testing.</p>
+      <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">User agents provide this role string, for example, in developer tools, and in response to the WebDriver function <a href="https://w3c.github.io/webdriver/#get-computed-role"><code>getComputedRole</code></a>, which is used for <a href="https://github.com/w3c/aria/blob/main/documentation/tests.md">interoperability testing of ARIA, <abbr title="Hypertext Markup Language">HTML</abbr>-AAM, and other specifications</a>.</p></div>
+      <aside class="example" id="example-1"><div class="marker">
+    <a class="self-link" href="#example-1">Example<bdi> 1</bdi></a>
+  </div>
+
+
+<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "button" --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "button" --&gt;</span></code></pre>
+
+      </aside>
+      <p>When an element has a role but is not contained in the required context (for example, an orphaned <code>listitem</code> without the required accessible parent of role <code>list</code>), User Agents <em class="rfc2119">MUST</em> ignore the role token, and return the <code>computedrole</code> as if the ignored role token had not been included.</p>
+      <aside class="example" id="example-2"><div class="marker">
+    <a class="self-link" href="#example-2">Example<bdi> 2</bdi></a>
+  </div>
+
+
+<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- Author error: orphaned listitem. computedrole returns "generic" --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"list"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "list" --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "listitem" in the required context. --&gt;</span></code></pre>
+
+      </aside>
+      <p>When host language elements do not have an exact or equivalent mapping to a valid, non-abstract role, the related Accessibilty <abbr title="Application Programming Interface">API</abbr> Mapping extension specification <em class="rfc2119">MAY</em> specify a unique <code>computedrole</code> string as the return value for interoperability testing purposes, such as <code>&lt;video&gt; -&gt; "html-video"</code> in [<cite><a class="bibref" data-link-type="biblio" href="#bib-html-aam" title="HTML Accessibility API Mappings 1.0">HTML-AAM</a></cite>]. However, authors <em class="rfc2119">MUST NOT</em> use any host-language-prefixed <code>computedrole</code> string in the <code>role</code> attribute (such as <code>html-video</code>), unless the token also matches valid, defined role (such as <code>dpub-chapter</code>). User Agents <em class="rfc2119">MUST</em> ignore any abstract or invalid role token.</p>
+      <aside class="example" id="example-3"><div class="marker">
+    <a class="self-link" href="#example-3">Example<bdi> 3</bdi></a>
+  </div>
+
+
+<pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">video</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "html-video" --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">main</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"html-video"</span>&gt;</span> <span class="hljs-comment">&lt;!-- Author error. computedrole returns "main" --&gt;</span></code></pre>
+
+      </aside>
     </section>
     <section id="mapping_role_table"><div class="header-wrapper"><h4 id="x4-4-3-role-mapping-table"><bdi class="secno">4.4.3 </bdi>Role Mapping Table</h4><a class="self-link" href="#mapping_role_table" aria-label="Permalink for Section 4.4.3"></a></div>
 		
@@ -8154,7 +8224,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
     
-    <dl class="bibliography"><dt id="bib-iaccessible2">[IAccessible2]</dt><dd>
+    <dl class="bibliography"><dt id="bib-html-aam">[HTML-AAM]</dt><dd>
+      <a href="https://www.w3.org/TR/html-aam-1.0/"><cite>HTML Accessibility API Mappings 1.0</cite></a>. Scott O'Hara.  W3C. 28 July 2023. W3C Working Draft. URL: <a href="https://www.w3.org/TR/html-aam-1.0/">https://www.w3.org/TR/html-aam-1.0/</a>
+    </dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd>
       <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/">https://wiki.linuxfoundation.org/accessibility/iaccessible2/</a>
     </dd><dt id="bib-infra">[infra]</dt><dd>
       <a href="https://infra.spec.whatwg.org/"><cite>Infra Standard</cite></a>. Anne van Kesteren; Domenic Denicola.  WHATWG. Living Standard. URL: <a href="https://infra.spec.whatwg.org/">https://infra.spec.whatwg.org/</a>
