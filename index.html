@@ -1,6 +1,6 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<meta name="generator" content="ReSpec 35.4.2">
+<meta name="generator" content="ReSpec 35.4.3">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 span.example-title{text-transform:none}
@@ -98,7 +98,7 @@ dd{margin-left:0}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="638e8c5a07221c95e78f7a4ac2072ead5f8843c6">
+<meta name="revision" content="34306eda1358774b478c223e6ffea25db3744d94">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -357,16 +357,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "638e8c5a07221c95e78f7a4ac2072ead5f8843c6",
-  "publishISODate": "2025-07-15T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 15 July 2025"
+  "gitRevision": "34306eda1358774b478c223e6ffea25db3744d94",
+  "publishISODate": "2025-07-31T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 31 July 2025"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-07-15">15 July 2025</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2025-07-31">31 July 2025</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -445,7 +445,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </div>
     <section id="abstract" class="introductory"><h2>Abstract</h2>
       <p>
-        This document describes how <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> should expose semantics of web content languages to <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. This helps users with disabilities to obtain and interact with information using <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technologies</a>. Documenting these mappings promotes interoperable exposure of
+        This document describes how <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">user agents</a> should expose semantics of web content languages to <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a>. This helps users with disabilities to obtain and interact with information using <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technologies</a>. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility <abbr title="Application Programming Interfaces">APIs</abbr> and helps to ensure that this information appears in a manner consistent with author intent.
       </p>
       <p>
@@ -830,14 +830,14 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </p>
         <p>
           Browser implementers are advised to publicly document their <abbr title="application programming interface">API</abbr> methods for exposing any relevant information, so that
-          <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technology</a> developers can use the <abbr title="application programming interface">API</abbr> to support user features.
+          <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technology</a> developers can use the <abbr title="application programming interface">API</abbr> to support user features.
         </p>
       </section>
       <section id="mapping_role"><div class="header-wrapper"><h3 id="x4-4-role-mapping"><bdi class="secno">4.4 </bdi>Role mapping</h3><a class="self-link" href="#mapping_role" aria-label="Permalink for Section 4.4"></a></div>
         
         <p>
           Platform <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> traditionally have had a finite set of predefined <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-role">roles</a> that are expected by
-          <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technologies</a> on that platform and only one or two roles may be exposed. In contrast,
+          <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technologies</a> on that platform and only one or two roles may be exposed. In contrast,
           <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> allows multiple roles to be specified as an ordered set of space-separated valid role tokens. The additional roles are
           fallback roles similar to the concept of specifying multiple fonts in case the first choice font type is not supported.
         </p>
@@ -883,18 +883,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"button"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "button" --&gt;</span></code></pre>
           </aside>
-          <p>
-            When an element has a role but is not contained in the required context (for example, an orphaned <code>listitem</code> without the required accessible parent of role <code>list</code>), User Agents <em class="rfc2119">MUST</em> ignore
-            the role token, and return the <code>computedrole</code> as if the ignored role token had not been included.
-          </p>
+          <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><p class="">
+            When an element has a role but is not contained in the required context (for example, an orphaned <code>listitem</code> without the required accessible parent of role <code>list</code>), this is an authoring
+            error, but the user agent behavior is not specified as a single rule. For most roles, user agents can either recover the error by ignoring the role, or respect the author's intended role
+            in scenarios deemed by the implementation to be harmless. Please note that this permissiveness in how engines treat author role errors might be overridden in a language-specific mapping document such as [<cite><a class="bibref" data-link-type="biblio" href="#bib-html-aam" title="HTML Accessibility API Mappings 1.0">HTML-AAM</a></cite>].
+          </p></div>
           <aside class="example" id="example-2"><div class="marker">
     <a class="self-link" href="#example-2">Example<bdi> 2</bdi></a>
   </div>
             
-            <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- Author error: orphaned listitem. computedrole returns "generic" --&gt;</span>
+            <pre aria-busy="false"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- Author error: orphaned listitem. computedrole is unspecified. --&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"list"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "list" --&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "listitem" in the required context. --&gt;</span></code></pre>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"listitem"</span>&gt;</span> <span class="hljs-comment">&lt;!-- computedrole returns "listitem" in the appropriate context. --&gt;</span></code></pre>
           </aside>
           <p>
             When host language elements do not have an exact or equivalent mapping to a valid, non-abstract role, the related Accessibilty <abbr title="Application Programming Interface">API</abbr> Mapping extension specification <em class="rfc2119">MAY</em> specify a unique
@@ -5575,13 +5576,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </tr>
             </tbody>
           </table>
-          <div class="note" role="note" id="ftn.note1"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><div class="">
+          <div class="note" role="note" id="ftn.note1"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
             <p>
               <sup>[Note 1]</sup>
               User agent should return a user-presentable, localized string value for the AXRoleDescription.
             </p>
           </div></div>
-          <div class="note" role="note" id="ftn.note2"><div role="heading" class="note-title marker" id="h-note-3" aria-level="5"><span>Note</span></div><div class="">
+          <div class="note" role="note" id="ftn.note2"><div role="heading" class="note-title marker" id="h-note-4" aria-level="5"><span>Note</span></div><div class="">
             <p>
               <sup>[Note 2]</sup> This specification does not currently contain guidance for when user agents should fire system alert events. Some guidance may be added to the specification at a
               later date but it will be a recommendation (<em class="rfc2119">SHOULD</em>), not a requirement (<em class="rfc2119">MUST</em>).
@@ -9401,7 +9402,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           
           <p>
             Often in a <abbr title="Graphical User Interface">GUI</abbr>, there are <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-relationship">relationships</a> between the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-widget">widgets</a> that can be exposed programmatically
-            to <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technology</a>. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> provides several relationship <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-property" class="respec-offending-element" title="Normative reference to non-normative term." id="respec-offender-normative-reference-to-non-normative-term-2">properties</a> which are globally
+            to <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technology</a>. <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> provides several relationship <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-property" class="respec-offending-element" title="Normative reference to non-normative term." id="respec-offender-normative-reference-to-non-normative-term-2">properties</a> which are globally
             applicable to any <a class="termref informative" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-element">element</a>: <a class="property-reference" href="https://w3c.github.io/aria/#aria-controls"><code>aria-controls</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-flowto"><code>aria-flowto</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-labelledby"><code>aria-labelledby</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-owns"><code>aria-owns</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-posinset"><code>aria-posinset</code></a>, and <a class="property-reference" href="https://w3c.github.io/aria/#aria-setsize"><code>aria-setsize</code></a>. Therefore, it is not important to check the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-role">role</a> before computing them. <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">User agents</a> can simply map these relations to
             <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interfaces">APIs</abbr></a> as defined in the section titled <a href="#mapping_state-property">State and Property Mapping</a>.
           </p>
@@ -9424,7 +9425,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <p>
               Note that <a class="property-reference" href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a> may reference structured or interactive information where users would want to be able
               to navigate to different sections of content. User agents <em class="rfc2119">MAY</em> provide a way for the user to navigate to structured information referenced by
-              <a class="property-reference" href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a> and <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technology</a> <em class="rfc2119">SHOULD</em> provide such a method.
+              <a class="property-reference" href="https://w3c.github.io/aria/#aria-describedby"><code>aria-describedby</code></a> and <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technology</a> <em class="rfc2119">SHOULD</em> provide such a method.
             </p>
           </section>
           <section id="mapping_additional_relations_implied"><div class="header-wrapper"><h5 id="x4-6-2-2-implied-reverse-relations"><bdi class="secno">4.6.2.2 </bdi>Implied reverse relations</h5><a class="self-link" href="#mapping_additional_relations_implied" aria-label="Permalink for Section 4.6.2.2"></a></div>
@@ -9536,7 +9537,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <em class="rfc2119">SHOULD</em> simulate a click on the <abbr title="Document Object Model">DOM</abbr> element which is mapped to that accessible object.
           </li>
         </ul>
-        <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-4" aria-level="4"><span>Note</span></div><p class="">
+        <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-5" aria-level="4"><span>Note</span></div><p class="">
           Authors will need to create handlers for those click events that update <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> states and properties in the
           <abbr title="Document Object Model">DOM</abbr> accordingly, so that those updated states can be populated by the user agent in the Accessibility
           <abbr title="Application Programming Interface">API</abbr>.
@@ -9551,19 +9552,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <section id="mapping_events_state-change"><div class="header-wrapper"><h4 id="x4-8-1-state-and-property-change-events"><bdi class="secno">4.8.1 </bdi>State and Property Change Events</h4><a class="self-link" href="#mapping_events_state-change" aria-label="Permalink for Section 4.8.1"></a></div>
           
           <p>
-            <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">User agents</a> <em class="rfc2119">MUST</em> notify <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technology</a> of <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-state">state</a> changes as defined in the table below, <em class="rfc2119">SHOULD</em> notify assistive technology of
+            <a data-link-type="dfn" href="https://infra.spec.whatwg.org/#user-agent">User agents</a> <em class="rfc2119">MUST</em> notify <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technology</a> of <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-state">state</a> changes as defined in the table below, <em class="rfc2119">SHOULD</em> notify assistive technology of
             <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-property" class="respec-offending-element" title="Normative reference to non-normative term." id="respec-offender-normative-reference-to-non-normative-term-7">property</a> changes if the <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-api">accessibility <abbr title="Application Programming Interface">API</abbr></a> defines a change <a class="termref informative" data-link-type="dfn" href="https://dom.spec.whatwg.org/#concept-event">event</a> for the property, and <em class="rfc2119">SHOULD NOT</em> notify assistive technology of
             property changes if the accessibility <abbr title="application programming interface">API</abbr> does not define a change event for the property. For example, IAccessible2 defines an event
             to be used when <a class="property-reference" href="https://w3c.github.io/aria/#aria-activedescendant"><code>aria-activedescendant</code></a> changes.
             <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> properties that are expected to change include
             <a class="property-reference" href="https://w3c.github.io/aria/#aria-activedescendant"><code>aria-activedescendant</code></a>, <a class="property-reference" href="https://w3c.github.io/aria/#aria-valuenow"><code>aria-valuenow</code></a>, and <a class="property-reference" href="https://w3c.github.io/aria/#aria-valuetext"><code>aria-valuetext</code></a>.
           </p>
-          <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-5" aria-level="5"><span>Note</span></div><p class="">In some <abbr title="Application Programming Interfaces">APIs</abbr>, <abbr title="assistive technology">AT</abbr> will only be notified of events to which it has subscribed.</p></div>
+          <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-6" aria-level="5"><span>Note</span></div><p class="">In some <abbr title="Application Programming Interfaces">APIs</abbr>, <abbr title="assistive technology">AT</abbr> will only be notified of events to which it has subscribed.</p></div>
           <p>
-            For simplicity and performance the user agent <em class="rfc2119">MAY</em> trim out change events for state or property changes that <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-assistive-technologies">assistive technologies</a> typically ignore, such as events
+            For simplicity and performance the user agent <em class="rfc2119">MAY</em> trim out change events for state or property changes that <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#assistive-technology">assistive technologies</a> typically ignore, such as events
             that are happening in a window that does not currently have focus.
           </p>
-          <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-6" aria-level="5"><span>Note</span></div><p class="">
+          <div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-7" aria-level="5"><span>Note</span></div><p class="">
             Translators: For label text associated with the following table and its toggle buttons, see the <code>mappingTableLabels</code> object in the <code>&lt;head&gt;</code> section of this
             document.
           </p></div>
@@ -10755,7 +10756,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
     
     <dl class="bibliography"><dt id="bib-html-aam">[HTML-AAM]</dt><dd>
-      <a href="https://www.w3.org/TR/html-aam-1.0/"><cite>HTML Accessibility API Mappings 1.0</cite></a>. Scott O'Hara; Rahim Abdi.  W3C. 27 June 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/html-aam-1.0/">https://www.w3.org/TR/html-aam-1.0/</a>
+      <a href="https://www.w3.org/TR/html-aam-1.0/"><cite>HTML Accessibility API Mappings 1.0</cite></a>. Scott O'Hara; Rahim Abdi.  W3C. 30 July 2025. W3C Working Draft. URL: <a href="https://www.w3.org/TR/html-aam-1.0/">https://www.w3.org/TR/html-aam-1.0/</a>
     </dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd>
       <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/">https://wiki.linuxfoundation.org/accessibility/iaccessible2/</a>
     </dd><dt id="bib-infra">[infra]</dt><dd>
