@@ -98,7 +98,7 @@ dd{margin-left:0}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="98526b870cd8d03f3b0a2e5d06e6cf4372de7356">
+<meta name="revision" content="aab9cd42da367660b9e863dc55963ae1c463a7a3">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -358,7 +358,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "98526b870cd8d03f3b0a2e5d06e6cf4372de7356",
+  "gitRevision": "aab9cd42da367660b9e863dc55963ae1c463a7a3",
   "publishISODate": "2025-10-10T00:00:00.000Z",
   "generatedSubtitle": "W3C Editor's Draft 10 October 2025"
 }</script>
@@ -471,7 +471,10 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         documents. To comment, <a href="https://github.com/w3c/core-aam/issues/new">file an issue in the <abbr title="World Wide Web Consortium">W3C</abbr> core-aam GitHub repository</a>. If this is
         not feasible, send email to <a href="mailto:public-aria@w3.org?subject=Comment%20on%20Core-AAM%201.2">public-aria@w3.org</a> (<a href="http://lists.w3.org/Archives/Public/public-aria/">comment archive</a>). In-progress updates to the document may be viewed in the <a href="http://w3c.github.io/core-aam/">publicly visible editors' draft</a>.
       </p>
-      <p><strong>Living specification</strong> — This document is maintained as a living specification. For the latest normative version, visit <a href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings</a>.</p>
+      <p>
+        <strong>Living specification</strong> — This document is maintained as a living specification. For the latest normative version, visit
+        <a href="https://www.w3.org/TR/core-aam-1.2/">Core Accessibility <abbr title="Application Programming Interface">API</abbr> Mappings</a>.
+      </p>
     <p>
     This document was published by the <a href="https://www.w3.org/groups/wg/aria">Accessible Rich Internet Applications Working Group</a> as
     an Editor's Draft. 
@@ -518,8 +521,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           defines the <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> standard.
         </li>
         <li>
-          <cite><a href="https://www.w3.org/WAI/ARIA/apg/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices Guide</a></cite>, describes how web content developers can develop accessible rich internet applications using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>.
-          It provides detailed advice and examples directed primarily to web application developers, yet also useful to user agent and developers of assistive technologies.
+          <cite><a href="https://www.w3.org/WAI/ARIA/apg/"><abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Authoring Practices Guide</a></cite>, describes how web content developers can develop accessible rich internet applications using <abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr>. It provides detailed
+          advice and examples directed primarily to web application developers, yet also useful to user agent and developers of assistive technologies.
         </li>
         <li>
           <cite><a href="http://www.w3.org/TR/wai-aria-roadmap/">Roadmap for Accessible Rich Internet Applications (<abbr title="Accessible Rich Internet Applications">WAI-ARIA</abbr> Roadmap)</a></cite>
@@ -668,9 +671,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         when, and only when, they appear in all
         capitals, as shown here.
       </p>
-      <p>
-        Normative sections provide requirements that user agents and assistive technologies <em class="rfc2119">MUST</em> follow for an implementation to conform to this specification.
-      </p>
+      <p>Normative sections provide requirements that user agents and assistive technologies <em class="rfc2119">MUST</em> follow for an implementation to conform to this specification.</p>
       <p>
         Non-normative (informative) sections provide information useful to understanding the specification. Such sections may contain examples of recommended practice, but it is not required to follow
         such recommendations in order to conform to this specification.
@@ -854,7 +855,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="5"><span>Note</span></div><p class="">
             When an element has a role but is not contained in the required context (for example, an orphaned <code>listitem</code> without the required accessible parent of role <code>list</code>), this is an authoring
             error, but the user agent behavior is not specified as a single rule. For most roles, user agents can either recover the error by ignoring the role, or respect the author's intended role
-            in scenarios deemed by the implementation to be harmless. Please note that this permissiveness in how engines treat author role errors might be overridden in a language-specific mapping document such as [<cite><a class="bibref" data-link-type="biblio" href="#bib-html-aam" title="HTML Accessibility API Mappings 1.0">HTML-AAM</a></cite>].
+            in scenarios deemed by the implementation to be harmless. Please note that this permissiveness in how engines treat author role errors might be overridden in a language-specific mapping
+            document such as [<cite><a class="bibref" data-link-type="biblio" href="#bib-html-aam" title="HTML Accessibility API Mappings 1.0">HTML-AAM</a></cite>].
           </p></div>
           <aside class="example" id="example-2"><div class="marker">
     <a class="self-link" href="#example-2">Example<bdi> 2</bdi></a>
@@ -10227,8 +10229,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               </tr>
             </tbody>
           </table>
-          <p>Fire the following events for node changes where the node in question is an element and has an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>. The <dfn data-export="" data-lt="accessibility subtree" id="dfn-accessibility-subtree" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">accessibility subtree</dfn> of a node is its <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> in the <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and all of it's <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-descendant">accessibility descendants</a>. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via <a class="specref" href="https://w3c.github.io/aria/#aria-flowto">aria-flowto</a> unless those objects are also descendants in the <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>.
-          </p><table class="data">
+          <p>
+            Fire the following events for node changes where the node in question is an element and has an <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a>. The
+            <dfn data-export="" data-lt="accessibility subtree" id="dfn-accessibility-subtree" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">accessibility subtree</dfn> of a node is its <a class="termref informative" data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessible-object">accessible object</a> in the <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a> and all of it's
+            <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-descendant">accessibility descendants</a>. It does not include objects which have relationships other than parent-child in that tree. For example, it does not include objects linked via
+            <a class="specref" href="https://w3c.github.io/aria/#aria-flowto">aria-flowto</a> unless those objects are also descendants in the <a data-link-type="dfn" href="https://www.w3.org/TR/wai-aria/#dfn-accessibility-tree">accessibility tree</a>.
+          </p>
+          <table class="data">
             <caption>
               Table of document change scenarios and events to be fired in each
               <abbr title="application programming interface">API</abbr>
