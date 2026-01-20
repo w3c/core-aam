@@ -98,7 +98,7 @@ dd{margin-left:0}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="2d9ac48b56647d588a814204eb0bbad14ad15272">
+<meta name="revision" content="c723e040de1ab2a6f80aa8abe5c90a1e9ce0e1e9">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -370,7 +370,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "2d9ac48b56647d588a814204eb0bbad14ad15272",
+  "gitRevision": "c723e040de1ab2a6f80aa8abe5c90a1e9ce0e1e9",
   "publishISODate": "2026-01-20T00:00:00.000Z",
   "generatedSubtitle": "W3C Editor's Draft 20 January 2026"
 }</script>
@@ -567,7 +567,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
           <li><cite>User Interface Automation</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-ui-automation" title="UI Automation">UI-AUTOMATION</a></cite>]</li>
           <li><cite><abbr title="Accessibility Toolkit">ATK</abbr> - Accessibility Toolkit</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-atk" title="ATK - Accessibility Toolkit">ATK</a></cite>] and <cite>Assistive Technology Service Provider Interface</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-at-spi" title="Assistive Technology Service Provider Interface">AT-SPI</a></cite>], referred to hereafter as "<abbr title="Accessibility Toolkit">ATK</abbr>/<abbr title="assistive technology">AT</abbr>-SPI"</li>
           <li><cite>macOS Accessibility Protocol</cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-axapi" title="The NSAccessibility Protocol for macOS">AXAPI</a></cite>]</li>
-          <li><cite><a href="https://developer.android.com/reference/android/view/accessibility/package-summary">Android</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-android-accessibility-api" title="Android Accessibility API">Android-Accessibility-API</a></cite>]</li>
+          <li>
+            <cite><a href="https://developer.android.com/reference/android/view/accessibility/package-summary">Android</a></cite> [<cite><a class="bibref" data-link-type="biblio" href="#bib-android-accessibility-api" title="Android Accessibility API">Android-Accessibility-API</a></cite>]
+          </li>
         </ul>
         <p>
           The <cite><a href="http://www.w3.org/TR/wai-aria-implementation/"><abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> 1.0 User Agent Implementation Guide</a></cite> included mappings for [<cite><a class="bibref" data-link-type="biblio" href="#bib-uia-express" title="The IAccessibleEx Interface">UIA-EXPRESS</a></cite>], also known as IAccessibleEx,
@@ -653,11 +655,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         <section id="android-accessibility-api"><div class="header-wrapper"><h4 id="x1-2-3-android-accessibility-api"><bdi class="secno">1.2.3 </bdi>Android Accessibility <abbr title="Application Programming Interface">API</abbr></h4><a class="self-link" href="#android-accessibility-api" aria-label="Permalink for Section 1.2.3"></a></div>
           
           <p>
-            Android accessibility services and applications both express user interface elements as a tree of <code>AccessibilityNodeInfo</code> objects. Accessibility services receive events, traverse the <code>AccessibilityNodeInfo</code> tree, retrieve properties, and perform actions on a node. Conversely, Android applications build the <code>AccessibilityNodeInfo</code> tree indirectly by constructing views or composables, or directly via an <code>AccessibilityNodeProvider</code>. They then subsequently fire events, and handle actions.
+            Android accessibility services and applications both express user interface elements as a tree of <code>AccessibilityNodeInfo</code> objects. Accessibility services receive events,
+            traverse the <code>AccessibilityNodeInfo</code> tree, retrieve properties, and perform actions on a node. Conversely, Android applications build the <code>AccessibilityNodeInfo</code> tree
+            indirectly by constructing views or composables, or directly via an <code>AccessibilityNodeProvider</code>. They then subsequently fire events, and handle actions.
           </p>
-          <p>
-            For <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> implementers, of particular interest is the mapping into properties, actions, and events on <code>AccessibilityNodeInfo</code> and <code>AccessibilityEvent</code>.
-          </p>
+          <p>For <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> implementers, of particular interest is the mapping into properties, actions, and events on <code>AccessibilityNodeInfo</code> and <code>AccessibilityEvent</code>.</p>
         </section>
         <section id="accessible-names-and-descriptions"><div class="header-wrapper"><h4 id="x1-2-4-accessible-names-and-descriptions"><bdi class="secno">1.2.4 </bdi>Accessible Names and Descriptions</h4><a class="self-link" href="#accessible-names-and-descriptions" aria-label="Permalink for Section 1.2.4"></a></div>
           
