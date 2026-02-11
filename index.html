@@ -98,7 +98,7 @@ dd{margin-left:0}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="ba3444814ac6afcaff49a4c43b5c9df5fbf299d5">
+<meta name="revision" content="2bf7a7ef90e1a0fb9c5c1ef8ddde2459d895ee54">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -370,7 +370,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "ba3444814ac6afcaff49a4c43b5c9df5fbf299d5",
+  "gitRevision": "2bf7a7ef90e1a0fb9c5c1ef8ddde2459d895ee54",
   "publishISODate": "2026-02-11T00:00:00.000Z",
   "generatedSubtitle": "W3C Editor's Draft 11 February 2026"
 }</script>
@@ -11958,12 +11958,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             <td>
               <p>User agents and assistive technologies <em class="rfc2119">MUST</em> determine the language of the announcement by taking the first valid BCP&nbsp;47 language tag from the following sources:</p>
               <ol>
-                <li>The <var>node</var>'s nearest ancestor element's <code>lang</code> attribute
-                (including
-                <var>node</var>
-                itself).</li>
-                <li>The document element's <code>lang</code> attribute
-                (including when called on the document).</li>
+                <li>
+                  The <var>node</var>'s nearest ancestor element's <code>lang</code> attribute (including
+                  <var>node</var>
+                  itself).
+                </li>
+                <li>The document element's <code>lang</code> attribute (including when called on the document).</li>
                 <li>A user agent or platform default.</li>
               </ol>
               <p>Assistive technologies <em class="rfc2119">MUST</em> present the announcement using that language (for example, voice, pronunciation rules, braille table).</p>
