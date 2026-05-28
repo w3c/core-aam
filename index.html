@@ -105,7 +105,7 @@ body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="ece017cb271dd914772bc0a8625b4c40573094d8">
+<meta name="revision" content="d7d308c2e09c2e19aef83795f010708da57ebc7e">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -408,16 +408,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "ece017cb271dd914772bc0a8625b4c40573094d8",
-  "publishISODate": "2026-05-27T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 27 May 2026"
+  "gitRevision": "d7d308c2e09c2e19aef83795f010708da57ebc7e",
+  "publishISODate": "2026-05-28T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 28 May 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-05-27">27 May 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-05-28">28 May 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -701,6 +701,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             indirectly by constructing views or composables, or directly via an <code>AccessibilityNodeProvider</code>. They then subsequently fire events, and handle actions.
           </p>
           <p>For <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> implementers, of particular interest is the mapping into properties, actions, and events on <code>AccessibilityNodeInfo</code> and <code>AccessibilityEvent</code>.</p>
+          <p>Note: Many ARIA roles in this specification are mapped to <code>android.view.View</code> as a default or fallback mapping. This often reflects a baseline level of support where a more specific Android widget class is not available or has not been defined yet. These mappings are subject to change as the Android accessibility ecosystem evolves and more specific mappings are identified. In cases where no specific role mapping is available, Android's <a href="https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityNodeInfoCompat#setRoleDescription(java.lang.CharSequence)"><code>setRoleDescription</code></a> can be used to convey the specific ARIA role semantics to assistive technologies.</p>
         </section>
         <section id="accessible-names-and-descriptions"><div class="header-wrapper"><h4 id="x1-2-4-accessible-names-and-descriptions"><bdi class="secno">1.2.4 </bdi>Accessible Names and Descriptions</h4><a class="self-link" href="#accessible-names-and-descriptions" aria-label="Permalink for Section 1.2.4"></a></div>
           
@@ -1003,7 +1004,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1058,7 +1059,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.app.Dialog / android.app.AlertDialog</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1109,7 +1110,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1163,7 +1164,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1218,7 +1219,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1270,7 +1271,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1321,7 +1322,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.Button</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1371,7 +1372,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.Button</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1422,7 +1423,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ToggleButton</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1473,7 +1474,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1528,7 +1529,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1582,7 +1583,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.CheckBox</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1635,7 +1636,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1690,7 +1691,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1744,7 +1745,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.EditText</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1796,7 +1797,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1851,7 +1852,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1906,7 +1907,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -1958,7 +1959,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2011,7 +2012,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2062,7 +2063,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.app.Dialog / android.app.AlertDialog</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2112,7 +2113,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2163,7 +2164,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2216,7 +2217,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2269,7 +2270,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2322,7 +2323,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2376,7 +2377,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2425,7 +2426,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2476,7 +2477,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed as <code>android.widget.TextView</code> if the element has only text children.</span>
                 </td>
               </tr>
             </tbody>
@@ -2543,7 +2545,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.GridView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2600,7 +2602,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2650,7 +2652,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2702,7 +2704,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.isHeading</code>: <code>true</code></span><br>
+                  <span>Note: Exposed as <code>android.widget.TextView</code> if the element has only text children.</span>
                 </td>
               </tr>
             </tbody>
@@ -2754,7 +2758,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.Image</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2806,7 +2810,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.Image / android.widget.ImageButton</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2859,7 +2863,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -2914,7 +2918,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getText</code> returns text containing an <code>android.text.style.URLSpan</code> when exposed as part of formatted text.</span>
                 </td>
               </tr>
             </tbody>
@@ -2965,7 +2970,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ListView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3023,7 +3028,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ListView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3081,7 +3086,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ListView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3134,7 +3139,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3193,7 +3198,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3247,7 +3252,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3301,7 +3306,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3353,7 +3358,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3404,7 +3409,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getStructuredDataInfo</code> returns mathematical content in an <code>AccessibilityNodeInfo.MathInfo</code> object.</span>
                 </td>
               </tr>
             </tbody>
@@ -3461,7 +3467,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getCollectionInfo</code> returns an <code>AccessibilityNodeInfo.CollectionInfo</code> object.</span>
                 </td>
               </tr>
             </tbody>
@@ -3518,7 +3525,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getCollectionInfo</code> returns an <code>AccessibilityNodeInfo.CollectionInfo</code> object.</span>
                 </td>
               </tr>
             </tbody>
@@ -3568,7 +3576,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.MenuItem</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3624,7 +3632,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.MenuItem</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3681,7 +3689,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.MenuItem</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3735,7 +3743,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ProgressBar</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getRangeInfo</code> returns an <code>AccessibilityNodeInfo.RangeInfo</code> object if it represents a numeric range without <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -3789,7 +3798,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>com.google.android.material.navigation.NavigationView</span>
                 </td>
               </tr>
             </tbody>
@@ -3853,7 +3862,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3904,7 +3913,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -3959,7 +3968,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4014,7 +4023,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getCollectionItemInfo</code> returns an <code>AccessibilityNodeInfo.CollectionItemInfo</code> object.</span>
                 </td>
               </tr>
             </tbody>
@@ -4065,7 +4075,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed as <code>android.widget.TextView</code> if the element has only text children.</span>
                 </td>
               </tr>
             </tbody>
@@ -4129,7 +4140,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4187,7 +4198,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.ProgressBar</code></span><br>
+                  <span>Note: Exposed with <code>RangeInfo</code> if it represents a numeric range without <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -4243,7 +4255,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.RadioButton</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4293,7 +4305,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.RadioGroup</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4348,7 +4360,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4397,7 +4409,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4449,7 +4461,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4501,7 +4513,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>CollectionItemInfo</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -4550,7 +4563,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4602,7 +4615,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4659,7 +4672,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>RangeInfo</code> if it represents a numeric range without <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -4713,7 +4727,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.SearchView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4769,7 +4783,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.EditText</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4822,7 +4836,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4875,7 +4889,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4925,7 +4939,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -4982,7 +4996,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>RangeInfo</code> if it represents a numeric range without <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5039,7 +5054,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.SeekBar</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5096,7 +5111,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.EditText</code></span><br>
+                  <span>Note: Exposed with <code>RangeInfo</code> if it represents a numeric range without <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5154,7 +5170,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getLiveRegion</code>: <code>View.ACCESSIBILITY_LIVE_REGION_POLITE</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5207,7 +5224,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getText</code> returns text containing an <code>android.text.style.StyleSpan</code> with <code>android.graphics.Typeface.BOLD</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5260,7 +5278,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getText</code> returns text containing an <code>android.text.style.SubscriptSpan</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5313,7 +5332,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getText</code> returns text containing an <code>android.text.style.SuggestionSpan</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5366,7 +5386,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getText</code> returns text containing an <code>android.text.style.SuperscriptSpan</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5425,7 +5446,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.Switch</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5479,7 +5500,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>CollectionItemInfo</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -5538,7 +5560,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.GridView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5596,7 +5618,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.TabWidget</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5646,7 +5668,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5698,7 +5720,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5751,7 +5773,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.EditText</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5804,7 +5826,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.EditText</code></span><br>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.isMultiLine</code>: <code>true</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5858,7 +5881,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.TimePicker</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5909,7 +5932,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -5959,7 +5982,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span>
                 </td>
               </tr>
             </tbody>
@@ -6009,7 +6032,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: The tooltip text is typically exposed via <code>AccessibilityNodeInfo.getTooltipText</code> on the associated anchor element.</span>
                 </td>
               </tr>
             </tbody>
@@ -6066,7 +6090,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>CollectionInfo</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -6125,7 +6150,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.widget.GridView</code></span>
                 </td>
               </tr>
             </tbody>
@@ -6179,7 +6204,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span><code>android.view.View</code></span><br>
+                  <span>Note: Exposed with <code>CollectionItemInfo</code>.</span>
                 </td>
               </tr>
             </tbody>
@@ -6283,7 +6309,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6334,7 +6360,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6387,7 +6413,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6430,7 +6456,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6471,7 +6497,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6512,7 +6538,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6553,7 +6579,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6594,7 +6620,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6635,7 +6661,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6676,7 +6702,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6721,7 +6747,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6766,7 +6792,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6811,7 +6837,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6852,7 +6878,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6895,7 +6921,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6938,7 +6964,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -6979,7 +7005,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7022,7 +7048,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7067,7 +7093,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7109,7 +7135,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7151,7 +7177,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7192,7 +7218,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7242,7 +7268,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7288,7 +7314,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7333,7 +7359,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7375,7 +7401,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7416,7 +7442,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7459,7 +7485,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7502,7 +7528,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7547,7 +7573,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7589,7 +7615,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7631,7 +7657,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7672,7 +7698,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7717,7 +7743,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7758,7 +7784,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7799,7 +7825,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7840,7 +7866,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7885,7 +7911,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7927,7 +7953,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -7972,7 +7998,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8017,7 +8043,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8062,7 +8088,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8107,7 +8133,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8152,7 +8178,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8197,7 +8223,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8242,7 +8268,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8283,7 +8309,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8326,7 +8352,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8367,7 +8393,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8410,7 +8436,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8453,7 +8479,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8494,7 +8520,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8539,7 +8565,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8590,7 +8616,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8634,7 +8660,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8676,7 +8702,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8725,7 +8751,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8774,7 +8800,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8819,7 +8845,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8861,7 +8887,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8903,7 +8929,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8947,7 +8973,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -8991,7 +9017,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9037,7 +9063,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9080,7 +9106,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9123,7 +9149,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9166,7 +9192,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9208,7 +9234,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9262,7 +9288,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9303,7 +9329,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9348,7 +9374,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9392,7 +9418,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9436,7 +9462,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9480,7 +9506,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9521,7 +9547,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9569,7 +9595,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9615,7 +9641,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9664,7 +9690,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9713,7 +9739,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9754,7 +9780,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9795,7 +9821,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9836,7 +9862,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9879,7 +9905,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9922,7 +9948,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -9965,7 +9991,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10006,7 +10032,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10049,7 +10075,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10094,7 +10120,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10139,7 +10165,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10180,7 +10206,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10230,7 +10256,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10273,7 +10299,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10316,7 +10342,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10359,7 +10385,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10400,7 +10426,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10445,7 +10471,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10490,7 +10516,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10536,7 +10562,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10582,7 +10608,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10810,7 +10836,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10852,7 +10878,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10894,7 +10920,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10936,7 +10962,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -10976,7 +11002,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11018,7 +11044,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11060,7 +11086,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11104,7 +11130,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11147,7 +11173,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11191,7 +11217,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11233,7 +11259,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11276,7 +11302,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11318,7 +11344,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11360,7 +11386,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11402,7 +11428,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11435,7 +11461,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11477,7 +11503,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -11519,7 +11545,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
               <tr>
                 <th>Android</th>
                 <td>
-                  <p>TBD</p>
+                  <span>TBD</span>
                 </td>
               </tr>
             </tbody>
@@ -12198,7 +12224,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="c-references"><bdi class="secno">C. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix C."></a></div><section id="normative-references"><div class="header-wrapper"><h3 id="c-1-normative-references"><bdi class="secno">C.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix C.1"></a></div>
     
     <dl class="bibliography"><dt id="bib-html-aam">[HTML-AAM]</dt><dd>
-      <a href="https://www.w3.org/TR/html-aam-1.0/"><cite>HTML Accessibility API Mappings 1.0</cite></a>. Scott O'Hara; Rahim Abdi.  W3C. 20 May 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/html-aam-1.0/">https://www.w3.org/TR/html-aam-1.0/</a>
+      <a href="https://www.w3.org/TR/html-aam-1.0/"><cite>HTML Accessibility API Mappings 1.0</cite></a>. Scott O'Hara; Rahim Abdi.  W3C. 27 May 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/html-aam-1.0/">https://www.w3.org/TR/html-aam-1.0/</a>
     </dd><dt id="bib-iaccessible2">[IAccessible2]</dt><dd>
       <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/"><cite>IAccessible2</cite></a>.  Linux Foundation. URL: <a href="https://wiki.linuxfoundation.org/accessibility/iaccessible2/">https://wiki.linuxfoundation.org/accessibility/iaccessible2/</a>
     </dd><dt id="bib-infra">[infra]</dt><dd>
@@ -12215,7 +12241,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   </section><section id="informative-references"><div class="header-wrapper"><h3 id="c-2-informative-references"><bdi class="secno">C.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix C.2"></a></div>
     
     <dl class="bibliography"><dt id="bib-accname-1-2">[accname-1.2]</dt><dd>
-      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 20 May 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
+      <a href="https://www.w3.org/TR/accname-1.2/"><cite>Accessible Name and Description Computation 1.2</cite></a>. Bryan Garaventa; Melanie Sumner.  W3C. 27 May 2026. W3C Working Draft. URL: <a href="https://www.w3.org/TR/accname-1.2/">https://www.w3.org/TR/accname-1.2/</a>
     </dd><dt id="bib-android-accessibility-api">[Android-Accessibility-API]</dt><dd>
       <a href="https://developer.android.com/guide/topics/ui/accessibility"><cite>Android Accessibility API</cite></a>.  Google. URL: <a href="https://developer.android.com/guide/topics/ui/accessibility">https://developer.android.com/guide/topics/ui/accessibility</a>
     </dd><dt id="bib-at-spi">[AT-SPI]</dt><dd>
