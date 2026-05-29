@@ -105,7 +105,7 @@ body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
     
   
 <meta name="color-scheme" content="light">
-<meta name="revision" content="d7d308c2e09c2e19aef83795f010708da57ebc7e">
+<meta name="revision" content="07833035332d9bbc42c68f39ab1f8b68c3f5e4b1">
 <meta name="description" content="This document describes how user agents should expose semantics of web content languages to accessibility APIs. This helps users with disabilities to obtain and interact with information using assistive technologies. Documenting these mappings promotes interoperable exposure of
         roles, states, properties, and events implemented by accessibility APIs and helps to ensure that this information appears in a manner consistent with author intent.">
 <style>
@@ -408,16 +408,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "aliasOf": "WAI-ARIA-1.1"
     }
   },
-  "gitRevision": "d7d308c2e09c2e19aef83795f010708da57ebc7e",
-  "publishISODate": "2026-05-28T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 28 May 2026"
+  "gitRevision": "07833035332d9bbc42c68f39ab1f8b68c3f5e4b1",
+  "publishISODate": "2026-05-29T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 29 May 2026"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
   <body class="h-entry" data-cite="dom accname wai-aria infra"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Core Accessibility API Mappings 1.2</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-05-28">28 May 2026</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2026-05-29">29 May 2026</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -701,7 +701,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
             indirectly by constructing views or composables, or directly via an <code>AccessibilityNodeProvider</code>. They then subsequently fire events, and handle actions.
           </p>
           <p>For <abbr title="Accessible Rich Internet Application">WAI-ARIA</abbr> implementers, of particular interest is the mapping into properties, actions, and events on <code>AccessibilityNodeInfo</code> and <code>AccessibilityEvent</code>.</p>
-          <p>Note: Many ARIA roles in this specification are mapped to <code>android.view.View</code> as a default or fallback mapping. This often reflects a baseline level of support where a more specific Android widget class is not available or has not been defined yet. These mappings are subject to change as the Android accessibility ecosystem evolves and more specific mappings are identified. In cases where no specific role mapping is available, Android's <a href="https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityNodeInfoCompat#setRoleDescription(java.lang.CharSequence)"><code>setRoleDescription</code></a> can be used to convey the specific ARIA role semantics to assistive technologies.</p>
+          <p>
+            Note: Many ARIA roles in this specification are mapped to <code>android.view.View</code> as a default or fallback mapping. This often reflects a baseline level of support where a more
+            specific Android widget class is not available or has not been defined yet. These mappings are subject to change as the Android accessibility ecosystem evolves and more specific mappings
+            are identified. In cases where no specific role mapping is available, Android's
+            <a href="https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityNodeInfoCompat#setRoleDescription(java.lang.CharSequence)"><code>setRoleDescription</code></a>
+            can be used to convey the specific ARIA role semantics to assistive technologies.
+          </p>
         </section>
         <section id="accessible-names-and-descriptions"><div class="header-wrapper"><h4 id="x1-2-4-accessible-names-and-descriptions"><bdi class="secno">1.2.4 </bdi>Accessible Names and Descriptions</h4><a class="self-link" href="#accessible-names-and-descriptions" aria-label="Permalink for Section 1.2.4"></a></div>
           
@@ -3744,7 +3750,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
                 <th>Android</th>
                 <td>
                   <span><code>android.widget.ProgressBar</code></span><br>
-                  <span class="method">Method: <code>AccessibilityNodeInfo.getRangeInfo</code> returns an <code>AccessibilityNodeInfo.RangeInfo</code> object if it represents a numeric range without <code>aria-valuetext</code>.</span>
+                  <span class="method">Method: <code>AccessibilityNodeInfo.getRangeInfo</code> returns an <code>AccessibilityNodeInfo.RangeInfo</code> object if it represents a numeric range without
+                    <code>aria-valuetext</code>.</span>
                 </td>
               </tr>
             </tbody>
